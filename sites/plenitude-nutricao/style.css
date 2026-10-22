@@ -1,0 +1,361 @@
+/* =========================================================================
+   Plenitude — nutrição clínica · Jardins, São Paulo
+   Arquetipo H: hero full-bleed de cor solida, citacoes grandes entre as
+   secoes, mosaico de galeria. Assinatura: o bloco de citacao em Fraunces
+   solto sobre o creme, com o texto quebrando em poucas linhas.
+   ========================================================================= */
+
+:root {
+  --k-bg: #f5f1e8;
+  --k-surface: #fffdf7;
+  --k-ink: #2b302a;
+  --k-accent: #6f8f5e;
+  --k-accent-2: #d99a3c;
+
+  --k-font-display: "Fraunces", Georgia, serif;
+  --k-font-body: "Figtree", "Segoe UI", sans-serif;
+  --k-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --k-line: rgba(43, 48, 42, 0.14);
+  --k-line-strong: rgba(43, 48, 42, 0.28);
+  --k-ink-soft: #5a6357;
+  --k-accent-ink: #f6f2e6;
+
+  --k-max: 71rem;
+  --k-gutter: 1.4rem;
+  --k-sec-pad: clamp(3.2rem, 6.4vw, 5.6rem);
+  --k-display-weight: 400;
+  --k-display-leading: 1.02;
+  --k-display-tracking: -0.02em;
+  --k-h1: clamp(2.3rem, 6.4vw, 4.7rem);
+  --k-h2: clamp(1.6rem, 3.1vw, 2.4rem);
+  --k-btn-radius: 3px;
+  --k-card-radius: 4px;
+
+  --pl-hero: #3e4f39;
+  --pl-deep: #46603c;
+}
+
+.icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+}
+h1, h2, h3 { font-weight: 400; }
+h2 { letter-spacing: -0.022em; }
+
+/* ---------------------------------------------------------------- header */
+.pl-head {
+  --k-head-bg: rgba(245, 241, 232, 0.88);
+  padding-inline: max(1.4rem, calc((100vw - 71rem) / 2));
+  background: var(--k-head-bg);
+  backdrop-filter: blur(9px);
+}
+.brand { font-family: var(--k-font-display); font-size: 1.24rem; letter-spacing: 0.005em; }
+.brand__mark { width: 22px; height: 22px; }
+.pl-nav { gap: 1.2rem; }
+.pl-nav a { font-size: 0.82rem; color: var(--k-ink-soft); }
+.pl-nav a:hover { color: var(--k-ink); }
+.pl-nav__cta {
+  border-bottom: 1px solid var(--k-accent) !important;
+  color: var(--k-ink) !important;
+}
+@media (max-width: 880px) {
+  .pl-head { flex-wrap: wrap; gap: 0.4rem 1rem; padding-block: 0.8rem; }
+  .pl-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.1rem 0.95rem;
+    justify-content: flex-start;
+  }
+  .pl-nav a { font-size: 0.74rem; min-height: 38px; }
+}
+
+/* ----------------------------------------------------- hero cor solida */
+.pl-hero {
+  background: var(--pl-hero);
+  color: var(--k-accent-ink);
+  padding-block: clamp(2.8rem, 6vw, 5rem) 0;
+  border-bottom: 1px solid var(--pl-hero);
+}
+.pl-hero__tag {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(246, 242, 230, 0.78);
+  margin-bottom: 1.2rem;
+}
+.pl-hero h1 { max-width: 17ch; }
+.pl-hero__lede {
+  color: rgba(246, 242, 230, 0.88);
+  margin-top: 1.3rem;
+  margin-bottom: 2rem;
+  max-width: 51ch;
+}
+.pl-hero__acts { margin-bottom: 2.6rem; }
+.pl-hero__acts .btn {
+  background: var(--k-accent-ink);
+  color: #33422f;
+  border-radius: 3px;
+  font-weight: 500;
+}
+.pl-hero__acts .link-arrow {
+  color: var(--k-accent-ink);
+  border-bottom-color: rgba(246, 242, 230, 0.45);
+}
+.pl-hero__facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(246, 242, 230, 0.28);
+  padding-bottom: 0;
+}
+.pl-hero__facts > div {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1.1rem 1.4rem 1.4rem 0;
+  font-size: 0.85rem;
+  color: rgba(246, 242, 230, 0.8);
+  line-height: 1.45;
+}
+.pl-hero__facts > div + div {
+  border-left: 1px solid rgba(246, 242, 230, 0.2);
+  padding-left: 1.4rem;
+}
+.pl-hero__facts .mono { font-size: 1.25rem; color: var(--k-accent-ink); letter-spacing: -0.02em; }
+@media (max-width: 720px) {
+  .pl-hero__facts { grid-template-columns: minmax(0, 1fr); }
+  .pl-hero__facts > div + div { border-left: 0; border-top: 1px solid rgba(246, 242, 230, 0.18); padding-left: 0; }
+}
+
+/* ---------------------------------------------------------- intro blocos */
+.pl-lede { margin-top: 1rem; max-width: 50ch; }
+.pl-consulta { align-items: start; gap: clamp(2rem, 5vw, 3.6rem); }
+.pl-figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--k-line);
+}
+.pl-figure figcaption { font-size: 0.8rem; max-width: 44ch; }
+
+.pl-min { margin-top: 2rem; }
+.pl-min > li:first-child { border-top: 1px solid var(--k-ink); }
+.pl-min h3 {
+  font-family: var(--k-font-display);
+  font-size: 1.16rem;
+  letter-spacing: -0.012em;
+  margin-bottom: 0.35rem;
+}
+.pl-min p { font-size: 0.92rem; max-width: 60ch; }
+
+.pl-traz {
+  margin-top: 2.6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--k-line-strong);
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: 1rem 2rem;
+  align-items: start;
+}
+.pl-traz__tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pl-deep);
+  padding-top: 0.2rem;
+}
+.pl-traz .list-cols { margin: 0; }
+.pl-traz .list-cols li { font-size: 0.9rem; }
+@media (max-width: 720px) {
+  .pl-traz { grid-template-columns: minmax(0, 1fr); }
+  .pl-traz .list-cols { columns: 1; }
+}
+
+/* --------------------------------------------------------- citacao grande */
+.pl-quote {
+  padding-block: clamp(2.8rem, 6vw, 4.8rem);
+  border-top: 1px solid var(--k-line);
+  background: var(--k-bg);
+}
+.pl-quote blockquote {
+  margin: 0;
+  font-family: var(--k-font-display);
+  font-size: clamp(1.45rem, 3.4vw, 2.5rem);
+  line-height: 1.16;
+  letter-spacing: -0.024em;
+  max-width: 27ch;
+  color: var(--k-ink);
+  text-wrap: balance;
+}
+.pl-quote .mono {
+  margin-top: 1.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--k-ink-soft);
+}
+.pl-quote--alt { background: var(--k-surface); border-block: 1px solid var(--k-line); }
+
+/* --------------------------------------------------------------- o plano */
+.pl-band { background: var(--k-surface); border-block: 1px solid var(--k-line); }
+.pl-plano { align-items: start; gap: clamp(2rem, 5vw, 3.4rem); }
+.pl-list { gap: 1rem; }
+.pl-list li { font-size: 0.95rem; line-height: 1.55; }
+.pl-list strong { color: var(--k-ink); font-weight: 600; }
+.pl-list svg { color: var(--k-accent); }
+.pl-note {
+  margin-top: 1.6rem;
+  max-width: 52ch;
+  font-size: 0.85rem;
+  line-height: 1.62;
+  color: var(--k-ink-soft);
+  padding-left: 1rem;
+  border-left: 1px solid var(--k-accent-2);
+}
+.pl-note--foot { margin-top: 1.8rem; max-width: 72ch; padding-left: 0; border-left: 0; border-top: 1px solid var(--k-line); padding-top: 1.2rem; }
+
+/* -------------------------------------------------------------- mosaico */
+.pl-head-sec {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6rem 2rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--k-line-strong);
+  margin-bottom: 1.6rem;
+}
+.pl-head-sec .mono { font-size: 0.7rem; color: var(--k-ink-soft); }
+.pl-mosaic figcaption {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  color: var(--k-ink-soft);
+  padding-top: 0.55rem;
+}
+.pl-mosaic figure { display: grid; align-content: start; }
+.pl-mosaic img {
+  border-radius: 3px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+/* seis quadros: 2 grandes, 3 medios, 1 faixa — so no desktop, o kit assume
+   a grade de duas colunas abaixo de 760px */
+@media (min-width: 761px) {
+  .pl-mosaic > *:nth-child(1),
+  .pl-mosaic > *:nth-child(2) { grid-column: span 3; }
+  .pl-mosaic > *:nth-child(3),
+  .pl-mosaic > *:nth-child(4),
+  .pl-mosaic > *:nth-child(5) { grid-column: span 2; }
+  .pl-mosaic > *:nth-child(6) { grid-column: span 6; }
+  .pl-mosaic > *:nth-child(6) img { aspect-ratio: 21 / 9; }
+}
+
+/* ------------------------------------------------------------ depoimentos */
+.pl-depo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: 2.2rem;
+}
+.pl-depo blockquote {
+  margin: 0;
+  font-family: var(--k-font-display);
+  font-size: clamp(1.08rem, 1.9vw, 1.32rem);
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+  color: var(--k-ink);
+}
+.pl-depo figcaption {
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--k-line);
+  font-size: 0.8rem;
+  color: var(--k-ink-soft);
+  line-height: 1.5;
+}
+.pl-depo figcaption strong { color: var(--k-ink); font-weight: 600; }
+@media (max-width: 800px) { .pl-depo { grid-template-columns: minmax(0, 1fr); gap: 2.2rem; } }
+
+/* ---------------------------------------------------------------- precos */
+.pl-prices { margin-top: 2rem; border-top-color: var(--k-line-strong); }
+.pl-prices > li { padding-block: 1.1rem; }
+.pl-prices > li > span { font-weight: 500; color: var(--k-ink); }
+.pl-prices small { font-size: 0.82rem; font-weight: 400; max-width: 62ch; }
+.pl-prices b {
+  font-family: var(--k-font-display);
+  font-size: 1.18rem;
+  font-weight: 500;
+  color: var(--pl-deep);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------- contato */
+.pl-cta { background: var(--pl-hero); color: var(--k-accent-ink); }
+.pl-cta__in {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.pl-cta h2 { max-width: 18ch; }
+.pl-cta .pl-lede { color: rgba(246, 242, 230, 0.85); }
+.pl-cta__acts { display: grid; gap: 0.75rem; justify-items: start; }
+.pl-cta .btn { background: var(--k-accent-ink); color: #33422f; font-size: 0.9rem; }
+.pl-cta .link-arrow { color: var(--k-accent-ink); border-bottom-color: rgba(246, 242, 230, 0.45); font-size: 0.88rem; }
+.pl-cta__mini { font-size: 0.68rem; color: rgba(246, 242, 230, 0.7); }
+
+/* ---------------------------------------------------------------- rodape */
+.site-footer { padding-block: 2.8rem 0; }
+.pl-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding-bottom: 2.2rem;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.pl-foot__brand { font-family: var(--k-font-display); font-size: 1.2rem; color: var(--k-ink); margin-bottom: 0.5rem; }
+.pl-foot .mono { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pl-deep); margin-bottom: 0.45rem; }
+@media (max-width: 720px) { .pl-foot { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; } }
+
+.skip-link {
+  background: var(--pl-deep);
+  color: var(--k-accent-ink);
+}
+
+.demo-notice {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  line-height: 1.65;
+  color: var(--k-ink-soft);
+  border-top: 1px solid var(--k-line);
+  padding-top: 1.1rem;
+  padding-bottom: 2.6rem;
+  max-width: 62ch;
+}
+.demo-chip {
+  --k-chip-bg: #2b302a;
+  --k-chip-ink: #f6f2e6;
+  --k-chip-line: rgba(246, 242, 230, 0.25);
+  font-size: 0.68rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  :root { --k-h1: 2.05rem; }
+  .pl-hero h1 { max-width: none; }
+  .pl-quote blockquote { max-width: none; }
+}
+
+/* ancora sob o cabecalho fixo */
+section[id] { scroll-margin-top: 7rem; }

@@ -1,0 +1,240 @@
+/* Nuvem ERP — arquétipo G: denso, seções empilhadas, dado sempre visível. */
+
+:root {
+  --k-bg: #0f1722;
+  --k-surface: #16202f;
+  --k-ink: #e2e8f0;
+  --k-ink-soft: #94a3b8;
+  --k-accent: #3b82f6;
+  --k-accent-2: #38bdf8;
+  --k-accent-ink: #0b1220;
+  --k-line: rgba(226, 232, 240, 0.14);
+  --k-line-strong: rgba(226, 232, 240, 0.34);
+
+  --k-font-display: "Sora", "Segoe UI", sans-serif;
+  --k-font-body: "Public Sans", "Segoe UI", sans-serif;
+  --k-font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --k-display-weight: 600;
+  --k-display-leading: 1.06;
+  --k-display-tracking: -0.025em;
+  --k-h1: clamp(1.9rem, 4.4vw, 3.2rem);
+  --k-h2: clamp(1.45rem, 2.9vw, 2.1rem);
+  --k-h3: 1.02rem;
+  --k-body-size: 0.98rem;
+  --k-lede-size: 1.01rem;
+
+  --k-max: 74rem;
+  --k-gutter: clamp(1.15rem, 4vw, 2.9rem);
+  --k-sec-pad: clamp(2.8rem, 6vw, 4.6rem);
+  --k-hero-pad: clamp(2.2rem, 5vw, 3.6rem);
+  --k-head-gap: 1.8rem;
+  --k-card-radius: 10px;
+  --k-btn-radius: 8px;
+  --k-art-bg: #16202f;
+  --k-head-bg: rgba(15, 23, 34, 0.9);
+  --k-focus: #38bdf8;
+}
+
+.brand { font-family: var(--k-font-display); font-weight: 600; font-size: 1.05rem; }
+.brand__mark { border-radius: 8px; }
+.eyebrow { color: var(--k-accent-2); }
+.lede { color: var(--k-ink-soft); }
+
+/* ------------------------------------------------------------------ hero */
+
+.hero--inset { padding-top: clamp(1.8rem, 4vw, 3rem); }
+.hero--inset .hero__band {
+  inset: 0 0 40% 0;
+  background: var(--k-surface);
+  border-bottom: 1px solid var(--k-line);
+}
+.hero__card {
+  background: var(--k-surface);
+  border: 1px solid var(--k-line-strong);
+  padding: clamp(1.5rem, 3.6vw, 2.6rem);
+}
+.hero__title { max-width: 26ch; }
+.hero__art { margin-top: clamp(1.2rem, 3vw, 1.8rem); }
+.hero__art img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border: 1px solid var(--k-line);
+}
+
+/* --------------------------------------------------------------- recursos */
+
+.recursos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--k-line);
+  border: 1px solid var(--k-line);
+}
+@media (max-width: 700px) { .recursos { grid-template-columns: minmax(0, 1fr); } }
+.recursos > li {
+  background: var(--k-bg);
+  padding: clamp(1.2rem, 2.6vw, 1.8rem);
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+}
+.recursos__num {
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  color: var(--k-accent);
+}
+.recursos h3 {
+  font-family: var(--k-font-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+.recursos p { font-size: 0.92rem; line-height: 1.62; color: var(--k-ink-soft); }
+.recursos__det {
+  margin-top: 0.5rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  color: var(--k-accent-2);
+}
+
+/* ---------------------------------------------------------------- preços */
+
+.precos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.6rem, 4vw, 3.4rem);
+  align-items: start;
+}
+@media (max-width: 820px) { .precos { grid-template-columns: minmax(0, 1fr); } }
+.precos .lede { margin-top: 0.9rem; max-width: 42ch; }
+.precos__list { margin-top: 1.4rem; }
+.precos__list li { font-size: 0.92rem; }
+.precos__list svg { color: var(--k-accent-2); }
+.precos__card {
+  background: var(--k-bg);
+  border: 1px solid var(--k-line-strong);
+  border-radius: var(--k-card-radius);
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+.precos__card .mono { color: var(--k-accent-2); }
+.precos__value {
+  margin-top: 0.5rem;
+  font-family: var(--k-font-display);
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.precos__value small {
+  display: block;
+  font-family: var(--k-font-body);
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--k-ink-soft);
+  margin-top: 0.4rem;
+}
+.precos__det { margin-top: 1rem; font-size: 0.88rem; color: var(--k-ink-soft); line-height: 1.6; }
+.precos__note {
+  margin-block: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--k-line);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--k-ink-soft);
+}
+
+/* ----------------------------------------------------------- integrações */
+
+.integra {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--k-line);
+  border: 1px solid var(--k-line);
+}
+@media (max-width: 760px) { .integra { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.integra li {
+  background: var(--k-bg);
+  padding: 1.1rem 1rem;
+  display: grid;
+  gap: 0.25rem;
+}
+.integra b { font-family: var(--k-font-display); font-weight: 500; font-size: 0.95rem; }
+.integra span { font-size: 0.8rem; line-height: 1.45; color: var(--k-ink-soft); }
+.integra__nota {
+  margin-top: 1.2rem;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--k-ink-soft);
+  max-width: 62ch;
+}
+
+/* ------------------------------------------------------------------ depo */
+
+.depo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3.5vw, 2.6rem);
+}
+@media (max-width: 760px) { .depo { grid-template-columns: minmax(0, 1fr); } }
+.depo__item blockquote {
+  margin: 0 0 0.7rem;
+  font-family: var(--k-font-display);
+  font-weight: 400;
+  font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+  line-height: 1.5;
+}
+.depo__item figcaption {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  color: var(--k-ink-soft);
+  padding: 0;
+}
+
+/* -------------------------------------------------------------------- cta */
+
+.cta { background: var(--k-accent); color: var(--k-accent-ink); padding-block: clamp(2.2rem, 4.4vw, 3.2rem); }
+.cta__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cta h2 { color: var(--k-accent-ink); max-width: 30ch; font-size: clamp(1.25rem, 2.5vw, 1.8rem); }
+.cta .btn { background: var(--k-accent-ink); color: var(--k-ink); }
+
+/* ----------------------------------------------------------------- footer */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.2rem;
+  padding-bottom: 2rem;
+}
+@media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; } }
+.site-footer h4 {
+  font-family: var(--k-font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  font-weight: 400;
+  margin-bottom: 0.7rem;
+}
+.site-footer li + li { margin-top: 0.3rem; }
+.footer__p { font-size: 0.85rem; color: var(--k-ink-soft); margin-top: 0.8rem; max-width: 32ch; line-height: 1.6; }
+
+.demo-notice {
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--k-line);
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  line-height: 1.75;
+  color: var(--k-ink-soft);
+  max-width: 62ch;
+}

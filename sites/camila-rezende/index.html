@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camila Rezende — front-end e design systems | remoto</title>
+  <meta name="description" content="Front-end em React, TypeScript e Astro. Design system com 38 componentes, tabelas de 12 mil linhas e bundle de 41 kB gzip, com nota de acessibilidade no CI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/kit.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="masthead wrap masthead--bar">
+    <a class="brand" href="#conteudo">
+      <img class="brand__mark" src="assets/mark.svg" alt="" width="22" height="22">
+      camila rezende
+    </a>
+    <nav class="nav nav--mono" aria-label="Principal">
+      <a href="#projetos">projetos</a>
+      <a href="#stack">stack</a>
+      <a href="#sobre">sobre</a>
+      <a href="#contato">contato</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <div class="wrap layout">
+
+      <aside class="side" aria-label="Índice da página">
+        <p class="side__label">índice</p>
+        <nav class="side__nav">
+          <a href="#hero"><span>01</span> apresentação</a>
+          <a href="#projetos"><span>02</span> projetos</a>
+          <a href="#stack"><span>03</span> stack</a>
+          <a href="#sobre"><span>04</span> sobre</a>
+          <a href="#depoimentos"><span>05</span> quem trabalhou</a>
+          <a href="#contato"><span>06</span> contato</a>
+        </nav>
+        <div class="side__meta">
+          <p>remoto · UTC-3</p>
+          <p>Recife, Brasil</p>
+          <p class="side__status"><span class="dot" aria-hidden="true"></span>agenda aberta em fev/2025</p>
+        </div>
+      </aside>
+
+      <div class="main">
+
+        <section class="hero" id="hero" aria-labelledby="titulo-hero">
+          <p class="eyebrow">front-end · design systems</p>
+          <h1 id="titulo-hero">Componentes, acessibilidade e bundle pequeno</h1>
+          <p class="lede hero__lede">
+            Oito anos escrevendo interface em React e TypeScript. Passei os
+            últimos dois mantendo o design system da Vitta: 38 componentes,
+            dois temas e 41 kB gzip de CSS no pacote final.
+          </p>
+
+          <ul class="hero__spec">
+            <li><span class="spec__k">atuação</span><span class="spec__v">bibliotecas de componente, a11y, performance</span></li>
+            <li><span class="spec__k">stack</span><span class="spec__v">React 18 · TypeScript · Astro · Vite</span></li>
+            <li><span class="spec__k">forma</span><span class="spec__v">20 h por semana, contrato de 3 meses</span></li>
+            <li><span class="spec__k">idioma</span><span class="spec__v">pt-BR e inglês (times em Berlim)</span></li>
+          </ul>
+
+          <figure class="hero__art">
+            <img src="assets/hero.svg" alt="Composição técnica em verde e azul sobre fundo escuro, com blocos e linhas de grade" width="1200" height="900">
+            <figcaption>capa do pacote v2.4.0 do DS da Vitta · 38 componentes, 190 stories</figcaption>
+          </figure>
+        </section>
+
+        <section class="sec" id="projetos" aria-labelledby="titulo-projetos">
+          <header class="sec__head">
+            <p class="sec__num">02 / projetos</p>
+            <h2 id="titulo-projetos">Três projetos, com o que quebrou no meio</h2>
+            <p class="lede">
+              Cada bloco traz o papel que eu tive, a stack e o número que o time
+              usou para decidir se valia continuar. Os repositórios abertos
+              estão no fim da lista.
+            </p>
+          </header>
+
+          <article class="proj">
+            <div class="proj__top">
+              <h3>Vitta DS</h3>
+              <p class="proj__period">2023 – 2024 · pacote privado</p>
+            </div>
+            <p class="proj__desc">
+              O time tinha quatro botões diferentes e três tons de cinza para o
+              mesmo fundo. Comecei pelo inventário: 120 capturas de tela, uma
+              planilha e a decisão de cortar tudo que não era usado em duas
+              telas ou mais.
+            </p>
+            <p class="proj__desc">
+              O primeiro componente foi o campo de formulário, porque era o que
+              mais aparecia. O guia de contribuição veio antes do segundo.
+              No fim, 9 telas migradas sem reescrever regra de negócio.
+            </p>
+            <ul class="tag-row">
+              <li><span>React</span></li>
+              <li><span>TypeScript</span></li>
+              <li><span>Radix</span></li>
+              <li><span>Storybook 7</span></li>
+              <li><span>Vitest</span></li>
+            </ul>
+            <dl class="ficha">
+              <div><dt>papel</dt><dd>design system e implementação</dd></div>
+              <div><dt>artefato</dt><dd>38 componentes, 2 temas</dd></div>
+              <div><dt>bundle</dt><dd>41 kB gzip de CSS</dd></div>
+              <div><dt>testes</dt><dd>190 stories, 64 testes de unidade</dd></div>
+            </dl>
+            <figure class="proj__img">
+              <img src="assets/work-1.svg" alt="Estudo vertical da grade de componentes com blocos verdes" width="900" height="1200" loading="lazy">
+            </figure>
+          </article>
+
+          <article class="proj">
+            <div class="proj__top">
+              <h3>Painel do produtor</h3>
+              <p class="proj__period">2023 · Nexo Agro · 4 meses</p>
+            </div>
+            <p class="proj__desc">
+              O produtor rural abria o painel no 3G do campo e esperava dois
+              segundos por uma tabela de doze mil linhas. Troquei a listagem por
+              virtualização e movi o filtro para o servidor, com debounce de
+              300 ms na busca.
+            </p>
+            <p class="proj__desc">
+              A primeira renderização caiu de 2,1 s para 0,8 s no 3G simulado do
+              Chrome — medido no mesmo aparelho, com o mesmo arquivo de dados.
+              Depois disso é que escrevi os 48 cenários de teste com Playwright.
+            </p>
+            <ul class="tag-row">
+              <li><span>React 18</span></li>
+              <li><span>TanStack Table</span></li>
+              <li><span>Zod</span></li>
+              <li><span>Playwright</span></li>
+            </ul>
+            <dl class="ficha">
+              <div><dt>papel</dt><dd>front-end e revisão de acessibilidade</dd></div>
+              <div><dt>tabela</dt><dd>12 mil linhas virtualizadas</dd></div>
+              <div><dt>a11y</dt><dd>navegação por teclado em 100% das ações</dd></div>
+              <div><dt>testes</dt><dd>48 cenários end-to-end</dd></div>
+            </dl>
+            <figure class="proj__img">
+              <img src="assets/work-2.svg" alt="Estudo horizontal de tabela de dados com colunas e realces" width="1200" height="900" loading="lazy">
+            </figure>
+          </article>
+
+          <article class="proj">
+            <div class="proj__top">
+              <h3>Portal do Instituto Canaã</h3>
+              <p class="proj__period">2022 · projeto fechado</p>
+            </div>
+            <p class="proj__desc">
+              Noventa e seis páginas de conteúdo, feitas por três pessoas que não
+              programam. Escolhi Astro porque o site é texto: as páginas saem em
+              HTML puro, sem JavaScript no conteúdo, e o build inteiro leva 40
+              segundos na máquina da equipe.
+            </p>
+            <p class="proj__desc">
+              A parte chata foi o editor de texto do CMS devolvendo marcação
+              suja. Escrevi um sanitizador de 120 linhas no build e um teste de
+              contrato que quebra quando chega tag fora da lista.
+            </p>
+            <ul class="tag-row">
+              <li><span>Astro</span></li>
+              <li><span>Markdown</span></li>
+              <li><span>Sanitize-HTML</span></li>
+              <li><span>Lighthouse CI</span></li>
+            </ul>
+            <dl class="ficha">
+              <div><dt>papel</dt><dd>arquitetura e implementação</dd></div>
+              <div><dt>páginas</dt><dd>96, geradas em HTML estático</dd></div>
+              <div><dt>javascript</dt><dd>0 kB nas páginas de conteúdo</dd></div>
+              <div><dt>nota</dt><dd>Lighthouse 98 em performance no mobile</dd></div>
+            </dl>
+            <figure class="proj__img">
+              <img src="assets/work-3.svg" alt="Estudo vertical de página com coluna de texto e diagrama" width="900" height="1200" loading="lazy">
+            </figure>
+          </article>
+
+          <div class="repos">
+            <p class="repos__label">repositórios abertos</p>
+            <ul class="repos__list">
+              <li>
+                <span class="mono">cadernos-de-campo</span>
+                <span>app de anotação offline, PWA com IndexedDB</span>
+                <span class="mono repos__meta">2021 · TypeScript</span>
+              </li>
+              <li>
+                <span class="mono">focus-ring</span>
+                <span>hook de foco visível para teclado, 1,4 kB</span>
+                <span class="mono repos__meta">2022 · React</span>
+              </li>
+              <li>
+                <span class="mono">tabela-a11y</span>
+                <span>exemplos do que falei na BrazilJS 2023</span>
+                <span class="mono repos__meta">2023 · HTML</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sec sec--panel" id="stack" aria-labelledby="titulo-stack">
+          <header class="sec__head">
+            <p class="sec__num">03 / stack</p>
+            <h2 id="titulo-stack">O que eu uso e desde quando</h2>
+            <p class="lede">
+              Só entra na lista o que já sustentou um projeto em produção por mais
+              de seis meses. O resto fica no rascunho.
+            </p>
+          </header>
+
+          <table class="stack-table">
+            <caption class="visually-hidden">Ferramentas, para que servem e desde quando uso</caption>
+            <thead>
+              <tr>
+                <th scope="col">ferramenta</th>
+                <th scope="col">uso</th>
+                <th scope="col">desde</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">TypeScript</th><td>todos os projetos, modo estrito</td><td>2019</td></tr>
+              <tr><th scope="row">React 18</th><td>interface de produto</td><td>2018</td></tr>
+              <tr><th scope="row">Astro</th><td>site de conteúdo e blog</td><td>2022</td></tr>
+              <tr><th scope="row">Vite</th><td>build e servidor de dev</td><td>2021</td></tr>
+              <tr><th scope="row">Vitest</th><td>teste de unidade e de componente</td><td>2022</td></tr>
+              <tr><th scope="row">Playwright</th><td>teste end-to-end e de teclado</td><td>2022</td></tr>
+              <tr><th scope="row">Storybook</th><td>catálogo e revisão de estado</td><td>2020</td></tr>
+              <tr><th scope="row">axe-core</th><td>checagem de acessibilidade no CI</td><td>2021</td></tr>
+              <tr><th scope="row">CSS puro</th><td>camada de token, sem framework</td><td>2016</td></tr>
+            </tbody>
+          </table>
+
+          <div class="releases">
+            <p class="releases__label">notas de versão do DS</p>
+            <ul>
+              <li><span class="mono">v2.4.0</span><span>2024-03 · tema escuro estável, 38 componentes</span></li>
+              <li><span class="mono">v2.1.0</span><span>2023-11 · campo de seleção com busca, 3,2 kB</span></li>
+              <li><span class="mono">v1.8.2</span><span>2023-06 · correção de foco no modal e no menu</span></li>
+              <li><span class="mono">v1.0.0</span><span>2023-02 · primeiro pacote publicado no registro interno</span></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sec" id="sobre" aria-labelledby="titulo-sobre">
+          <header class="sec__head">
+            <p class="sec__num">04 / sobre</p>
+            <h2 id="titulo-sobre">De Recife, com fuso de três horas a menos</h2>
+          </header>
+
+          <div class="sobre prose">
+            <p>
+              Formei em ciência da computação na UFPE em 2016 e comecei
+              escrevendo front-end de sistema de saúde, onde o formulário tinha
+              80 campos e o usuário era uma enfermeira em pé, com pressa. Aprendi
+              ali que acessibilidade não é item de checklist: é a diferença entre
+              alguém conseguir registrar um plantão ou não.
+            </p>
+            <p>
+              Desde 2019 trabalho remoto, com sobreposição de quatro horas com
+              times na Europa. Prefiro entrar em projeto que já tem produto no ar,
+              porque dá para medir antes e depois — e prefiro trabalhar junto de
+              quem desenha, na mesma sala virtual, em vez de receber tela pronta.
+            </p>
+            <p>
+              Fora do trabalho, mantenho o <span class="mono">tabela-a11y</span> e
+              dou uma oficina de duas tardes sobre teclado, foco e leitor de tela
+              em escolas técnicas de Recife.
+            </p>
+          </div>
+        </section>
+
+        <section class="sec sec--panel" id="depoimentos" aria-labelledby="titulo-depoimentos">
+          <header class="sec__head">
+            <p class="sec__num">05 / quem trabalhou comigo</p>
+            <h2 id="titulo-depoimentos">Duas pessoas que revisaram meu código</h2>
+          </header>
+
+          <div class="grid grid-2">
+            <figure class="quote">
+              <blockquote>
+                <p>
+                  A Camila escreveu o guia de contribuição antes do segundo
+                  componente. Foi o que fez o design system sobreviver à troca de
+                  metade do time no ano seguinte.
+                </p>
+              </blockquote>
+              <cite>Renata Coelho — gerente de produto na Vitta</cite>
+            </figure>
+
+            <figure class="quote">
+              <blockquote>
+                <p>
+                  Ela entrou no painel com doze mil linhas na tela e entregou uma
+                  tabela que abre em menos de um segundo no 3G do produtor. E
+                  deixou os testes que provam isso.
+                </p>
+              </blockquote>
+              <cite>Diego Matos — tech lead na Nexo Agro</cite>
+            </figure>
+          </div>
+        </section>
+
+        <section class="sec" id="contato" aria-labelledby="titulo-contato">
+          <header class="sec__head">
+            <p class="sec__num">06 / contato</p>
+            <h2 id="titulo-contato">Como começa um projeto comigo</h2>
+            <p class="lede">
+              Primeira conversa de 30 minutos, sem proposta comercial. Se fizer
+              sentido, mando um documento de duas páginas com escopo, prazo e
+              valor fechado.
+            </p>
+          </header>
+
+          <div class="contato">
+            <div>
+              <a class="contato__mail" href="mailto:oi@camilarezende.example">oi@camilarezende.example</a>
+              <p class="contato__note">
+                Respondo em até dois dias úteis. Se o assunto for acessibilidade
+                de tabela, responde mais rápido.
+              </p>
+            </div>
+
+            <dl class="ficha ficha--wide">
+              <div><dt>disponibilidade</dt><dd>fevereiro de 2025, uma vaga</dd></div>
+              <div><dt>contrato</dt><dd>20 h por semana, mínimo de 3 meses</dd></div>
+              <div><dt>modelo</dt><dd>remoto, com sobreposição até 16h de Berlim</dd></div>
+              <div><dt>nota fiscal</dt><dd>MEI, emissão em Recife</dd></div>
+            </dl>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer__in">
+      <p class="footer__brand">camila rezende · front-end</p>
+      <p class="mono">Recife, Brasil · UTC-3</p>
+      <p class="demo-notice">
+        Página de demonstração criada pela Kodaros. Nome, endereço, preços e
+        depoimentos são fictícios.
+      </p>
+    </div>
+  </footer>
+
+  <a class="demo-chip" href="../../index.html">Voltar ao mostruário</a>
+</body>
+</html>

@@ -1,0 +1,459 @@
+/* =========================================================================
+   Rafael Nunes — personal trainer (arquétipo D)
+   Tom: ficha técnica. Papel, trena, planilha, azul de caneta e número tabular.
+   ========================================================================= */
+
+:root {
+  /* tokens do manifesto (valores exatos) */
+  --k-bg: #f4f5f7;
+  --k-surface: #ffffff;
+  --k-ink: #1c2330;
+  --k-accent: #2f57d6;
+  --k-accent-2: #e0b23c;
+  --k-font-display: "Bricolage Grotesque", sans-serif;
+  --k-font-body: "Public Sans", sans-serif;
+  --k-font-mono: "JetBrains Mono", monospace;
+
+  /* derivados da página */
+  --k-ink-soft: #4c5464;
+  --k-line: rgba(28, 35, 48, 0.14);
+  --k-line-strong: rgba(28, 35, 48, 0.32);
+  --k-accent-ink: #f6f8ff;
+  --k-art-bg: #e3e7ef;
+  --k-max: 76rem;
+  --k-gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --k-sec-pad: clamp(3.25rem, 6vw, 5.5rem);
+  --k-card-radius: 10px;
+  --k-btn-radius: 7px;
+  --k-input-radius: 6px;
+  --k-display-weight: 700;
+  --k-h1: clamp(2.15rem, 4.7vw, 3.45rem);
+  --k-h2: clamp(1.6rem, 2.9vw, 2.15rem);
+  --k-h3: clamp(1.05rem, 1.4vw, 1.22rem);
+  --k-display-tracking: -0.032em;
+  --k-lede-size: clamp(1rem, 1.25vw, 1.1rem);
+  --k-body-size: 1rem;
+  --k-sec-head: 0;
+}
+
+body {
+  background-image: linear-gradient(90deg, var(--k-line) 1px, transparent 1px);
+  background-size: 88px 100%;
+  background-position: center top;
+  background-repeat: repeat;
+}
+
+/* ------------------------------------------------------------------ topo */
+
+.rn-head {
+  border-bottom: 1px solid var(--k-line-strong);
+  padding-block: 1.1rem;
+  background: var(--k-bg);
+}
+
+.rn-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.rn-brand__sub {
+  display: block;
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  padding-top: 0.2rem;
+}
+
+.rn-head__cta {
+  font-family: var(--k-font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ hero */
+
+.hero--split--rev .hero__in { align-items: center; }
+
+.rn-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+}
+.rn-kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--k-accent);
+  flex: none;
+}
+
+.hero__title {
+  margin-block: 1rem 1.1rem;
+  letter-spacing: -0.035em;
+}
+
+.hero__lede { max-width: 44ch; }
+
+.rn-hero-note {
+  margin-top: 1.6rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--k-line-strong);
+  color: var(--k-ink-soft);
+  font-size: 0.74rem;
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+/* figura técnica: papel com borda fina */
+.rn-shot {
+  border: 1px solid var(--k-line-strong);
+  background: var(--k-surface);
+  border-radius: 12px;
+  padding: 0.6rem;
+}
+.rn-shot img {
+  width: 100%;
+  height: auto;
+  border-radius: 7px;
+  background: var(--k-art-bg);
+}
+.rn-shot figcaption {
+  font-size: 0.74rem;
+  line-height: 1.6;
+  color: var(--k-ink-soft);
+  padding: 0.7rem 0.3rem 0.2rem;
+  max-width: 54ch;
+  border-top: 1px solid var(--k-line);
+  margin-top: 0.6rem;
+}
+
+/* ------------------------------------------------------- faixa de números */
+
+.rn-strip {
+  border-block: 1px solid var(--k-line-strong);
+  padding-block: 1.5rem;
+}
+.rn-strip .stat__value {
+  font-family: var(--k-font-mono);
+  font-size: 1.32rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--k-ink);
+}
+.rn-strip .stat__label {
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+/* ---------------------------------------------------------------- método */
+
+.rn-metodo {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: clamp(1.75rem, 4vw, 4rem);
+}
+.rn-metodo h2 { margin-bottom: 0.9rem; }
+.rn-shot--wide { margin-top: 1.75rem; }
+
+.rn-metodo .steps > li { padding-block: 1.35rem; }
+.rn-metodo .steps h3 { margin-bottom: 0.45rem; }
+
+/* --------------------------------------------------------- as 12 semanas */
+
+.rn-plan__head { max-width: 62ch; }
+
+.rn-plan {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: clamp(1.5rem, 3.5vw, 3.25rem);
+}
+
+.rn-weeks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.rn-week {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem 0.7rem 0.8rem;
+  border: 1px solid var(--k-line);
+  border-radius: 8px;
+  background: var(--k-surface);
+}
+.rn-week b {
+  font-family: var(--k-font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--k-ink-soft);
+  letter-spacing: 0.02em;
+}
+.rn-week__name {
+  font-family: var(--k-font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.rn-week__load {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: var(--k-accent);
+}
+
+.rn-week--base { background: color-mix(in srgb, var(--k-accent) 4%, var(--k-surface)); }
+.rn-week--build { background: color-mix(in srgb, var(--k-accent) 9%, var(--k-surface)); }
+.rn-week--peak {
+  background: color-mix(in srgb, var(--k-accent) 15%, var(--k-surface));
+  border-color: color-mix(in srgb, var(--k-accent) 45%, var(--k-line));
+}
+.rn-week--peak .rn-week__load { color: var(--k-ink); }
+.rn-week--rest {
+  background: color-mix(in srgb, var(--k-accent-2) 18%, var(--k-surface));
+  border-color: color-mix(in srgb, var(--k-accent-2) 60%, var(--k-line));
+}
+.rn-week--rest .rn-week__load { color: var(--k-ink); }
+
+.rn-plan__side h3 { margin-bottom: 0.85rem; }
+.rn-plan__note {
+  margin-top: 1.6rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--k-line-strong);
+  color: var(--k-ink-soft);
+  font-size: 0.74rem;
+  line-height: 1.65;
+  max-width: 50ch;
+}
+
+/* --------------------------------------------------------------- treinos */
+
+.rn-treino {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.7fr);
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+.rn-shot--tall { position: sticky; top: 1.5rem; }
+
+/* -------------------------------------------------------- prova social */
+
+.band--dark { background: var(--k-ink); color: var(--k-bg); }
+
+.rn-prova__head h2 { color: var(--k-bg); }
+
+.rn-prova {
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.rn-quote {
+  font-size: clamp(1.3rem, 2.3vw, 1.72rem);
+  line-height: 1.34;
+  color: var(--k-bg);
+  margin: 0;
+  text-wrap: pretty;
+}
+.rn-quote cite {
+  color: color-mix(in srgb, var(--k-bg) 72%, transparent);
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  max-width: 34ch;
+}
+
+.rn-quote-sm {
+  margin: 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid color-mix(in srgb, var(--k-bg) 22%, transparent);
+  font-size: 0.98rem;
+  line-height: 1.62;
+  color: color-mix(in srgb, var(--k-bg) 88%, transparent);
+}
+.rn-quote-sm cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  color: color-mix(in srgb, var(--k-bg) 62%, transparent);
+  line-height: 1.65;
+}
+
+/* ---------------------------------------------------------------- preços */
+
+.rn-precos {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+}
+.rn-precos h2 { margin-bottom: 0.8rem; }
+.rn-precos .price-list { margin-top: 1.75rem; }
+.rn-precos .price-list > li { font-size: 0.98rem; }
+
+.rn-policy { background: var(--k-surface); }
+.rn-policy h3 { margin-bottom: 0.75rem; }
+.rn-policy p {
+  font-size: 0.92rem;
+  line-height: 1.62;
+  color: var(--k-ink-soft);
+}
+.rn-policy p + p { margin-top: 0.85rem; }
+.rn-policy .mono {
+  font-size: 0.74rem;
+  line-height: 1.65;
+  color: var(--k-ink);
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--k-line-strong);
+}
+
+/* --------------------------------------------------------------- contato */
+
+.rn-contato {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+}
+
+.rn-contato__card { background: var(--k-surface); }
+.rn-contato__card h3 { margin-bottom: 0.6rem; }
+.rn-contato__card > p { color: var(--k-ink-soft); font-size: 0.95rem; }
+
+.rn-hours {
+  display: grid;
+  gap: 0;
+  margin: 1.2rem 0;
+}
+.rn-hours div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.45rem;
+  border-bottom: 1px solid var(--k-line);
+  font-size: 0.9rem;
+}
+.rn-hours dt { color: var(--k-ink-soft); }
+.rn-hours dd {
+  margin: 0;
+  font-family: var(--k-font-mono);
+  font-size: 0.82rem;
+  color: var(--k-ink);
+}
+
+.rn-como h3 { margin-bottom: 0.5rem; }
+.rn-como__steps { margin-top: 0.5rem; }
+.rn-como__steps > li { padding-block: 1.15rem; }
+.rn-como__steps h3 { margin-bottom: 0.35rem; }
+
+/* ---------------------------------------------------------------- rodapé */
+
+.rn-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem 2rem;
+  align-items: start;
+}
+.rn-footer__brand {
+  font-family: var(--k-font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+  color: var(--k-ink);
+  margin-bottom: 0.5rem;
+}
+.rn-footer p { line-height: 1.7; }
+.rn-footer__nav {
+  display: grid;
+  gap: 0.1rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.8rem;
+}
+.rn-footer__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: var(--k-ink-soft);
+}
+.rn-footer__nav a:hover { color: var(--k-accent); }
+
+.demo-notice {
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: var(--k-ink-soft);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--k-line);
+  max-width: 60ch;
+}
+
+.demo-chip {
+  background: var(--k-ink);
+  color: var(--k-bg);
+  border-color: transparent;
+  font-family: var(--k-font-mono);
+}
+
+/* ------------------------------------------------------------- responsivo */
+
+@media (max-width: 980px) {
+  .rn-plan,
+  .rn-treino,
+  .rn-precos,
+  .rn-contato,
+  .rn-prova,
+  .rn-metodo { grid-template-columns: minmax(0, 1fr); }
+  .rn-shot--tall { position: static; }
+  .rn-weeks { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .rn-plan__side { padding-top: 0.5rem; }
+  body { background-size: 64px 100%; }
+}
+
+@media (max-width: 720px) {
+  .rn-head { padding-block: 0.85rem; }
+  .rn-head .nav { gap: 1.1rem; }
+  body { background-image: none; }
+  .rn-footer { grid-template-columns: minmax(0, 1fr); }
+  .rn-weeks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rn-strip { padding-block: 1.15rem; }
+  .rn-quote { font-size: 1.18rem; }
+}
+
+@media (max-width: 460px) {
+  .rn-brand__sub { display: none; }
+  .rn-head { gap: 0.75rem; }
+  .rn-head__cta { font-size: 0.74rem; padding-inline: 0.7rem; }
+  .rn-shot { padding: 0.4rem; border-radius: 9px; }
+  .rn-week { padding: 0.6rem 0.55rem; }
+  .rn-week__name { font-size: 0.84rem; }
+  .rn-week__load { font-size: 0.68rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .link-arrow { transition: none; }
+}
+
+/* ------------------------------------------------- medida de leitura ---- */
+/* Em coluna única (tablet) os blocos de texto não passam de ~60 caracteres. */
+.rn-quote { max-width: 42ch; }
+.rn-quote-sm { max-width: 54ch; }
+.rn-treino .index-list p { max-width: 56ch; }
+.rn-policy p { max-width: 46ch; }
+.rn-contato__card > p { max-width: 46ch; }
+.rn-como__steps p { max-width: 54ch; }

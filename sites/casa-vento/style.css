@@ -1,0 +1,294 @@
+/* Casa Vento — arquétipo J: claro, quente, muito respiro, cantos suaves. */
+
+:root {
+  --k-bg: #f7f2e9;
+  --k-surface: #ffffff;
+  --k-ink: #262b26;
+  --k-ink-soft: #5f6a5f;
+  --k-accent: #4f7a6a;
+  --k-accent-2: #d99a55;
+  --k-accent-ink: #ffffff;
+  --k-line: rgba(38, 43, 38, 0.14);
+  --k-line-strong: rgba(38, 43, 38, 0.28);
+
+  --k-font-display: "Newsreader", Georgia, serif;
+  --k-font-body: "Figtree", "Segoe UI", sans-serif;
+  --k-font-mono: "DM Mono", ui-monospace, monospace;
+
+  --k-display-weight: 400;
+  --k-display-leading: 1.06;
+  --k-display-tracking: -0.02em;
+  --k-h1: clamp(2.3rem, 5.2vw, 3.9rem);
+  --k-h2: clamp(1.8rem, 3.2vw, 2.5rem);
+  --k-h3: 1.18rem;
+  --k-brand-weight: 500;
+  --k-body-size: 1rem;
+  --k-lede-size: clamp(1rem, 1.28vw, 1.08rem);
+
+  --k-max: 72rem;
+  --k-gutter: clamp(1.25rem, 4.5vw, 3.2rem);
+  --k-sec-pad: clamp(3.2rem, 7vw, 5.4rem);
+  --k-hero-pad: clamp(2.4rem, 6vw, 4rem);
+  --k-head-gap: 2.2rem;
+  --k-card-radius: 16px;
+  --k-btn-radius: 999px;
+  --k-art-radius: 18px;
+  --k-art-bg: #ede4d3;
+  --k-head-bg: rgba(247, 242, 233, 0.9);
+  --k-chip-bg: #ffffff;
+  --k-focus: #4f7a6a;
+
+  --acc-text: #3e6455;
+}
+
+.brand {
+  font-family: var(--k-font-display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+}
+.brand__mark { border-radius: 50% 50% 20% 20%; }
+.eyebrow { color: var(--acc-text); }
+.lede { color: var(--k-ink-soft); }
+
+/* ------------------------------------------------------------------ hero */
+
+.hero--split .hero__in { align-items: center; }
+.hero__title { max-width: 20ch; }
+.hero__art img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--k-art-radius);
+}
+
+/* ---------------------------------------------------------------- suítes */
+
+.suites {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (max-width: 860px) { .suites { grid-template-columns: minmax(0, 1fr); } }
+.suites > li {
+  background: var(--k-surface);
+  border: 1px solid var(--k-line);
+  border-radius: var(--k-card-radius);
+  padding: 1.5rem 1.6rem;
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+}
+.suites h3 {
+  font-family: var(--k-font-display);
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+.suites p { font-size: 0.93rem; color: var(--k-ink-soft); line-height: 1.6; }
+.suites__meta {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-top: 1px solid var(--k-line);
+}
+.suites__meta span {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--k-ink-soft);
+}
+.suites__meta b {
+  font-family: var(--k-font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--acc-text);
+}
+.suites__note {
+  margin-top: 1.3rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.73rem;
+  color: var(--k-ink-soft);
+}
+
+/* ------------------------------------------------------------------ café */
+
+.cafe {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+@media (max-width: 820px) { .cafe { grid-template-columns: minmax(0, 1fr); } }
+.cafe h2 { margin-block: 0.6rem 1rem; }
+.cafe .lede { margin-bottom: 1.6rem; max-width: 44ch; }
+.cafe__list { display: grid; gap: 0.6rem; }
+.cafe__list li {
+  display: grid;
+  grid-template-columns: 1rem minmax(0, 1fr);
+  gap: 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--k-ink);
+}
+.cafe__list li::before {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-top: 0.52em;
+  border-radius: 50%;
+  background: var(--k-accent-2);
+}
+.cafe__aside img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--k-art-radius);
+}
+.cafe__aside p {
+  margin-top: 0.8rem;
+  font-size: 0.86rem;
+  color: var(--k-ink-soft);
+  line-height: 1.55;
+}
+
+/* ---------------------------------------------------------------- região */
+
+.dist { border-top: 1px solid var(--k-line-strong); }
+.dist > li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--k-line);
+}
+.dist b {
+  font-family: var(--k-font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--k-ink);
+}
+.dist span {
+  font-family: var(--k-font-mono);
+  font-size: 0.76rem;
+  color: var(--k-ink-soft);
+  white-space: nowrap;
+}
+.dist__note {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--k-ink-soft);
+  max-width: 54ch;
+}
+
+/* --------------------------------------------------------------- reserva */
+
+.reserva {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 820px) { .reserva { grid-template-columns: minmax(0, 1fr); } }
+.reserva .lede { margin-top: 0.9rem; margin-bottom: 1.6rem; max-width: 44ch; }
+.reserva__rows { border-top: 1px solid var(--k-line-strong); }
+.reserva__rows div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--k-line);
+  font-size: 0.93rem;
+}
+.reserva__rows dt { color: var(--k-ink-soft); }
+.reserva__rows dd { margin: 0; text-align: right; }
+
+.reserva__card {
+  background: var(--k-surface);
+  border: 1px solid var(--k-line);
+  border-radius: var(--k-card-radius);
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+.reserva__card .mono { color: var(--acc-text); }
+.reserva__tel {
+  margin-top: 0.7rem;
+  font-family: var(--k-font-display);
+  font-size: 1.8rem;
+  letter-spacing: -0.01em;
+}
+.reserva__tel a { color: var(--k-ink); text-decoration: none; }
+.reserva__mail { font-size: 0.9rem; margin-top: 0.2rem; }
+.reserva__mail a { color: var(--acc-text); }
+.reserva__addr {
+  margin-block: 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--k-ink-soft);
+}
+
+/* ------------------------------------------------------------ depoimentos */
+
+.depo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.6rem, 4vw, 3rem);
+}
+@media (max-width: 760px) { .depo { grid-template-columns: minmax(0, 1fr); } }
+.depo__item blockquote {
+  margin: 0 0 0.8rem;
+  font-family: var(--k-font-display);
+  font-size: clamp(1.25rem, 2.1vw, 1.5rem);
+  line-height: 1.36;
+}
+.depo__item figcaption {
+  font-family: var(--k-font-mono);
+  font-size: 0.7rem;
+  color: var(--k-ink-soft);
+  padding: 0;
+}
+
+/* -------------------------------------------------------------------- cta */
+
+.cta { background: var(--acc-text); color: var(--k-surface); padding-block: clamp(2.6rem, 5vw, 4rem); }
+.cta__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cta h2 { color: var(--k-surface); max-width: 28ch; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.cta .btn { background: var(--k-surface); color: var(--acc-text); }
+
+/* ----------------------------------------------------------------- footer */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.4rem;
+  padding-bottom: 2.2rem;
+}
+@media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; } }
+.site-footer h4 {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+.site-footer li + li { margin-top: 0.3rem; }
+.footer__p { font-size: 0.87rem; color: var(--k-ink-soft); margin-top: 0.8rem; max-width: 32ch; line-height: 1.65; }
+
+.demo-notice {
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--k-line);
+  font-family: var(--k-font-mono);
+  font-size: 0.71rem;
+  line-height: 1.75;
+  color: var(--k-ink-soft);
+  max-width: 58ch;
+}

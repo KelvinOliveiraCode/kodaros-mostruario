@@ -1,0 +1,513 @@
+/* =========================================================================
+   Casa Boa — restaurante brasileiro (arquétipo H)
+   Tom: parede escura, faixa de cor cheia, citação grande, mosaico no fim.
+   ========================================================================= */
+
+:root {
+  /* tokens do manifesto (valores exatos) */
+  --k-bg: #1b1410;
+  --k-surface: #251a13;
+  --k-ink: #f3e8d8;
+  --k-accent: #d4622a;
+  --k-accent-2: #7fa05a;
+  --k-font-display: "Fraunces", Georgia, serif;
+  --k-font-body: "Karla", sans-serif;
+  --k-font-mono: "IBM Plex Mono", monospace;
+
+  /* derivados da página */
+  --k-ink-soft: #cbb9a4;
+  --cb-accent-text: #e8834a;
+  --cb-hero: #201610;
+  --k-line: rgba(243, 232, 216, 0.14);
+  --k-line-strong: rgba(243, 232, 216, 0.3);
+  --k-accent-ink: #1e120b;
+  --k-art-bg: #2b1d16;
+  --k-input-bg: rgba(243, 232, 216, 0.05);
+  --k-max: 76rem;
+  --k-gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --k-sec-pad: clamp(3.25rem, 6.5vw, 5.75rem);
+  --k-card-radius: 4px;
+  --k-btn-radius: 3px;
+  --k-input-radius: 3px;
+  --k-display-weight: 500;
+  --k-h1: clamp(2.3rem, 6vw, 4.35rem);
+  --k-h2: clamp(1.65rem, 3.2vw, 2.5rem);
+  --k-h3: clamp(1.08rem, 1.5vw, 1.28rem);
+  --k-display-tracking: -0.028em;
+  --k-display-leading: 1;
+  --k-lede-size: clamp(1rem, 1.25vw, 1.12rem);
+  --k-gap: 1.5rem;
+  --k-gallery-cols: 3;
+}
+
+body { line-height: 1.62; }
+
+/* ------------------------------------------------------------------ topo */
+
+.cb-head {
+  border-bottom: 1px solid var(--k-line);
+  padding-block: 1.15rem;
+}
+
+.cb-brand {
+  font-family: var(--k-font-display);
+  font-weight: 600;
+  font-size: 1.24rem;
+  letter-spacing: -0.02em;
+}
+
+.cb-head__cta {
+  background: transparent;
+  color: var(--k-ink);
+  border-color: var(--k-line-strong);
+  font-family: var(--k-font-mono);
+  font-size: 0.8rem;
+}
+.cb-head__cta:hover { background: var(--k-surface); }
+
+/* ------------------------------------------------------------------ hero */
+
+.cb-hero {
+  background: var(--cb-hero);
+  border-bottom: 1px solid var(--k-line);
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  padding-bottom: 0;
+}
+
+.cb-hero__in { padding-bottom: clamp(2rem, 4vw, 3rem); }
+
+.cb-kicker {
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cb-accent-text);
+}
+
+.cb-title {
+  max-width: 17ch;
+  margin-block: 1rem 1.3rem;
+  font-weight: 500;
+  font-size: clamp(2.3rem, 6vw, 4.35rem);
+  line-height: 0.99;
+  letter-spacing: -0.03em;
+  color: var(--k-ink);
+}
+
+.cb-lede {
+  max-width: 52ch;
+  color: var(--k-ink-soft);
+}
+
+.cb-ctas { margin-top: 1.9rem; row-gap: 0.9rem; }
+.cb-ctas .link-arrow { border-bottom-color: var(--k-line-strong); }
+
+.cb-hero__art {
+  border-top: 1px solid var(--k-line);
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+.cb-hero__art img {
+  width: 100%;
+  max-height: 52vh;
+  object-fit: cover;
+  border-radius: 0;
+  background: var(--k-art-bg);
+}
+.cb-hero__cap {
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+  padding-block: 0.9rem clamp(1.25rem, 3vw, 2rem);
+  max-width: 62ch;
+}
+
+/* ---------------------------------------------------------- faixa citação */
+
+.cb-quote { padding-block: clamp(2.75rem, 6vw, 4.75rem); }
+
+.cb-quote__in {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.75fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: end;
+}
+
+.cb-quote__text {
+  margin: 0;
+  font-family: var(--k-font-display);
+  font-size: clamp(1.5rem, 3.4vw, 2.55rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+.cb-quote__text cite {
+  display: block;
+  margin-top: 1.3rem;
+  font-family: var(--k-font-mono);
+  font-style: normal;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+}
+
+.band--accent .cb-quote__text cite { color: color-mix(in srgb, var(--k-accent-ink) 78%, transparent); }
+
+.cb-quote__side {
+  font-size: 0.74rem;
+  line-height: 1.75;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--k-accent-ink) 30%, transparent);
+}
+.band--accent .cb-quote__side { color: color-mix(in srgb, var(--k-accent-ink) 82%, transparent); }
+
+.band--dark .cb-quote__text { color: var(--k-bg); }
+.band--dark .cb-quote__text cite { color: color-mix(in srgb, var(--k-bg) 72%, transparent); }
+.band--dark .cb-quote__side {
+  color: color-mix(in srgb, var(--k-bg) 78%, transparent);
+  border-top-color: color-mix(in srgb, var(--k-bg) 28%, transparent);
+}
+
+/* --------------------------------------------------------------- cardápio */
+
+.cb-head-sec { max-width: 60ch; }
+
+.cb-menu {
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.72fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.menu-list > li { padding-block: 0.95rem; }
+.menu-list__group {
+  padding-top: 2.25rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--cb-accent-text);
+}
+.menu-list__name {
+  font-family: var(--k-font-display);
+  font-size: 1.16rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+.menu-list__desc {
+  font-size: 0.89rem;
+  line-height: 1.6;
+  color: var(--k-ink-soft);
+  max-width: 58ch;
+}
+.menu-list__price {
+  font-family: var(--k-font-mono);
+  font-size: 0.9rem;
+  color: var(--cb-accent-text);
+  font-weight: 500;
+}
+
+.cb-aside {
+  border-top: 2px solid var(--k-accent);
+  padding-top: 1.3rem;
+}
+.cb-aside h3 { margin-bottom: 1rem; font-weight: 500; }
+.cb-aside__note {
+  margin-top: 1.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--k-line-strong);
+  font-size: 0.74rem;
+  line-height: 1.75;
+  color: var(--k-ink-soft);
+}
+
+/* ------------------------------------------------------------------ casa */
+
+.cb-casa {
+  background: var(--k-surface);
+  border-block: 1px solid var(--k-line);
+}
+
+.cb-casa__top {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.cb-casa__top h2 { margin-bottom: 1.1rem; }
+
+.cb-prose p {
+  font-size: 0.97rem;
+  line-height: 1.75;
+  color: var(--k-ink-soft);
+  max-width: 58ch;
+}
+.cb-prose p + p { margin-top: 1rem; }
+
+.cb-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 1.5rem;
+  margin-top: 1.9rem;
+}
+.cb-facts div {
+  border-top: 1px solid var(--k-line);
+  padding-block: 0.7rem;
+}
+.cb-facts dt {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+}
+.cb-facts dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.93rem;
+  color: var(--k-ink);
+}
+
+.cb-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--k-card-radius);
+  background: var(--k-art-bg);
+}
+.cb-figure figcaption {
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  line-height: 1.7;
+  padding-top: 0.8rem;
+  max-width: 54ch;
+}
+
+.cb-gal-title {
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  border-top: 1px solid var(--k-line);
+  padding-top: 1rem;
+  margin: clamp(2.25rem, 5vw, 3.5rem) 0 1.1rem;
+}
+
+.cb-mosaic img { background: var(--k-art-bg); }
+
+/* ----------------------------------------------------------- depoimentos */
+
+.cb-rows { display: grid; }
+
+.cb-rows li {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 0.7fr);
+  gap: 0.75rem 2rem;
+  align-items: baseline;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--k-line);
+}
+.cb-rows li:last-child { border-bottom: 1px solid var(--k-line); }
+
+.cb-rows__text {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+  line-height: 1.48;
+  letter-spacing: -0.01em;
+  color: var(--k-ink);
+  text-wrap: pretty;
+  max-width: 58ch;
+}
+.cb-rows__by {
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+}
+
+/* --------------------------------------------------------------- reserva */
+
+.cb-reserva {
+  background: var(--k-surface);
+  border-block: 1px solid var(--k-line);
+}
+
+.cb-reserva__in {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.8fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.cb-reserva__form h2 { margin-bottom: 0.85rem; }
+.cb-reserva__form .lede { margin-bottom: 1.6rem; }
+
+.cb-form { display: grid; gap: 0.9rem; max-width: 34rem; }
+.cb-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+.cb-form .field label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.cb-form .field input,
+.cb-form .field select {
+  background: var(--k-input-bg);
+  border-color: var(--k-line-strong);
+  color: var(--k-ink);
+  border-radius: 3px;
+  padding: 0.75rem 0.85rem;
+  font-family: var(--k-font-body);
+}
+.cb-form__btn {
+  justify-self: start;
+  margin-top: 0.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.cb-form__note {
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+  max-width: 46ch;
+}
+
+.cb-rules h3 { margin-bottom: 1rem; font-weight: 500; }
+.cb-rules .list-rows > li { display: block; padding-block: 1rem; }
+.cb-rules .list-rows strong {
+  font-family: var(--k-font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.cb-rules .list-rows p { font-size: 0.88rem; line-height: 1.65; margin-top: 0.2rem; max-width: 50ch; }
+
+/* ----------------------------------------------------------------- local */
+
+.cb-local__in {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.75fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.cb-local h2 { margin-bottom: 0.9rem; }
+.cb-local__text {
+  color: var(--k-ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.75;
+  max-width: 52ch;
+  margin-bottom: 1.75rem;
+}
+
+.cb-hours { max-width: 32rem; }
+.cb-hours th[scope="row"] {
+  font-family: var(--k-font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--k-ink);
+}
+.cb-hours td { font-size: 0.9rem; color: var(--k-ink-soft); }
+.cb-hours td:last-child { color: var(--k-ink); }
+
+.cb-tel {
+  border: 1px solid var(--k-line-strong);
+  border-radius: var(--k-card-radius);
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+}
+.cb-tel h3 { font-weight: 500; margin-bottom: 0.75rem; }
+.cb-tel__num {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.5rem, 2.6vw, 1.95rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.cb-tel__num a {
+  text-decoration: none;
+  color: var(--cb-accent-text);
+  display: inline-block;
+  min-height: 44px;
+  padding-block: 0.1rem;
+}
+.cb-tel__num a:hover { text-decoration: underline; }
+.cb-tel__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  margin: 0.35rem 0 1rem;
+}
+.cb-tel p { font-size: 0.9rem; line-height: 1.7; color: var(--k-ink-soft); }
+.cb-tel__note {
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--k-line-strong);
+  font-size: 0.74rem;
+  line-height: 1.7;
+}
+
+/* ---------------------------------------------------------------- rodapé */
+
+.cb-footer { display: grid; gap: 0.4rem; padding-bottom: 1.4rem; }
+.cb-footer__brand {
+  font-family: var(--k-font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--k-ink);
+}
+.cb-footer p { line-height: 1.75; }
+
+.demo-notice {
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--k-line);
+  max-width: 60ch;
+}
+
+.demo-chip {
+  background: var(--k-surface);
+  color: var(--k-ink);
+  border-color: var(--k-line-strong);
+  font-family: var(--k-font-mono);
+}
+
+/* ------------------------------------------------------------- responsivo */
+
+@media (max-width: 980px) {
+  .cb-menu,
+  .cb-casa__top,
+  .cb-reserva__in,
+  .cb-local__in,
+  .cb-quote__in { grid-template-columns: minmax(0, 1fr); }
+  .cb-quote__side { border-top-color: var(--k-line-strong); }
+  .cb-rows li { grid-template-columns: minmax(0, 1fr); }
+  .cb-rows__by { padding-top: 0.15rem; }
+  .cb-facts { margin-top: 1.5rem; }
+}
+
+@media (max-width: 720px) {
+  .cb-title { max-width: 22ch; }
+  .cb-hero__art img { max-height: 40vh; }
+  .cb-form__row { grid-template-columns: minmax(0, 1fr); }
+  .cb-facts { grid-template-columns: minmax(0, 1fr); }
+  .cb-quote__text { font-size: clamp(1.35rem, 5vw, 1.9rem); }
+  .cb-hours th[scope="row"] { font-size: 0.84rem; }
+  .cb-hours td { font-size: 0.82rem; }
+}
+
+@media (max-width: 460px) {
+  .cb-head { gap: 0.75rem; }
+  .cb-head__cta { font-size: 0.74rem; padding-inline: 0.7rem; }
+  .menu-list > li { padding-block: 0.85rem; }
+  .menu-list__name { font-size: 1.06rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .link-arrow { transition: none; }
+}
+
+/* ------------------------------------------------- medida de leitura ---- */
+.cb-quote__side { max-width: 40ch; }
+.cb-tel p { max-width: 42ch; }
+.cb-tel__note { max-width: 42ch; }
+.cb-rows__text { max-width: 56ch; }
+.menu-list__desc { max-width: 54ch; }

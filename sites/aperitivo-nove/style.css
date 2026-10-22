@@ -1,0 +1,544 @@
+/* =========================================================================
+   Aperitivo Nove — bar de vinhos e petiscos, Pinheiros (SP)
+   Arquétipo K: fundo escuro, hero à esquerda com cartão de preço à direita,
+   conteúdo em cartões de borda fina, filetes dourados.
+   Tokens: pal / fonts do manifesto.
+   ========================================================================= */
+
+:root {
+  --k-bg: #12100f;
+  --k-surface: #1d1815;
+  --k-ink: #f0e6d8;
+  --k-accent: #c99a4e;
+  --k-accent-2: #7d3f3f;
+
+  --k-soft: #b6a696;
+  --k-line: rgba(240, 230, 216, 0.14);
+  --k-line-strong: rgba(240, 230, 216, 0.28);
+  --k-art-bg: #1d1815;
+  --k-accent-ink: #191410;
+  --k-focus: #c99a4e;
+
+  --k-font-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --k-font-body: "Karla", "Segoe UI", sans-serif;
+  --k-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --k-max: 74rem;
+  --k-gutter: 2.5rem;
+  --k-sec-pad: clamp(3.4rem, 7vw, 6rem);
+  --k-card-radius: 10px;
+  --k-btn-radius: 4px;
+  --k-input-radius: 4px;
+
+  --k-display-weight: 300;
+  --k-display-leading: 1.04;
+  --k-display-tracking: -0.01em;
+  --k-h1: clamp(2.4rem, 5.6vw, 4.4rem);
+  --k-h2: clamp(1.8rem, 3.2vw, 2.6rem);
+  --k-h3: 1.1rem;
+  --k-body-size: 0.99rem;
+  --k-lede-size: clamp(1rem, 1.35vw, 1.12rem);
+  --k-card-pad: 1.5rem;
+  --k-ink-soft: var(--k-soft);
+
+  --k-input-bg: rgba(240, 230, 216, 0.05);
+  --k-chip-bg: #f0e6d8;
+  --k-chip-ink: #12100f;
+  --k-chip-line: rgba(18, 16, 15, 0.3);
+}
+
+body {
+  background: var(--k-bg);
+  color: var(--k-ink);
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 { font-style: normal; }
+h1, h2 { font-weight: 300; }
+h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; letter-spacing: 0.01em; }
+
+.lede { color: var(--k-soft); max-width: 52ch; }
+.mono { letter-spacing: 0.08em; }
+:focus-visible { outline-color: var(--k-accent); }
+
+.btn {
+  --btn-bg: var(--k-accent);
+  --btn-ink: #191410;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  min-height: 46px;
+}
+.btn--ghost { --btn-bg: transparent; --btn-ink: var(--k-ink); }
+.link-arrow {
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  color: var(--k-ink);
+}
+
+/* ------------------------------------------------------------------ topo */
+
+.an-top {
+  border-bottom: 1px solid var(--k-line);
+  background: rgba(18, 16, 15, 0.92);
+}
+.an-top__in {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding-block: 1.1rem;
+}
+.an-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--k-font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  color: var(--k-ink);
+}
+.an-brand__mark { width: 1.7rem; height: 1.7rem; color: var(--k-accent); }
+.an-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.15rem 1.5rem;
+}
+.an-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--k-soft);
+  text-decoration: none;
+}
+.an-nav a:hover { color: var(--k-accent); }
+.an-top__meta {
+  margin: 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-soft);
+  text-align: right;
+}
+
+/* ------------------------------------------------------------------ hero */
+
+.an-hero { padding-block: clamp(2.4rem, 5vw, 4.4rem) 0; }
+.an-hero__in {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.8rem, 4.5vw, 4rem);
+  align-items: start;
+}
+.an-hero .eyebrow { color: var(--k-accent); }
+.an-hero h1 { margin-block: 0.9rem 1.2rem; max-width: 23ch; }
+.an-hero__acts { margin-top: 1.9rem; }
+.an-hero__note {
+  margin-top: 1.6rem;
+  font-size: 0.68rem;
+  line-height: 1.85;
+  color: var(--k-soft);
+  max-width: 40ch;
+}
+
+/* cartão de preço */
+
+.an-card {
+  padding: clamp(1.3rem, 2.6vw, 1.8rem);
+  background: var(--k-surface);
+  border: 1px solid rgba(201, 154, 78, 0.34);
+}
+.an-card__label {
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(201, 154, 78, 0.3);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+}
+.an-card__list { display: grid; }
+.an-card__list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.15rem 1rem;
+  padding-block: 0.7rem;
+  border-bottom: 1px solid var(--k-line);
+}
+.an-card__what { font-size: 0.94rem; }
+.an-card__price {
+  font-family: var(--k-font-mono);
+  font-size: 0.95rem;
+  color: var(--k-accent);
+  white-space: nowrap;
+  text-align: right;
+}
+.an-card__sub {
+  grid-column: 1 / -1;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--k-soft);
+}
+.an-card__foot {
+  margin: 1rem 0 0;
+  font-size: 0.64rem;
+  line-height: 1.8;
+  color: var(--k-soft);
+}
+
+/* faixa de imagem */
+
+.an-band {
+  margin-top: clamp(2rem, 4vw, 3.2rem);
+}
+.an-band img {
+  width: 100%;
+  height: clamp(13rem, 30vw, 22rem);
+  object-fit: cover;
+  border-block: 1px solid var(--k-line);
+}
+
+/* ----------------------------------------------------------------- carta */
+
+.an-head { max-width: 46rem; }
+.an-head .lede { margin-top: 0.8rem; }
+
+.an-group {
+  margin: 2.4rem 0 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(201, 154, 78, 0.4);
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+}
+.an-wines { display: grid; }
+.an-wine {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 5rem 5.6rem;
+  gap: 0.4rem 1.2rem;
+  align-items: baseline;
+  padding-block: 1.15rem;
+  border-bottom: 1px solid var(--k-line);
+}
+.an-wine__name {
+  font-family: var(--k-font-display);
+  font-size: 1.35rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+}
+.an-wine__origin {
+  margin-top: 0.25rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+}
+.an-wine__note {
+  margin-top: 0.45rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--k-soft);
+  max-width: 48ch;
+}
+.an-wine__p {
+  margin: 0;
+  text-align: right;
+  font-family: var(--k-font-mono);
+}
+.an-wine__p span {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--k-ink);
+  white-space: nowrap;
+}
+.an-wine__p small {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-soft);
+  margin-top: 0.15rem;
+}
+.an-wine__p + .an-wine__p {
+  padding-left: 1.1rem;
+  border-left: 1px solid var(--k-line);
+}
+
+.an-foot-note {
+  margin-top: 1.6rem;
+  font-size: 0.68rem;
+  line-height: 1.9;
+  color: var(--k-soft);
+  max-width: 60ch;
+}
+
+/* -------------------------------------------------------------- petiscos */
+
+.an-sec-panel {
+  background: var(--k-surface);
+  border-block: 1px solid var(--k-line);
+}
+.an-petiscos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--k-line);
+  border: 1px solid var(--k-line);
+}
+.an-pet {
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+  padding: 1.35rem;
+  background: var(--k-bg);
+}
+.an-pet h3 { color: var(--k-ink); }
+.an-pet p {
+  font-size: 0.87rem;
+  line-height: 1.6;
+  color: var(--k-soft);
+}
+.an-pet__price {
+  font-size: 0.92rem;
+  color: var(--k-accent);
+  letter-spacing: 0.04em;
+  padding-top: 0.3rem;
+}
+
+/* -------------------------------------------------------------- citação */
+
+.an-quote {
+  max-width: 44rem;
+  margin: clamp(2.4rem, 5vw, 4rem) auto;
+  padding-inline: var(--k-gutter);
+  font-weight: 300;
+  font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+  line-height: 1.3;
+  text-align: center;
+}
+.an-quote cite { color: var(--k-soft); font-size: 0.84rem; }
+
+/* ------------------------------------------------------------------ casa */
+
+.an-casa {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 4.5vw, 3.6rem);
+  align-items: start;
+}
+.an-casa h2 { margin-bottom: 0.9rem; }
+.an-rules {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 1.8rem;
+  background: var(--k-line);
+  border: 1px solid var(--k-line);
+}
+.an-rule {
+  padding: 1.3rem;
+  background: var(--k-bg);
+}
+.an-rule__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+}
+.an-rule h3 { font-family: var(--k-font-display); font-size: 1.2rem; font-weight: 400; margin-bottom: 0.4rem; }
+.an-rule p { font-size: 0.86rem; line-height: 1.6; color: var(--k-soft); }
+
+.an-person {
+  padding: clamp(1.3rem, 3vw, 1.8rem);
+  border: 1px solid rgba(201, 154, 78, 0.3);
+  background: var(--k-surface);
+}
+.an-person__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+}
+.an-person h3 { font-family: var(--k-font-display); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.7rem; }
+.an-person p { font-size: 0.9rem; line-height: 1.7; color: var(--k-soft); }
+.an-person p + p { margin-top: 0.7rem; }
+.an-person__rule {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--k-line);
+  font-size: 0.66rem;
+  line-height: 1.8;
+}
+
+/* --------------------------------------------------------------- reserva */
+
+.an-reserva {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4.5vw, 3.6rem);
+  align-items: start;
+}
+.an-reserva h2 { margin-bottom: 0.9rem; }
+.an-list { margin-top: 1.6rem; display: grid; }
+.an-list li {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  padding-block: 0.65rem;
+  border-top: 1px solid var(--k-line);
+  font-size: 0.9rem;
+  color: var(--k-soft);
+}
+.an-list span {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+}
+.an-list a {
+  display: inline-block;
+  min-height: 1.75rem;
+  color: var(--k-ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--k-line);
+}
+.an-foot__line a { display: inline-block; min-height: 1.75rem; }
+
+.an-form {
+  display: grid;
+  gap: 0.9rem;
+  padding: clamp(1.3rem, 3vw, 1.9rem);
+  background: var(--k-surface);
+  border: 1px solid var(--k-line);
+}
+.an-form h3 { font-family: var(--k-font-display); font-size: 1.35rem; font-weight: 400; }
+.an-form .field label { color: var(--k-soft); font-size: 0.66rem; }
+.an-form .field input,
+.an-form .field select {
+  background: var(--k-input-bg);
+  border-color: var(--k-line-strong);
+  color: var(--k-ink);
+  min-height: 44px;
+}
+.an-form .field input::placeholder { color: rgba(240, 230, 216, 0.4); }
+.an-form .btn { margin-top: 0.3rem; }
+.an-form__note {
+  margin: 0;
+  font-size: 0.62rem;
+  line-height: 1.7;
+  color: var(--k-soft);
+}
+
+/* ------------------------------------------------------------------ onde */
+
+.an-onde {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 4.5vw, 3.6rem);
+  align-items: start;
+}
+.an-onde h2 { margin-bottom: 0.9rem; }
+.an-addr {
+  margin-top: 1.3rem;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: var(--k-soft);
+  max-width: 40ch;
+}
+.an-table { border-top: 1px solid var(--k-line); }
+.an-table th,
+.an-table td { border-bottom: 1px solid var(--k-line); }
+.an-table td:last-child { color: var(--k-soft); }
+
+/* --------------------------------------------------------------- rodapé */
+
+.an-foot { border-top: 1px solid var(--k-line); }
+.an-foot__in {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 0.8fr);
+  gap: 2rem;
+}
+.an-foot__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+}
+.an-foot__line {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--k-soft);
+}
+.an-foot .an-brand { font-size: 1.25rem; margin-bottom: 0.6rem; }
+
+.demo-notice {
+  width: min(100% - 5rem, 74rem);
+  margin: 2.4rem auto 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--k-line);
+  font-family: var(--k-font-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+  color: var(--k-soft);
+}
+
+/* ------------------------------------------------------------ responsivo */
+
+@media (max-width: 960px) {
+  .an-hero__in { grid-template-columns: minmax(0, 1fr); }
+  .an-card { max-width: 30rem; }
+  .an-casa,
+  .an-reserva,
+  .an-onde { grid-template-columns: minmax(0, 1fr); }
+  .an-petiscos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .an-foot__in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .an-foot__in > div:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 700px) {
+  .an-top__in {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.2rem;
+  }
+  .an-top__meta { display: none; }
+  .an-nav { justify-content: flex-start; gap: 0 1.15rem; }
+  .an-nav a { font-size: 0.76rem; min-height: 40px; }
+}
+
+@media (max-width: 620px) {
+  .an-petiscos { grid-template-columns: minmax(0, 1fr); }
+  .an-rules { grid-template-columns: minmax(0, 1fr); }
+  .an-quote { padding-inline: 1.3rem; font-size: 1.25rem; }
+  .an-wine {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem 1rem;
+    padding-block: 1rem;
+  }
+  .an-wine__body { grid-column: 1 / -1; }
+  .an-wine__p { text-align: left; }
+  .an-wine__p + .an-wine__p {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .an-wine__p span,
+  .an-wine__p small { text-align: left; }
+  .an-wine__note { font-size: 0.84rem; }
+  .an-list li { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; }
+  .an-foot__in { grid-template-columns: minmax(0, 1fr); }
+  .an-band img { height: 11rem; }
+  .demo-notice { width: min(100% - 2.6rem, 74rem); }
+}

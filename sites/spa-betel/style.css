@@ -1,0 +1,507 @@
+/* =========================================================================
+   Spa Betel — Moema, São Paulo
+   Arquétipo B: hero full-bleed escuro, tipografia grande, coluna única larga.
+   Tokens = paleta e fontes do manifesto (pal / fonts).
+
+   Escala de espaçamento: múltiplos de 4px (0.25 / 0.5 / 0.75 / 1 ... rem)
+   Escala de tipo: 0.7 · 0.9 · 1 · 1.125 · 1.75 rem + display (h1/h2/quote)
+   ========================================================================= */
+
+:root {
+  --k-bg: #101a1c;
+  --k-surface: #16252a;
+  --k-ink: #e4efec;
+  --k-soft: #a7bdb9;
+  --k-accent: #4fa3a0;
+  --k-accent-2: #d8b26a;
+  --k-line: rgba(228, 239, 236, 0.13);
+  --k-line-strong: rgba(228, 239, 236, 0.28);
+  --k-art-bg: #163034;
+
+  --k-accent-ink: #101a1c;
+  --k-focus: #d8b26a;
+
+  --k-font-display: "Cormorant Garamond", Georgia, serif;
+  --k-font-body: "Jost", "Segoe UI", sans-serif;
+  --k-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --k-max: 72rem;
+  --k-gutter: 2.5rem;
+  --k-sec-pad: clamp(4rem, 8vw, 6.5rem);
+  --k-card-radius: 12px;
+  --k-btn-radius: 4px;
+  --k-input-radius: 4px;
+  --k-card-pad: 1.5rem;
+
+  --k-display-weight: 400;
+  --k-display-leading: 1.04;
+  --k-display-tracking: -0.015em;
+  --k-h1: clamp(2.75rem, 7vw, 5.5rem);
+  --k-h2: clamp(2rem, 3.6vw, 3rem);
+  --k-h3: 1.125rem;
+  --k-body-size: 1rem;
+  --k-lede-size: 1.0625rem;
+
+  --fs-xs: 0.7rem;
+  --fs-sm: 0.9rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.75rem;
+
+  --k-ink-soft: var(--k-soft);
+  --k-chip-bg: #dbe8e5;
+  --k-chip-ink: #101a1c;
+  --k-chip-line: #7d9a95;
+}
+
+body {
+  background: var(--k-bg);
+  color: var(--k-ink);
+  font-weight: 300;
+}
+
+h1, h2, h3, h4 { font-style: normal; }
+h1, h2 { font-weight: 400; }
+h3 {
+  font-family: var(--k-font-body);
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.25;
+}
+
+.narrow { --k-max: 60rem; }
+.lede { max-width: 54ch; }
+.mono { letter-spacing: 0.08em; }
+:focus-visible { outline-color: var(--k-accent-2); }
+::selection { background: var(--k-accent-2); color: #101a1c; }
+
+.btn {
+  --btn-bg: var(--k-accent-2);
+  --btn-ink: #101a1c;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  min-height: 44px;
+}
+
+/* ------------------------------------------------------------------ topo */
+/* três partes: navegação à esquerda, marca ao centro, telefone à direita */
+
+.top { position: relative; z-index: 30; padding-block: 1rem; }
+.top__in {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+.top__nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; justify-self: start; }
+.top__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--k-font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-soft);
+  text-decoration: none;
+}
+.top__nav a:hover { color: var(--k-ink); }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-self: center;
+  text-decoration: none;
+}
+.brand__mark { width: 1.5rem; height: 1.5rem; flex: none; }
+.brand__name {
+  font-family: var(--k-font-display);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.top__meta { justify-self: end; }
+.top__meta a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--fs-xs);
+  color: var(--k-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--k-line-strong);
+}
+.top__meta a:hover { color: var(--k-ink); }
+
+/* ------------------------------------------------------------ hero (B) */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero--full { min-height: clamp(34rem, 82vh, 46rem); }
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.85;
+  z-index: -2;
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--k-bg) 78%, transparent) 0%,
+      color-mix(in srgb, var(--k-bg) 34%, transparent) 42%,
+      var(--k-bg) 96%);
+}
+.hero__in { padding-block: clamp(5rem, 14vw, 8rem) 3rem; }
+.hero__title {
+  max-width: 15ch;
+  margin: 1.25rem 0 1.5rem;
+}
+.hero__lede { max-width: 46ch; }
+.hero__acts { margin-top: 2rem; gap: 1.5rem; }
+
+/* --------------------------------------------------------------- faixa */
+
+.band { border-block: 1px solid var(--k-line); padding-block: 1.25rem; }
+.band__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2.5rem;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-soft);
+}
+.band__list li { display: flex; align-items: center; gap: 0.75rem; }
+.band__list li + li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--k-accent);
+}
+
+/* --------------------------------------------------------- tratamentos */
+
+.sec { border-top: 1px solid var(--k-line); }
+
+.trat { margin-top: 2.5rem; }
+.trat__row {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  padding-block: 2rem;
+  border-top: 1px solid var(--k-line);
+}
+.trat__row:last-child { border-bottom: 1px solid var(--k-line); }
+.trat__num {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  color: var(--k-accent);
+  padding-top: 0.5rem;
+}
+.trat__body h3 { font-family: var(--k-font-display); font-size: var(--fs-lg); }
+.trat__body p {
+  margin-top: 0.5rem;
+  max-width: 60ch;
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--k-soft);
+}
+.trat__meta {
+  margin-top: 1rem;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  color: var(--k-accent-2);
+}
+
+/* ------------------------------------------------------------- citação */
+
+.quote-band { background: var(--k-surface); }
+.quote-band .quote {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: 0;
+  max-width: 32ch;
+}
+.quote-band .quote cite {
+  font-family: var(--k-font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-soft);
+}
+
+/* -------------------------------------------------------------- preços */
+
+.prices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.price {
+  border-radius: var(--k-card-radius);
+  background: var(--k-surface);
+  border-color: var(--k-line);
+  padding: 1.5rem 1.25rem;
+}
+.price--featured {
+  border-color: var(--k-accent-2);
+  background: color-mix(in srgb, var(--k-accent-2) 9%, var(--k-surface));
+}
+.price h3 {
+  font-family: var(--k-font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-soft);
+}
+.price__amount {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  font-weight: 400;
+  color: var(--k-ink);
+}
+.price--featured .price__amount { color: var(--k-accent-2); }
+.price__period { font-size: var(--fs-sm); line-height: 1.5; color: var(--k-soft); }
+.price__list {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--k-line);
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--k-soft);
+}
+.price__list li { position: relative; padding-left: 1rem; }
+.price__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 1px;
+  background: var(--k-accent);
+}
+.note {
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  font-size: var(--fs-xs);
+  line-height: 1.8;
+  color: var(--k-soft);
+}
+
+/* -------------------------------------------------------------- equipe */
+
+.team { margin-top: 2.5rem; }
+.team__row {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr) 6.5rem;
+  align-items: start;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--k-line);
+}
+.team__row:last-child { border-bottom: 1px solid var(--k-line); }
+.team .avatar {
+  background: color-mix(in srgb, var(--k-accent) 22%, transparent);
+  color: var(--k-ink);
+  border: 1px solid color-mix(in srgb, var(--k-accent) 42%, transparent);
+}
+.team__row h3 { font-size: var(--k-h3); }
+.team__row p {
+  margin-top: 0.25rem;
+  max-width: 56ch;
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--k-soft);
+}
+.team__days {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--k-accent-2);
+  padding-top: 0.25rem;
+}
+
+/* -------------------------------------------------------------- agenda */
+
+.agenda {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+  gap: 3rem;
+  align-items: start;
+}
+.agenda .lede { margin-top: 1rem; }
+
+.hours { margin: 2rem 0 0; }
+.hours > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 0.75rem;
+  border-top: 1px solid var(--k-line);
+  font-size: var(--fs-sm);
+}
+.hours dt { color: var(--k-soft); }
+.hours dd { margin: 0; }
+
+.addr {
+  max-width: 44ch;
+  margin-top: 1.75rem;
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  color: var(--k-soft);
+}
+
+.contact { margin-top: 1.5rem; }
+.contact li {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 0.5rem;
+  border-top: 1px solid var(--k-line);
+  font-size: var(--fs-sm);
+}
+.contact .mono {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-soft);
+}
+.contact a {
+  display: inline-block;
+  min-height: 1.75rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--k-line-strong);
+}
+.contact a:hover { color: var(--k-accent-2); }
+
+.booking {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+.booking h3 { font-family: var(--k-font-display); font-size: var(--fs-lg); }
+.booking__hint { font-size: var(--fs-sm); line-height: 1.6; color: var(--k-soft); }
+.booking .field input,
+.booking .field select { background: color-mix(in srgb, var(--k-ink) 6%, transparent); }
+.booking .btn { margin-top: 0.25rem; }
+.booking__note { font-size: var(--fs-xs); letter-spacing: 0.06em; color: var(--k-soft); }
+
+/* ----------------------------------------------------------------- faq */
+
+.faq { margin-top: 2rem; }
+.faq summary { font-size: var(--fs-md); font-weight: 400; }
+.faq summary::after { color: var(--k-accent-2); }
+.faq details p { font-size: var(--fs-sm); }
+.faq--betel details,
+.faq--betel details:last-of-type { border-color: var(--k-line); }
+
+/* -------------------------------------------------------------- rodapé */
+
+.foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+}
+.foot .brand { justify-self: start; margin-bottom: 1rem; }
+.foot__label {
+  margin-bottom: 0.75rem;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-accent-2);
+}
+.foot__line {
+  max-width: 40ch;
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--k-soft);
+}
+.foot__line a {
+  display: inline-block;
+  min-height: 1.75rem;
+  color: var(--k-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--k-line);
+}
+.foot__line a:hover { color: var(--k-ink); }
+
+.demo-notice {
+  max-width: min(calc(100% - var(--k-gutter) * 2), 46ch);
+  margin: 2.5rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--k-line);
+  font-family: var(--k-font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+  line-height: 1.8;
+  color: var(--k-soft);
+}
+
+/* --------------------------------------------------------- responsivo */
+
+@media (max-width: 1024px) {
+  .top__nav { gap: 0.25rem 0.75rem; }
+  .top__nav a { letter-spacing: 0.1em; }
+  .agenda { grid-template-columns: minmax(0, 1fr); }
+  .booking { max-width: 30rem; }
+}
+
+@media (max-width: 900px) {
+  .prices { grid-template-columns: minmax(0, 1fr); }
+  .price--featured { order: -1; }
+  .foot { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .foot > div:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  :root { --k-gutter: 1.25rem; }
+  .top__in {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 0.5rem;
+  }
+  .top__nav {
+    justify-self: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1rem;
+  }
+  .brand { order: 1; }
+  .top__meta { order: 2; justify-self: center; }
+  .hero__title { max-width: 100%; }
+  .team__row { grid-template-columns: 2.5rem minmax(0, 1fr); }
+  .team__days { grid-column: 2; text-align: left; padding-top: 0; }
+  .contact li { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+  .foot { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 430px) {
+  .trat__row { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+  .trat__num { padding-top: 0; }
+  .foot { grid-template-columns: minmax(0, 1fr); }
+  .band__list { gap: 0.5rem 1.25rem; font-size: 0.65rem; }
+  .prices { gap: 0.75rem; }
+  .top__nav { gap: 0 0.75rem; }
+}

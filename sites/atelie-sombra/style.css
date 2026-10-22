@@ -1,0 +1,450 @@
+/* =========================================================================
+   Ateliê Sombra — Vila Madalena, São Paulo
+   Arquétipo J: hero centrado, cantos arredondados, muito respiro, tom de casa.
+
+   Escala de espaço: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 px
+   Escala de tipo: 0.75 · 0.86 · 1 · 1.14 rem + display (Playfair)
+   ========================================================================= */
+
+:root {
+  /* paleta do manifesto — valores exatos */
+  --k-bg: #f1ece4;
+  --k-surface: #ffffff;
+  --k-ink: #26221c;
+  --k-accent: #3f5c6b;
+  --k-accent-2: #b5543f;
+
+  /* derivados */
+  --k-soft: #5e5648;
+  --k-line: rgba(38, 34, 28, 0.15);
+  --k-line-strong: rgba(38, 34, 28, 0.3);
+  --k-art-bg: #e2dbd0;
+  --k-accent-ink: #f1ece4;
+  --k-focus: #b5543f;
+
+  /* fontes do manifesto */
+  --k-font-display: "Playfair Display", Georgia, serif;
+  --k-font-body: "Crimson Text", Georgia, serif;
+  --k-font-mono: "DM Mono", ui-monospace, monospace;
+
+  --k-max: 68rem;
+  --k-gutter: clamp(1.25rem, 5vw, 2.75rem);
+  --k-sec-pad: clamp(3.75rem, 7.5vw, 6.5rem);
+  --k-card-radius: 22px;
+  --k-btn-radius: 999px;
+
+  --k-display-weight: 500;
+  --k-display-leading: 1.14;
+  --k-display-tracking: -0.012em;
+  --k-h1: clamp(2.25rem, 5.6vw, 3.9rem);
+  --k-h2: clamp(1.7rem, 3.2vw, 2.5rem);
+  --k-h3: 1.16rem;
+  --k-lede-size: clamp(1.06rem, 1.5vw, 1.22rem);
+  --k-body-size: 1.06rem;
+  --k-hero-pad: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+body {
+  background-image:
+    radial-gradient(70% 45% at 78% -6%, rgba(181, 84, 63, 0.1), transparent 70%),
+    radial-gradient(60% 40% at 8% 8%, rgba(63, 92, 107, 0.09), transparent 72%);
+  background-repeat: no-repeat;
+}
+
+.ico { fill: none; }
+
+.lede, .prose p, .note, .work figcaption { text-wrap: pretty; }
+
+/* ------------------------------------------------------------- masthead */
+
+.masthead--stack {
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-block: clamp(1.6rem, 3vw, 2.4rem) 0;
+}
+
+.brand {
+  font-size: 1.3rem;
+  letter-spacing: 0.01em;
+}
+
+.nav--soft {
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav--soft a {
+  min-height: 44px;
+  color: var(--k-soft);
+}
+
+.nav--soft a:hover { color: var(--k-accent); }
+
+/* ----------------------------------------------------------------- hero */
+
+.wrap--hero {
+  max-width: 60rem;
+  text-align: center;
+}
+
+.hero {
+  padding-block: clamp(2rem, 4vw, 3rem) clamp(3rem, 6vw, 5rem);
+}
+
+.hero .eyebrow {
+  margin-bottom: 1.1rem;
+  color: var(--k-accent);
+}
+
+.hero__title {
+  max-width: 20ch;
+  margin-inline: auto;
+  color: var(--k-ink);
+}
+
+.hero__lede {
+  margin: 1.2rem auto 1.9rem;
+  max-width: 44ch;
+  color: var(--k-soft);
+}
+
+.hero .cluster { justify-content: center; }
+
+.hero__frame {
+  margin-top: clamp(2.2rem, 5vw, 3.4rem);
+  padding: clamp(0.6rem, 1.4vw, 1rem);
+  background: var(--k-surface);
+  border-radius: 26px;
+  box-shadow: 0 22px 48px -34px rgba(38, 34, 28, 0.45);
+}
+
+.hero__frame img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.hero__frame figcaption {
+  padding: 0.9rem 0.6rem 0.5rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--k-soft);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------- seções */
+
+.sec__head--center {
+  text-align: center;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.sec__head--center .lede { margin-inline: auto; }
+
+.sec--soft {
+  background: color-mix(in srgb, var(--k-surface) 62%, var(--k-bg));
+  border-block: 1px solid var(--k-line);
+}
+
+.note {
+  max-width: 54ch;
+  margin-top: 1.6rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--k-soft);
+}
+
+.wrap--narrow .note { margin-inline: auto; }
+
+.note--tight {
+  margin-top: 1rem;
+  font-size: 0.84rem;
+}
+
+/* --------------------------------------------------------------- tabela */
+
+.schedule {
+  margin-block: 1rem 2.4rem;
+  font-size: 0.95rem;
+}
+
+.schedule th { font-size: 0.66rem; letter-spacing: 0.14em; }
+.schedule th,
+.schedule td { padding-inline: 0.35rem; }
+.schedule td:last-child { font-size: 0.78rem; color: var(--k-soft); }
+.schedule tbody tr:hover td { background: color-mix(in srgb, var(--k-surface) 70%, transparent); }
+
+/* ------------------------------------------------------------- equipe */
+
+.team-row { margin-top: 0.5rem; }
+
+.team-row > li {
+  grid-template-columns: 2.6rem minmax(0, 1fr) auto;
+  padding-block: 1.15rem;
+}
+
+.team-row__name { font-family: var(--k-font-display); font-size: 1.05rem; font-weight: 500; }
+.team-row__meta { color: var(--k-accent-2); letter-spacing: 0.06em; }
+.team-row__role {
+  grid-column: 2 / -1;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--k-soft);
+  max-width: 52ch;
+}
+
+.avatar {
+  background: color-mix(in srgb, var(--k-accent) 14%, transparent);
+  color: var(--k-accent);
+  border: 1px solid color-mix(in srgb, var(--k-accent) 30%, transparent);
+}
+
+/* ------------------------------------------------------------ materiais */
+
+.stay-go { margin-top: 0.5rem; }
+
+.card h3 {
+  font-family: var(--k-font-display);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.card .list-check li { font-size: 0.96rem; line-height: 1.55; }
+.card .list-check svg { color: var(--k-accent-2); }
+
+.pal-wrap {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.sub {
+  font-family: var(--k-font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-soft);
+  margin-bottom: 1rem;
+}
+
+.price-list--tight > li { font-size: 0.92rem; }
+
+.pal-lede {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--k-soft);
+  max-width: 34ch;
+  margin-bottom: 1.4rem;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
+  gap: 1.1rem;
+}
+
+.swatch { display: grid; gap: 0.45rem; }
+
+.swatch__chip {
+  display: block;
+  height: 4.4rem;
+  border-radius: 14px;
+  border: 1px solid var(--k-line);
+}
+
+.swatch__name {
+  font-size: 0.86rem;
+  line-height: 1.3;
+  color: var(--k-ink);
+}
+
+.swatch__code {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--k-soft);
+}
+
+/* ------------------------------------------------------------- trabalhos */
+
+.wall {
+  columns: 2;
+  column-gap: clamp(1.2rem, 3vw, 2.4rem);
+}
+
+.work {
+  break-inside: avoid;
+  margin-bottom: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.work img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: var(--k-art-bg);
+}
+
+.work figcaption {
+  padding-top: 0.85rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--k-soft);
+  max-width: 42ch;
+}
+
+.work figcaption strong {
+  display: block;
+  font-family: var(--k-font-display);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--k-ink);
+  margin-bottom: 0.15rem;
+}
+
+/* ---------------------------------------------------------- depoimentos */
+
+.quote blockquote { margin: 0; padding: 0; }
+.quote p {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.15rem, 1.9vw, 1.42rem);
+  line-height: 1.42;
+  letter-spacing: -0.01em;
+  color: var(--k-ink);
+}
+
+.quote cite {
+  font-family: var(--k-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--k-soft);
+  margin-top: 1rem;
+}
+
+/* ------------------------------------------------------------- matrícula */
+
+.enroll {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.5rem, 3.5vw, 2.6rem);
+  align-items: start;
+}
+
+.enroll__prices { background: color-mix(in srgb, var(--k-accent) 7%, var(--k-surface)); }
+
+.enroll__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+}
+
+.enroll__amount {
+  font-family: var(--k-font-display);
+  font-size: clamp(2.4rem, 4.4vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-block: 0.4rem 1.4rem;
+}
+
+.enroll__amount span {
+  font-family: var(--k-font-body);
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  color: var(--k-soft);
+}
+
+.price-list { border-top: 1px solid var(--k-line); }
+
+.enroll__form { display: grid; gap: 0.9rem; }
+.enroll__form h3 { margin-bottom: 0.3rem; }
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--k-bg);
+  border-color: var(--k-line-strong);
+  font-family: var(--k-font-body);
+  font-size: 1rem;
+}
+
+.field textarea { min-height: 5.2rem; }
+
+/* --------------------------------------------------------------- rodapé */
+
+.footer__in {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 1.5rem 2.5rem;
+}
+
+.footer__brand {
+  font-family: var(--k-font-display);
+  font-size: 1.15rem;
+  color: var(--k-ink);
+  margin-bottom: 0.35rem;
+}
+
+.footer__label {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+  margin-bottom: 0.35rem;
+}
+
+.site-footer p { font-size: 0.9rem; line-height: 1.7; }
+
+.demo-notice {
+  grid-column: 1 / -1;
+  max-width: 62ch;
+  margin-top: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--k-line);
+  font-family: var(--k-font-mono);
+  font-size: 0.7rem;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--k-ink) 62%, transparent);
+}
+
+.demo-chip {
+  --k-chip-bg: rgba(38, 34, 28, 0.86);
+  --k-chip-ink: #f1ece4;
+  --k-chip-line: rgba(241, 236, 228, 0.22);
+}
+
+/* ----------------------------------------------------------- responsivo */
+
+@media (max-width: 900px) {
+  .enroll { grid-template-columns: minmax(0, 1fr); }
+  .pal-wrap { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .wall { columns: 1; }
+  .footer__in { grid-template-columns: minmax(0, 1fr); }
+  .schedule { font-size: 0.86rem; }
+  .schedule th, .schedule td { padding-inline: 0.2rem; }
+  .team-row > li { grid-template-columns: 2.4rem minmax(0, 1fr); }
+  .team-row__meta { grid-column: 2; grid-row: 2; text-align: left; }
+  .team-row__role { grid-column: 2; }
+  .hero__title { max-width: 22ch; }
+}
+
+@media (max-width: 420px) {
+  .nav--soft { gap: 0.9rem; font-size: 0.68rem; }
+  .palette { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

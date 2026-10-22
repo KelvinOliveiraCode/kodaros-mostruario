@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kodaros — 50 landing pages, 12 nichos</title>
+<meta name="description" content="Mostruário da Kodaros: 50 landing pages de demonstração, uma para cada nicho — de salão de beleza a marcenaria. Filtre por área e veja cada página por dentro.">
+<meta name="theme-color" content="#0e1013">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@88..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/hub.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e1013'/%3E%3Cpath d='M8 6h7v8l7-8h6L19 17l9 9h-7l-6-7v7H8z' fill='%23ff5b35'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ------------------------------------------------------------- splash -->
+<div class="splash" id="splash">
+  <div class="splash__inner">
+    <div class="splash__mark">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 6h7v8l7-8h6L19 17l9 9h-7l-6-7v7H8z"/></svg>
+      <span class="splash__word">Kodaros</span>
+    </div>
+    <p class="splash__title">Cinquenta páginas.<br><span>Um nicho em cada.</span></p>
+    <div class="splash__bar" role="progressbar" aria-label="Carregando o mostruário" aria-valuemin="0" aria-valuemax="100">
+      <div class="splash__fill" id="splash-fill"></div>
+    </div>
+    <div class="splash__status" id="splash-status">
+      <span>Carregando prévias</span>
+      <b>0/50 páginas</b>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------------------------------------------------- header -->
+<header class="hub-head">
+  <div class="wrap hub-head__in">
+    <a class="wordmark" href="index.html" aria-label="Kodaros, início">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M8 6h7v8l7-8h6L19 17l9 9h-7l-6-7v7H8z"/></svg>
+      Kodaros
+    </a>
+    <nav class="hub-head__nav" aria-label="Principal">
+      <span class="mono hide-sm">Mostruário 2026</span>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- --------------------------------------------------------------- hero -->
+  <section class="wrap hub-hero">
+    <div class="hub-hero__grid">
+      <div>
+        <h1>Cinquenta landing pages.<br><em>Nenhuma parece a outra.</em></h1>
+        <p class="hub-hero__lede">
+          Cada página aqui foi escrita para um negócio específico: o preço de um corte,
+          a fornada de uma padaria, o prazo de uma obra. Escolha um nicho, abra e repare
+          no que muda quando a página entende o assunto.
+        </p>
+      </div>
+      <dl class="hub-hero__facts">
+        <div class="fact"><dt>Páginas</dt><dd>50</dd></div>
+        <div class="fact"><dt>Nichos</dt><dd>12</dd></div>
+        <div class="fact"><dt>Arquétipos de layout</dt><dd>12</dd></div>
+        <div class="fact"><dt>Imagens de banco</dt><dd>0</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------ catálogo -->
+  <section class="catalog" id="catalogo" aria-labelledby="catalogo-titulo">
+    <h2 class="visually-hidden" id="catalogo-titulo">Catálogo de páginas</h2>
+
+    <div class="controls">
+      <div class="wrap">
+        <div class="controls__row">
+          <div class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+            </svg>
+            <label class="visually-hidden" for="search">Buscar por negócio, nicho ou cidade</label>
+            <input id="search" type="search" placeholder="Buscar: pizza, dentista, casamento, Moema…" autocomplete="off">
+          </div>
+          <label class="visually-hidden" for="sort">Ordenar</label>
+          <select id="sort" aria-label="Ordenar páginas">
+            <option value="default">Ordem do mostruário</option>
+            <option value="az">A–Z por nome</option>
+            <option value="cat">Agrupar por nicho</option>
+          </select>
+        </div>
+        <div class="chips" id="chips" role="group" aria-label="Filtrar por área" style="margin-top:.85rem"></div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="result-line">
+        <span><b id="count">50</b> páginas no mostruário</span>
+        <button class="reset" type="button" id="reset" hidden>Limpar filtros</button>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="empty" id="empty" hidden>
+        <h3>Nenhuma página com esse filtro</h3>
+        <p>Tente outro termo, ou limpe os filtros para ver as cinquenta.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ------------------------------------------------------------- footer -->
+<footer class="hub-foot" id="contato">
+  <div class="wrap">
+    <div class="hub-foot__grid">
+      <div>
+        <h3>Kodaros</h3>
+        <p style="max-width:34ch">Landing pages para negócios que têm algo concreto para dizer. Página feita, texto escrito, imagem resolvida.</p>
+      </div>
+      <div>
+        <h3>Mostruário</h3>
+        <ul>
+          <li><a href="#catalogo">Ver as 50 páginas</a></li>
+          <li><a href="#catalogo">Filtrar por nicho</a></li>
+          <li><a href="index.html#atelie-lumina">Abrir um exemplo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="mailto:oi@kodaros.com.br">oi@kodaros.com.br</a></li>
+          <li><span style="color:var(--ink-faint)">São Paulo, Brasil</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="hub-foot__note">
+      Tudo aqui é demonstração. Os 50 negócios são fictícios: nomes, endereços, preços,
+      telefones e depoimentos foram inventados para mostrar o trabalho. Nenhuma página
+      oferece serviço real e nenhuma delas vende nada. Este mostruário existe para
+      mostrar desenho e redação, não para captar cliente.
+    </p>
+  </div>
+</footer>
+
+<!-- ------------------------------------------------------------- viewer -->
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer__name" hidden>
+  <div class="viewer__bar">
+    <button class="viewer__btn" type="button" id="closeviewer" aria-label="Fechar e voltar ao catálogo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      <span>Catálogo</span>
+    </button>
+    <div class="viewer__title">
+      <strong id="viewer__name">—</strong>
+      <span id="viewer__meta">—</span>
+    </div>
+    <div class="viewer__spacer"></div>
+    <span class="viewer__note">Demonstração · dados fictícios</span>
+    <a class="viewer__btn viewer__btn--primary" id="opennew" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+      <span>Abrir em nova aba</span>
+    </a>
+  </div>
+  <div class="viewer__frame">
+    <div class="viewer__loading" id="viewer-loading">Carregando a página</div>
+    <iframe id="viewer-frame" title="Prévia da landing page selecionada" loading="lazy"></iframe>
+  </div>
+</div>
+
+<a class="visually-hidden" id="viewer__link" href="index.html">Abrir página</a>
+
+<script src="assets/data/sites.js"></script>
+<script src="assets/js/hub.js"></script>
+</body>
+</html>

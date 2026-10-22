@@ -1,0 +1,351 @@
+/* =========================================================================
+   Serena — consultório de psicologia · Pinheiros, São Paulo
+   Arquetipo D: hero em duas colunas invertido (arte a esquerda), secoes de
+   largura alternada, prova social em destaque numa faixa escura.
+   Assinatura da página: a regua de 50 minutos da sessao.
+   ========================================================================= */
+
+:root {
+  --k-bg: #f1f2f4;
+  --k-surface: #fafbfc;
+  --k-ink: #262a33;
+  --k-accent: #5c6b8a;
+  --k-accent-2: #a08c72;
+
+  --k-font-display: "Newsreader", Georgia, serif;
+  --k-font-body: "Figtree", "Segoe UI", sans-serif;
+  --k-font-mono: "DM Mono", ui-monospace, monospace;
+
+  --k-line: rgba(38, 42, 51, 0.13);
+  --k-line-strong: rgba(38, 42, 51, 0.26);
+  --k-ink-soft: #5a6070;
+  --k-accent-ink: #f2f3f6;
+
+  --k-max: 72rem;
+  --k-gutter: 1.4rem;
+  --k-sec-pad: clamp(3.2rem, 6.4vw, 5.6rem);
+  --k-display-weight: 400;
+  --k-display-leading: 1.08;
+  --k-display-tracking: -0.018em;
+  --k-h1: clamp(2.1rem, 4.8vw, 3.5rem);
+  --k-h2: clamp(1.6rem, 2.9vw, 2.3rem);
+  --k-body-size: 1.02rem;
+  --k-btn-radius: 2px;
+  --k-card-radius: 3px;
+  --k-lede-size: clamp(1.02rem, 1.35vw, 1.14rem);
+}
+
+.icon {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+}
+
+body { background-image: linear-gradient(180deg, rgba(92, 107, 138, 0.07), transparent 30rem); }
+
+h1, h2, h3 { font-weight: 400; }
+.s-h2 { font-family: var(--k-font-display); }
+
+/* --------------------------------------------------------------- masthead */
+.masthead--sticky {
+  --k-head-bg: rgba(241, 242, 244, 0.86);
+  padding-inline: max(1.4rem, calc((100vw - 72rem) / 2));
+  background: var(--k-head-bg);
+  backdrop-filter: blur(10px);
+}
+.brand {
+  font-family: var(--k-font-display);
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+}
+.brand__mark { width: 22px; height: 22px; }
+.s-nav { gap: 1.35rem; }
+.s-nav a {
+  font-size: 0.83rem;
+  letter-spacing: 0.01em;
+  color: var(--k-ink-soft);
+}
+.s-nav a:hover { color: var(--k-accent); }
+@media (max-width: 900px) {
+  .masthead--sticky { flex-wrap: wrap; gap: 0.4rem 1rem; padding-block: 0.8rem; }
+  .s-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.1rem 1rem;
+    justify-content: flex-start;
+  }
+  .s-nav a { font-size: 0.74rem; min-height: 38px; }
+}
+
+/* ------------------------------------------------------------------ hero */
+.s-hero { padding-block: clamp(2.4rem, 5vw, 4.2rem); }
+.s-hero .hero__in { gap: clamp(2rem, 4.5vw, 4rem); }
+.s-hero .hero__art img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.s-kicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+  margin-bottom: 1.1rem;
+}
+.s-hero h1 { max-width: 15ch; }
+.s-hero .lede { max-width: 42ch; }
+.s-hero__note {
+  margin-top: 1.7rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--k-line);
+  font-size: 0.73rem;
+  line-height: 1.6;
+  color: var(--k-ink-soft);
+  max-width: 44ch;
+}
+.s-hero .btn { border-radius: 2px; font-weight: 500; }
+
+/* ------------------------------------------------- colunas de largura alt. */
+.s-narrow { max-width: 40rem; margin-inline: auto; padding-inline: 0; }
+.s-narrow h2 { max-width: 24ch; }
+.s-lede { margin-top: 1rem; max-width: 52ch; }
+.eyebrow { margin-bottom: 0.9rem; }
+
+/* ------------------------------------------------------------- abordagens */
+.s-approaches { margin-top: 2.6rem; border-top: 1px solid var(--k-ink); }
+.s-approaches > div {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 0.4rem 2rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--k-line);
+}
+.s-approaches dt {
+  font-family: var(--k-font-display);
+  font-size: 1.22rem;
+  line-height: 1.24;
+  letter-spacing: -0.01em;
+}
+.s-approaches dd {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--k-ink-soft);
+}
+.s-approaches dd .mono {
+  display: block;
+  margin-top: 0.65rem;
+  font-size: 0.72rem;
+  color: var(--k-accent-2);
+  letter-spacing: 0.02em;
+}
+@media (max-width: 700px) {
+  .s-approaches > div { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; }
+}
+.s-fine {
+  margin-top: 1.5rem;
+  font-size: 0.74rem;
+  line-height: 1.65;
+  color: var(--k-ink-soft);
+  max-width: 48ch;
+}
+
+/* ------------------------------------------------- regua de 50 minutos */
+.s-band {
+  background: var(--k-surface);
+  border-block: 1px solid var(--k-line);
+}
+.s-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.s-split--even { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 820px) { .s-split, .s-split--even { grid-template-columns: minmax(0, 1fr); } }
+
+.s-ruler {
+  display: grid;
+  grid-template-columns: 5fr 30fr 10fr 5fr;
+  gap: 0.55rem;
+  margin: 0;
+  padding-top: 0.4rem;
+  list-style: none;
+}
+.s-ruler__seg {
+  display: grid;
+  gap: 0.3rem;
+  align-content: start;
+  padding-top: 0.7rem;
+  border-top: 3px solid var(--k-line-strong);
+}
+.s-ruler__seg--a { border-top-color: #b8b3a5; }
+.s-ruler__seg--b { border-top-color: var(--k-accent); }
+.s-ruler__seg--c { border-top-color: var(--k-accent-2); }
+.s-ruler__seg--d { border-top-color: #b8b3a5; }
+.s-ruler__seg .mono { font-size: 0.68rem; color: var(--k-accent); letter-spacing: 0.02em; }
+.s-ruler__seg b {
+  font-family: var(--k-font-display);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+.s-ruler__seg span:last-child {
+  font-size: 0.79rem;
+  line-height: 1.45;
+  color: var(--k-ink-soft);
+}
+@media (max-width: 720px) {
+  .s-ruler { grid-template-columns: minmax(0, 1fr); gap: 0.9rem; }
+  .s-ruler__seg { border-top: 0; border-left: 3px solid var(--k-line-strong); padding: 0 0 0 0.9rem; }
+  .s-ruler__seg--a, .s-ruler__seg--d { border-left-color: #b8b3a5; }
+  .s-ruler__seg--b { border-left-color: var(--k-accent); }
+  .s-ruler__seg--c { border-left-color: var(--k-accent-2); }
+}
+
+/* ------------------------------------------------------------ profissionais */
+.s-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--k-line-strong);
+  margin-bottom: 0.6rem;
+}
+.s-sub { margin-top: 0.7rem; font-size: 0.9rem; color: var(--k-ink-soft); }
+.s-head__meta { font-size: 0.68rem; color: var(--k-accent-2); white-space: nowrap; padding-bottom: 0.2rem; }
+@media (max-width: 640px) {
+  .s-head { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+}
+.s-team > li { padding-block: 1.1rem; }
+.s-team .avatar {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--k-line-strong);
+  color: var(--k-accent);
+  font-size: 0.66rem;
+}
+.s-team .team-row__name { font-weight: 500; font-family: var(--k-font-display); font-size: 1.08rem; }
+.s-team .team-row__role { font-size: 0.88rem; max-width: 60ch; }
+.s-team .team-row__meta { color: var(--k-accent-2); font-size: 0.68rem; }
+
+/* ------------------------------------------------------- prova social */
+.s-proof { padding-block: clamp(3rem, 6vw, 5rem); }
+.s-proof__in { display: grid; gap: 2rem; }
+.s-proof__quote {
+  font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  max-width: 30ch;
+  margin: 0;
+  color: var(--k-bg);
+}
+.s-proof__foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(241, 242, 244, 0.24);
+}
+.s-proof__foot .mono { font-size: 0.72rem; color: rgba(241, 242, 244, 0.82); }
+.s-proof__small {
+  font-size: 0.76rem;
+  color: rgba(241, 242, 244, 0.62);
+  max-width: 34ch;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------------------------------- agenda */
+.s-sched { margin-top: 2rem; overflow-x: auto; }
+.s-sched .schedule { min-width: 28rem; }
+.s-sched .schedule th[scope="row"] { font-weight: 500; font-size: 0.88rem; color: var(--k-ink); }
+.s-sched .schedule td { font-size: 0.86rem; color: var(--k-ink-soft); }
+.s-sched .schedule td:last-child { color: var(--k-accent); }
+
+/* ----------------------------------------------------------------- valores */
+.s-prices { margin: 0; }
+.s-prices > li { font-size: 0.92rem; padding-block: 1rem; }
+.s-prices > li > b {
+  font-family: var(--k-font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--k-ink);
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------- faq */
+.s-faq { margin-top: 2rem; }
+.s-faq summary { font-family: var(--k-font-display); font-weight: 400; font-size: 1.06rem; }
+
+/* ------------------------------------------------------------------- CTA */
+.s-cta { border-top: 1px solid var(--k-line); background: rgba(250, 251, 252, 0.7); }
+.s-cta__in {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.s-cta h2 { max-width: 24ch; }
+.s-cta__acts { display: grid; gap: 0.6rem; justify-items: start; }
+.s-cta .btn { background: var(--k-accent); color: var(--k-accent-ink); border-radius: 2px; }
+
+/* ---------------------------------------------------------------- rodape */
+.s-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  padding-bottom: 2.2rem;
+  font-size: 0.85rem;
+}
+.s-foot__brand {
+  font-family: var(--k-font-display);
+  font-size: 1.3rem;
+  color: var(--k-ink);
+  margin-bottom: 0.5rem;
+}
+.s-foot .mono {
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+  margin-bottom: 0.45rem;
+}
+@media (max-width: 700px) { .s-foot { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; } }
+
+.demo-notice {
+  font-family: var(--k-font-mono);
+  font-size: 0.67rem;
+  line-height: 1.65;
+  color: var(--k-ink-soft);
+  border-top: 1px solid var(--k-line);
+  padding-top: 1.1rem;
+  padding-bottom: 2.6rem;
+  max-width: 60ch;
+}
+.demo-chip {
+  --k-chip-bg: #262a33;
+  --k-chip-ink: #f1f2f4;
+  --k-chip-line: rgba(241, 242, 244, 0.2);
+  font-size: 0.68rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  :root { --k-h1: 1.95rem; }
+  .s-proof__quote { font-size: 1.32rem; }
+}
+
+/* ancora sob o cabecalho fixo */
+section[id] { scroll-margin-top: 7rem; }

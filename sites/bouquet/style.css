@@ -1,0 +1,281 @@
+/* Bouquet — arquétipo J (variante faixa + cartão): florista, claro e vivo. */
+
+:root {
+  --k-bg: #f3f6ee;
+  --k-surface: #ffffff;
+  --k-ink: #1f2a20;
+  --k-ink-soft: #5d6b5e;
+  --k-accent: #4a7c59;
+  --k-accent-2: #d46b8a;
+  --k-accent-ink: #ffffff;
+  --k-line: rgba(31, 42, 32, 0.14);
+  --k-line-strong: rgba(31, 42, 32, 0.28);
+
+  --k-font-display: "Newsreader", Georgia, serif;
+  --k-font-body: "Figtree", "Segoe UI", sans-serif;
+  --k-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --k-display-weight: 400;
+  --k-display-leading: 1.05;
+  --k-display-tracking: -0.02em;
+  --k-h1: clamp(2.4rem, 5.4vw, 4rem);
+  --k-h2: clamp(1.8rem, 3.3vw, 2.6rem);
+  --k-h3: 1.15rem;
+  --k-brand-weight: 500;
+  --k-body-size: 1rem;
+  --k-lede-size: clamp(1rem, 1.3vw, 1.08rem);
+
+  --k-max: 72rem;
+  --k-gutter: clamp(1.25rem, 4.5vw, 3.2rem);
+  --k-sec-pad: clamp(3.2rem, 7vw, 5.4rem);
+  --k-hero-pad: clamp(2.4rem, 6vw, 4rem);
+  --k-head-gap: 2.2rem;
+  --k-card-radius: 14px;
+  --k-btn-radius: 999px;
+  --k-art-radius: 16px;
+  --k-art-bg: #e2ecdd;
+  --k-head-bg: rgba(243, 246, 238, 0.9);
+  --k-chip-bg: #ffffff;
+  --k-focus: #4a7c59;
+
+  --acc-text: #3c6749;
+}
+
+.brand {
+  font-family: var(--k-font-display);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+.brand__mark { border-radius: 50% 50% 50% 4px; }
+.eyebrow { color: var(--acc-text); }
+
+/* ------------------------------------------------------------------ hero */
+
+.hero--inset { padding-top: clamp(2rem, 5vw, 3.4rem); }
+.hero--inset .hero__band {
+  inset: 0 0 34% 0;
+  background: var(--k-art-bg);
+}
+.hero__card {
+  background: var(--k-surface);
+  box-shadow: 0 1px 2px rgba(31, 42, 32, 0.05), 0 24px 48px -34px rgba(31, 42, 32, 0.45);
+  padding: clamp(1.6rem, 4vw, 3rem);
+}
+.hero__title { max-width: 22ch; }
+.hero__art { margin-top: clamp(1.4rem, 3vw, 2rem); }
+.hero__art img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: var(--k-art-radius);
+}
+
+/* -------------------------------------------------------------- ocasiões */
+
+.ocasioes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 3rem;
+}
+@media (max-width: 700px) { .ocasioes { grid-template-columns: minmax(0, 1fr); } }
+.ocasioes > li {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--k-line);
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+}
+.ocasioes h3 {
+  font-family: var(--k-font-display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+.ocasioes p { font-size: 0.94rem; color: var(--k-ink-soft); line-height: 1.6; }
+.ocasioes__price {
+  font-family: var(--k-font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  color: var(--acc-text);
+  padding-top: 0.3rem;
+}
+
+/* ------------------------------------------------------------ assinatura */
+
+.assinatura {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+@media (max-width: 820px) { .assinatura { grid-template-columns: minmax(0, 1fr); } }
+.assinatura h2 { margin-block: 0.6rem 1rem; }
+.assinatura .lede { color: var(--k-ink-soft); max-width: 40ch; }
+.assinatura__nota {
+  margin-top: 1.2rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  color: var(--acc-text);
+}
+
+.planos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  background: var(--k-surface);
+  border-radius: var(--k-card-radius);
+  border: 1px solid var(--k-line);
+  overflow: hidden;
+}
+@media (max-width: 620px) { .planos { grid-template-columns: minmax(0, 1fr); } }
+.planos > li {
+  padding: 1.5rem 1.2rem;
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+  border-left: 1px solid var(--k-line);
+}
+.planos > li:first-child { border-left: 0; }
+@media (max-width: 620px) {
+  .planos > li { border-left: 0; border-top: 1px solid var(--k-line); }
+  .planos > li:first-child { border-top: 0; }
+}
+.planos__name {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+}
+.planos__price {
+  font-family: var(--k-font-display);
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.planos__price small { font-size: 0.8rem; font-family: var(--k-font-body); color: var(--k-ink-soft); }
+.planos__desc { font-size: 0.82rem; color: var(--k-ink-soft); line-height: 1.45; }
+
+/* --------------------------------------------------------------- entrega */
+
+.entrega {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 820px) { .entrega { grid-template-columns: minmax(0, 1fr); } }
+.entrega .lede { margin-block: 0.9rem 1.6rem; color: var(--k-ink-soft); max-width: 46ch; }
+.entrega__rows { border-top: 1px solid var(--k-line-strong); }
+.entrega__rows div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--k-line);
+  font-size: 0.93rem;
+}
+.entrega__rows dt { color: var(--k-ink-soft); }
+.entrega__rows dd { margin: 0; font-family: var(--k-font-mono); font-size: 0.78rem; text-align: right; }
+
+.entrega__aside {
+  background: var(--k-art-bg);
+  border-radius: var(--k-card-radius);
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+.entrega__aside h3 {
+  font-family: var(--k-font-display);
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+.entrega__aside p { font-size: 0.93rem; line-height: 1.65; color: var(--k-ink); }
+.entrega__aside p + p { margin-top: 0.8rem; }
+
+/* ------------------------------------------------------------ depoimentos */
+
+.depo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.6rem, 4vw, 3rem);
+}
+@media (max-width: 760px) { .depo { grid-template-columns: minmax(0, 1fr); } }
+.depo__item blockquote {
+  margin: 0 0 0.8rem;
+  font-family: var(--k-font-display);
+  font-size: clamp(1.25rem, 2.1vw, 1.55rem);
+  line-height: 1.36;
+}
+.depo__item figcaption {
+  font-family: var(--k-font-mono);
+  font-size: 0.7rem;
+  color: var(--k-ink-soft);
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------- contato */
+
+.contato {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 820px) { .contato { grid-template-columns: minmax(0, 1fr); } }
+.contato .lede { margin-top: 0.9rem; color: var(--k-ink-soft); max-width: 36ch; }
+.contato__rows { border-top: 1px solid var(--k-line-strong); }
+.contato__rows div {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--k-line);
+  font-size: 0.93rem;
+}
+.contato__rows dt {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  padding-top: 0.22rem;
+}
+.contato__rows dd { margin: 0; }
+
+/* -------------------------------------------------------------------- cta */
+
+.cta { background: var(--k-accent); color: var(--k-accent-ink); padding-block: clamp(2.6rem, 5vw, 4rem); }
+.cta h2 { max-width: 28ch; font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--k-accent-ink); }
+.cta .btn { background: var(--k-surface); color: var(--acc-text); }
+
+/* ----------------------------------------------------------------- footer */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.4rem;
+  padding-bottom: 2.2rem;
+}
+@media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; } }
+.site-footer h4 {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+.site-footer li + li { margin-top: 0.3rem; }
+.footer__p { font-size: 0.87rem; color: var(--k-ink-soft); margin-top: 0.8rem; max-width: 30ch; }
+
+.demo-notice {
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--k-line);
+  font-family: var(--k-font-mono);
+  font-size: 0.71rem;
+  line-height: 1.75;
+  color: var(--k-ink-soft);
+  max-width: 58ch;
+}

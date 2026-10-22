@@ -1,0 +1,255 @@
+/* Téo Martins — arquétipo B: escuro, tipografia grande, coluna única larga. */
+
+:root {
+  --k-bg: #101014;
+  --k-surface: #191920;
+  --k-ink: #eceaf0;
+  --k-ink-soft: #9d9aa8;
+  --k-accent: #ef5f4a;
+  --k-accent-2: #9aa3b8;
+  --k-accent-ink: #101014;
+  --k-line: rgba(236, 234, 240, 0.14);
+  --k-line-strong: rgba(236, 234, 240, 0.34);
+
+  --k-font-display: "Archivo Black", "Arial Black", sans-serif;
+  --k-font-body: "Karla", "Segoe UI", sans-serif;
+  --k-font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --k-display-weight: 400;
+  --k-display-leading: 0.9;
+  --k-display-tracking: -0.04em;
+  --k-h1: clamp(2.3rem, 6vw, 4.6rem);
+  --k-h2: clamp(1.6rem, 3.2vw, 2.4rem);
+  --k-h3: 0.95rem;
+  --k-body-size: 1rem;
+  --k-lede-size: 1.04rem;
+
+  --k-max: 78rem;
+  --k-gutter: clamp(1.15rem, 4.4vw, 3.3rem);
+  --k-sec-pad: clamp(3rem, 6.6vw, 5rem);
+  --k-hero-pad: clamp(2.4rem, 5.6vw, 4rem);
+  --k-head-gap: 2rem;
+  --k-card-radius: 2px;
+  --k-btn-radius: 2px;
+  --k-art-bg: #191920;
+  --k-head-bg: rgba(16, 16, 20, 0.9);
+  --k-focus: #ef5f4a;
+}
+
+h1, h2, h3 { text-transform: uppercase; }
+.brand { font-family: var(--k-font-display); text-transform: uppercase; font-size: 0.9rem; letter-spacing: -0.01em; }
+.brand__mark { width: 1.6rem; height: 1.6rem; }
+.eyebrow { color: var(--k-accent); }
+.lede { color: var(--k-ink-soft); }
+
+/* ------------------------------------------------------------------ hero */
+
+.hero--poster { padding-bottom: 0; }
+.hero__sub {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: end;
+  margin-top: 1.6rem;
+  padding-bottom: clamp(1.8rem, 4vw, 3rem);
+}
+.hero__sub .lede { max-width: 50ch; }
+@media (max-width: 760px) { .hero__sub { grid-template-columns: minmax(0, 1fr); } }
+
+.bleed { margin: 0; border-top: 1px solid var(--k-line); }
+.bleed img { width: 100%; aspect-ratio: 21 / 8; object-fit: cover; display: block; }
+
+/* --------------------------------------------------------------- serviços */
+
+.servicos__lede { margin-block: 0.9rem 1.8rem; max-width: 56ch; }
+.servicos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 2px solid var(--k-ink);
+}
+@media (max-width: 900px) { .servicos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .servicos { grid-template-columns: minmax(0, 1fr); } }
+.servicos > li {
+  padding: 1.2rem 1.1rem 1.4rem;
+  border-left: 1px solid var(--k-line);
+  display: grid;
+  gap: 0.4rem;
+  align-content: start;
+}
+.servicos > li:first-child { border-left: 0; padding-left: 0; }
+@media (max-width: 900px) {
+  .servicos > li { border-left: 0; padding-left: 0; border-bottom: 1px solid var(--k-line); }
+}
+.servicos h3 { font-family: var(--k-font-display); font-size: 0.9rem; letter-spacing: -0.01em; }
+.servicos__price {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  letter-spacing: -0.03em;
+  color: var(--k-accent);
+  line-height: 1.05;
+  margin-block: 0.2rem;
+}
+.servicos__price span {
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  color: var(--k-ink-soft);
+  display: block;
+  margin-top: 0.3rem;
+}
+.servicos p { font-size: 0.89rem; line-height: 1.6; color: var(--k-ink-soft); }
+.servicos__prazo {
+  margin-top: 0.5rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--k-accent-2);
+}
+
+/* -------------------------------------------------------------- trabalhos */
+
+.trabalhos { border-top: 1px solid var(--k-line-strong); margin-top: 1.4rem; }
+.trabalhos > li {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 2.4rem);
+  padding-block: 1.4rem;
+  border-bottom: 1px solid var(--k-line);
+  align-items: start;
+}
+@media (max-width: 620px) { .trabalhos > li { grid-template-columns: minmax(0, 1fr); gap: 0.4rem; } }
+.trabalhos__ano {
+  font-family: var(--k-font-mono);
+  font-size: 0.72rem;
+  color: var(--k-accent);
+  padding-top: 0.2rem;
+}
+.trabalhos h3 {
+  font-family: var(--k-font-display);
+  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.35rem;
+}
+.trabalhos p { font-size: 0.93rem; line-height: 1.62; color: var(--k-ink-soft); max-width: 60ch; }
+.trabalhos__meta {
+  margin-top: 0.45rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  color: var(--k-accent-2);
+}
+
+/* ---------------------------------------------------------------- estúdio */
+
+.estudio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(1.8rem, 4.5vw, 3.6rem);
+  align-items: start;
+}
+@media (max-width: 820px) { .estudio { grid-template-columns: minmax(0, 1fr); } }
+.estudio .lede { margin-block: 0.9rem 1.5rem; max-width: 48ch; }
+.estudio__rows { border-top: 1px solid var(--k-line-strong); }
+.estudio__rows > div { padding-block: 0.8rem; border-bottom: 1px solid var(--k-line); }
+.estudio__rows dt {
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+  margin-bottom: 0.2rem;
+}
+.estudio__rows dd { margin: 0; font-size: 0.92rem; line-height: 1.6; color: var(--k-ink-soft); }
+.estudio__aside {
+  background: var(--k-surface);
+  border: 1px solid var(--k-line);
+  padding: clamp(1.3rem, 3vw, 1.8rem);
+}
+.estudio__aside .mono { color: var(--k-accent-2); }
+.estudio__aside .list-check { margin-top: 0.9rem; }
+.estudio__aside .list-check li { font-size: 0.88rem; }
+.estudio__aside .list-check svg { color: var(--k-accent); }
+
+/* ------------------------------------------------------------------ depo */
+
+.depo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3.5vw, 2.6rem);
+}
+@media (max-width: 760px) { .depo { grid-template-columns: minmax(0, 1fr); } }
+.depo__item blockquote {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1rem, 1.7vw, 1.18rem);
+  line-height: 1.6;
+  font-weight: 500;
+}
+.depo__item figcaption {
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  color: var(--k-ink-soft);
+  padding: 0;
+  text-transform: none;
+}
+
+/* --------------------------------------------------------------- contato */
+
+.contato {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(1.8rem, 4.5vw, 3.4rem);
+  align-items: start;
+}
+@media (max-width: 820px) { .contato { grid-template-columns: minmax(0, 1fr); } }
+.contato .lede { margin-top: 0.9rem; max-width: 42ch; }
+.contato__rows { border-top: 1px solid var(--k-line-strong); }
+.contato__rows div {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--k-line);
+  font-size: 0.92rem;
+}
+.contato__rows dt {
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  padding-top: 0.2rem;
+}
+.contato__rows dd { margin: 0; }
+
+/* ----------------------------------------------------------------- footer */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.2rem;
+  padding-bottom: 2rem;
+}
+@media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; } }
+.site-footer h4 {
+  font-family: var(--k-font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  font-weight: 400;
+  margin-bottom: 0.7rem;
+}
+.site-footer li + li { margin-top: 0.3rem; }
+.footer__p { font-size: 0.85rem; color: var(--k-ink-soft); margin-top: 0.8rem; max-width: 34ch; line-height: 1.6; }
+
+.demo-notice {
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--k-line);
+  font-family: var(--k-font-mono);
+  font-size: 0.68rem;
+  line-height: 1.75;
+  color: var(--k-ink-soft);
+  max-width: 62ch;
+  text-transform: none;
+}

@@ -1,0 +1,389 @@
+/* =========================================================================
+   Tamanduá — Pinheiros, São Paulo
+   Arquétipo J: hero centrado, card arredondado, tom acolhedor e muito respiro.
+   Direção visual: banheiro de bairro, não clínica. Âmbar quente, borda grossa,
+   display chunky (Bowlby One SC), selo inclinado e preço grande.
+   ========================================================================= */
+
+:root {
+  --k-bg: #fff8ec;
+  --k-surface: #ffffff;
+  --k-ink: #2c2519;
+  --k-accent: #e0a02a;
+  --k-accent-2: #2f6f8f;
+  --k-font-display: "Bowlby One SC", "Arial Black", sans-serif;
+  --k-font-body: "Nunito Sans", "Segoe UI", sans-serif;
+  --k-font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --k-accent-ink: #2c2519;
+  --k-ink-soft: #6b6152;
+  --k-line: rgba(44, 37, 25, 0.16);
+  --k-line-strong: rgba(44, 37, 25, 0.38);
+  --k-art-bg: #f6e7cd;
+  --k-max: 72rem;
+  --k-gutter: 2rem;
+  --k-sec-pad: clamp(3.4rem, 7vw, 6rem);
+  --k-card-radius: 22px;
+  --k-btn-radius: 999px;
+  --k-input-radius: 12px;
+  --k-display-weight: 400;
+  --k-display-tracking: 0.005em;
+  --k-display-leading: 1.02;
+  --k-h1: clamp(2.15rem, 5.6vw, 4rem);
+  --k-h2: clamp(1.6rem, 3.1vw, 2.35rem);
+  --k-h3: 1.22rem;
+  --k-lede-size: clamp(1.02rem, 1.35vw, 1.15rem);
+}
+
+h1, h2 { letter-spacing: 0.005em; }
+h3 { font-family: var(--k-font-body); font-weight: 700; letter-spacing: -0.01em; }
+p { text-wrap: pretty; }
+body { background-image: radial-gradient(circle at 82% 4%, var(--k-art-bg), transparent 52%); }
+
+/* --- cabeçalho ---------------------------------------------------------- */
+
+.masthead { padding-block: 1.15rem; }
+.masthead__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  flex-wrap: wrap;
+}
+.brand { font-size: 1.22rem; letter-spacing: 0.01em; }
+.brand__mark { width: 1.9rem; height: 1.9rem; }
+.masthead__tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--k-ink);
+  background: var(--k-surface);
+  border: 2px solid var(--k-ink);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.nav a { font-weight: 600; }
+
+/* --- hero --------------------------------------------------------------- */
+
+.hero { padding-block: clamp(1.5rem, 4vw, 3rem) 0; position: relative; }
+.hero .bolha {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  display: block;
+}
+.bolha--a {
+  width: 34rem;
+  height: 34rem;
+  top: -9rem;
+  left: -13rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--k-accent) 26%, transparent), transparent 68%);
+}
+.bolha--b {
+  width: 26rem;
+  height: 26rem;
+  top: 4rem;
+  right: -9rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--k-accent-2) 16%, transparent), transparent 70%);
+}
+.hero__in { position: relative; }
+.hero .eyebrow { color: var(--k-ink); }
+.hero__title { max-width: 19ch; margin-inline: auto; }
+.hero__lede { margin: 1.2rem auto 1.9rem; max-width: 54ch; }
+.hero .btn { padding-inline: 1.8rem; }
+
+.hero__card {
+  position: relative;
+  margin-top: clamp(1.8rem, 4vw, 3rem);
+  border: 2px solid var(--k-ink);
+  border-radius: 26px;
+  overflow: hidden;
+  background: var(--k-art-bg);
+}
+.hero__card img { width: 100%; height: clamp(15rem, 44vw, 30rem); object-fit: cover; }
+.hero__legenda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 1.1rem;
+  background: var(--k-surface);
+  border-top: 2px solid var(--k-ink);
+  color: var(--k-ink-soft);
+}
+.hero__legenda .mono { font-size: 0.68rem; color: var(--k-ink); }
+.sticker {
+  display: inline-block;
+  transform: rotate(-2deg);
+  background: var(--k-accent);
+  color: var(--k-accent-ink);
+  border: 2px solid var(--k-ink);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  font-family: var(--k-font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* --- serviços ----------------------------------------------------------- */
+
+.serv__head { max-width: 56ch; }
+.serv__head .lede { margin-top: 0.9rem; }
+.serv__cards { gap: clamp(1rem, 2vw, 1.5rem); }
+.serv__card {
+  border: 2px solid var(--k-line-strong);
+  border-radius: var(--k-card-radius);
+  padding: 1.5rem 1.5rem 1.3rem;
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+.serv__card h3 { display: flex; align-items: baseline; gap: 0.5rem; }
+.serv__card p { font-size: 0.95rem; color: var(--k-ink-soft); }
+.serv__preco {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--k-line-strong);
+}
+.serv__preco b {
+  font-family: var(--k-font-display);
+  font-size: 1.5rem;
+  color: var(--k-ink);
+  letter-spacing: 0;
+}
+.serv__preco .mono { font-size: 0.66rem; color: var(--k-ink-soft); }
+
+/* --- tabela de porte ---------------------------------------------------- */
+
+.porte { margin-top: clamp(2.4rem, 5vw, 3.6rem); }
+.porte__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.9rem;
+  border-bottom: 2px solid var(--k-ink);
+}
+.porte__h { font-size: 1.15rem; }
+.porte__nota { font-size: 0.86rem; color: var(--k-ink-soft); max-width: 46ch; }
+.porte__scroll { overflow-x: auto; }
+.porte__tab { min-width: 34rem; }
+.porte__tab th { font-size: 0.62rem; color: var(--k-ink); }
+.porte__tab td { font-size: 0.95rem; border-bottom: 1px dashed var(--k-line-strong); }
+.porte__tab td:first-child { font-family: var(--k-font-display); font-size: 0.9rem; }
+.porte__tab td:nth-child(4),
+.porte__tab td:nth-child(5) { text-align: right; font-family: var(--k-font-mono); font-size: 0.82rem; }
+.porte__tab td:last-child { color: var(--k-ink); }
+
+/* --- pacotes ------------------------------------------------------------ */
+
+.pacotes { padding-block: var(--k-sec-pad); }
+.pacotes__in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.pacotes h2 { max-width: 22ch; }
+.pacotes .lede { margin-top: 1rem; }
+.pacotes__lista { border-top-color: color-mix(in srgb, var(--k-accent-ink) 30%, transparent); }
+.pacotes__lista li { border-bottom-color: color-mix(in srgb, var(--k-accent-ink) 26%, transparent); }
+.pacotes__lista small { color: color-mix(in srgb, var(--k-accent-ink) 92%, transparent); }
+.pacotes__lista b { color: var(--k-accent-ink); font-weight: 700; }
+
+.pacote__destaque {
+  margin-top: 1.8rem;
+  background: var(--k-surface);
+  border: 2px solid var(--k-ink);
+  border-radius: var(--k-card-radius);
+  padding: 1.3rem 1.4rem;
+  max-width: 24rem;
+}
+.pacote__selo {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-ink);
+  background: color-mix(in srgb, var(--k-accent) 42%, var(--k-surface));
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+}
+.pacote__nome { margin-top: 0.6rem; font-weight: 700; font-size: 1rem; }
+.pacote__valor {
+  font-family: var(--k-font-display);
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: var(--k-ink);
+  margin-top: 0.2rem;
+}
+.pacote__valor span {
+  display: block;
+  font-family: var(--k-font-body);
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--k-ink-soft);
+  padding-top: 0.25rem;
+}
+.pacote__txt { margin-top: 0.6rem; font-size: 0.86rem; color: var(--k-ink-soft); }
+
+/* --- galeria ------------------------------------------------------------ */
+
+.galeria { gap: clamp(0.9rem, 1.6vw, 1.3rem); }
+.galeria img {
+  border-radius: 18px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--k-art-bg);
+  border: 1px solid var(--k-line);
+}
+.galeria figcaption { font-size: 0.82rem; color: var(--k-ink-soft); padding-top: 0.5rem; }
+
+/* --- depoimentos -------------------------------------------------------- */
+
+.depo { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.depo__h { margin-bottom: clamp(1.4rem, 3vw, 2rem); max-width: 26ch; }
+.depo__grid { gap: clamp(1rem, 2vw, 1.4rem); }
+.depo__card {
+  margin: 0;
+  border: 2px solid var(--k-line-strong);
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+.depo__card p { font-size: 0.98rem; line-height: 1.55; }
+.depo__card cite {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--k-ink-soft);
+  border-top: 1px dashed var(--k-line-strong);
+  padding-top: 0.7rem;
+}
+
+/* --- leva-e-traz -------------------------------------------------------- */
+
+.busca {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.busca h2 { max-width: 20ch; }
+.busca .lede { margin-top: 1rem; }
+.busca__steps { margin-top: 1.8rem; }
+.busca__steps > li { border-top: 2px solid var(--k-line); }
+.busca__steps h3 { font-size: 1.02rem; }
+.busca__steps p { font-size: 0.93rem; }
+.busca__card {
+  border: 2px solid var(--k-ink);
+  border-radius: var(--k-card-radius);
+  padding: clamp(1.2rem, 2.4vw, 1.7rem);
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+.busca__card h3 { font-size: 1.1rem; }
+.busca__card .field label { text-transform: none; letter-spacing: 0; font-size: 0.78rem; }
+.busca__card input,
+.busca__card select { background: var(--k-bg); border-width: 1px; }
+.busca__check {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  min-height: 44px;
+}
+.busca__check input { width: 1.15rem; height: 1.15rem; accent-color: var(--k-accent); }
+.busca__obs { font-size: 0.64rem; line-height: 1.6; color: var(--k-ink-soft); }
+.busca__end {
+  font-style: normal;
+  font-size: 0.86rem;
+  line-height: 1.65;
+  border-top: 1px dashed var(--k-line-strong);
+  padding-top: 0.8rem;
+}
+.busca__end .mono { font-size: 0.66rem; color: var(--k-ink-soft); }
+
+/* --- rodapé ------------------------------------------------------------- */
+
+.site-footer { background: var(--k-surface); border-top: 2px solid var(--k-ink); }
+.rodape {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr) minmax(0, 0.8fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding-bottom: 2rem;
+}
+.rodape h4 {
+  font-family: var(--k-font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  margin-bottom: 0.6rem;
+}
+.rodape ul { display: grid; gap: 0.35rem; font-size: 0.88rem; }
+.rodape__p { margin-top: 0.8rem; font-size: 0.88rem; line-height: 1.6; max-width: 38ch; color: var(--k-ink-soft); }
+.demo-notice {
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+  border-top: 1px dashed var(--k-line-strong);
+  padding-top: 1rem;
+  max-width: 60ch;
+}
+.demo-chip {
+  --k-chip-bg: rgba(44, 37, 25, 0.9);
+  --k-chip-ink: #fdf6e9;
+  --k-chip-line: rgba(253, 246, 233, 0.28);
+  border-radius: 999px;
+}
+
+/* --- responsivo --------------------------------------------------------- */
+
+@media (max-width: 920px) {
+  .pacotes__in,
+  .busca { grid-template-columns: minmax(0, 1fr); }
+  .rodape { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .depo__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 720px) {
+  :root { --k-gutter: 1.15rem; --k-card-radius: 18px; }
+  .masthead__tag { order: 3; }
+  .hero__card { border-radius: 20px; }
+  .hero__card img { height: 13.5rem; }
+  .serv__card { padding: 1.2rem; }
+  .serv__preco b { font-size: 1.3rem; }
+  .porte__head { align-items: flex-start; }
+  .galeria { --k-gallery-cols: 2 !important; }
+  .rodape { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 420px) {
+  .hero__title { max-width: none; }
+  .sticker { transform: none; font-size: 0.68rem; }
+  .hero__legenda { padding: 0.8rem; }
+}
+
+/* --- acabamento: contraste, alvo de clique, medida de linha -------------- */
+
+.demo-chip {
+  --k-chip-bg: #2c2519;
+  --k-chip-ink: #fdf6e9;
+  --k-chip-line: rgba(253, 246, 233, 0.3);
+  opacity: 0.95;
+}
+.skip-link { background: var(--k-ink); color: var(--k-bg); }
+.rodape ul a { display: inline-flex; align-items: center; min-height: 32px; }
+.busca__check input { width: 1.5rem; height: 1.5rem; }
+.hero__legenda .mono,
+.galeria figcaption,
+.demo-notice { max-width: 60ch; }

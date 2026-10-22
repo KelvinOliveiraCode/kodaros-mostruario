@@ -1,0 +1,472 @@
+/* =========================================================================
+   Nova Luz — yoga e meditação (arquétipo J)
+   Tom: sala clara, serifa fina, verde-sálvia, muito ar entre as coisas.
+   ========================================================================= */
+
+:root {
+  /* tokens do manifesto (valores exatos) */
+  --k-bg: #faf7f2;
+  --k-surface: #ffffff;
+  --k-ink: #2e3b34;
+  --k-accent: #7aa287;
+  --k-accent-2: #d8bfa0;
+  --k-font-display: "Newsreader", Georgia, serif;
+  --k-font-body: "Figtree", sans-serif;
+  --k-font-mono: "DM Mono", monospace;
+
+  /* derivados da página */
+  --k-ink-soft: #55645c;
+  --nl-sage-deep: #4e7359;
+  --nl-sand-wash: #f1e7db;
+  --k-line: rgba(46, 59, 52, 0.13);
+  --k-line-strong: rgba(46, 59, 52, 0.24);
+  --k-accent-ink: #22302a;
+  --k-art-bg: #eef2ea;
+  --k-max: 74rem;
+  --k-gutter: clamp(1.15rem, 4.5vw, 2.75rem);
+  --k-sec-pad: clamp(3.5rem, 7vw, 6rem);
+  --k-card-radius: 22px;
+  --k-btn-radius: 999px;
+  --k-input-radius: 10px;
+  --k-display-weight: 400;
+  --k-h1: clamp(2rem, 4.6vw, 3.15rem);
+  --k-h2: clamp(1.55rem, 2.7vw, 2.1rem);
+  --k-h3: clamp(1.08rem, 1.4vw, 1.3rem);
+  --k-display-tracking: -0.012em;
+  --k-display-leading: 1.12;
+  --k-lede-size: clamp(1rem, 1.2vw, 1.08rem);
+  --k-body-size: 1rem;
+  --k-gap: 1.5rem;
+}
+
+body {
+  line-height: 1.68;
+}
+
+/* ------------------------------------------------------------------ topo */
+
+.nl-head {
+  padding-block: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.nl-brand {
+  font-size: 1.16rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.nl-head__cta {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.nl-head .nav a {
+  font-size: 0.88rem;
+}
+
+/* ------------------------------------------------------------------ hero */
+
+.nl-hero {
+  padding-top: clamp(1.5rem, 4vw, 3rem);
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.nl-kicker {
+  display: inline-block;
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--nl-sage-deep);
+  padding-bottom: 1.1rem;
+}
+
+.nl-title {
+  max-width: 21ch;
+  margin: 0 auto 1.35rem;
+  color: var(--k-ink);
+}
+
+.nl-lede {
+  max-width: 54ch;
+  margin-inline: auto;
+  font-size: clamp(1.02rem, 1.3vw, 1.13rem);
+  color: var(--k-ink-soft);
+}
+
+.nl-ctas {
+  justify-content: center;
+  margin-top: 1.9rem;
+  row-gap: 0.9rem;
+}
+
+.nl-ctas .link-arrow {
+  border-bottom-color: var(--k-line-strong);
+  font-weight: 500;
+}
+
+.nl-hero__art {
+  margin-top: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+.nl-figure { margin: 0; }
+.nl-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--k-card-radius) + 4px);
+  background: var(--k-art-bg);
+  border: 1px solid var(--k-line);
+}
+.nl-figure figcaption {
+  padding-top: 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--k-ink-soft);
+  max-width: 62ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.nl-figure--tall { margin-top: 1.9rem; }
+.nl-figure--tall figcaption { text-align: left; margin-inline: 0; }
+
+/* ---------------------------------------------------------------- aulas */
+
+.nl-head-sec {
+  max-width: 58ch;
+  margin-inline: auto;
+  text-align: center;
+}
+.nl-head-sec .lede { margin-inline: auto; }
+
+.nl-aulas { gap: 1.1rem; }
+
+.nl-card {
+  background: var(--k-surface);
+  border: 1px solid var(--k-line);
+  border-radius: var(--k-card-radius);
+  padding: clamp(1.35rem, 2.4vw, 1.85rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.nl-card h3 {
+  font-size: clamp(1.15rem, 1.5vw, 1.35rem);
+  font-weight: 500;
+}
+.nl-card p {
+  font-size: 0.95rem;
+  color: var(--k-ink-soft);
+}
+.nl-card__foot {
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  color: var(--nl-sage-deep);
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--k-line);
+}
+
+.nl-meta {
+  font-size: 0.74rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--nl-sage-deep);
+}
+
+/* --------------------------------------------------------------- seção 2 */
+
+.nl-sec-sand {
+  background: var(--nl-sand-wash);
+  border-block: 1px solid var(--k-line);
+}
+
+.nl-prof {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.1fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.nl-prof h2 { margin-bottom: 0.85rem; }
+
+.nl-team { margin-top: 0.5rem; }
+.nl-team > li { padding-block: 1.3rem; align-items: start; }
+.nl-team .team-row__name {
+  font-family: var(--k-font-display);
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.nl-team .team-row__role {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-top: 0.2rem;
+}
+.nl-team .team-row__meta { padding-top: 0.3rem; }
+
+.nl-avatar {
+  background: color-mix(in srgb, var(--k-accent) 32%, var(--k-surface));
+  color: var(--k-ink);
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+}
+
+/* ---------------------------------------------------------------- agenda */
+
+.nl-agenda {
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  align-items: start;
+}
+
+.nl-table-wrap { overflow-x: auto; }
+
+.nl-schedule { min-width: 26rem; }
+.nl-schedule th[scope="row"] {
+  font-family: var(--k-font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--k-ink);
+  text-transform: none;
+  letter-spacing: 0;
+  padding-block: 0.85rem;
+}
+.nl-schedule td {
+  font-size: 0.92rem;
+  padding-block: 0.85rem;
+  color: var(--k-ink-soft);
+}
+.nl-schedule td:last-child { color: var(--nl-sage-deep); }
+
+.nl-breath-card {
+  background: var(--k-surface);
+  border: 1px solid var(--k-line);
+  border-radius: var(--k-card-radius);
+  padding: clamp(1.3rem, 2.5vw, 1.9rem);
+}
+.nl-breath-card h3 {
+  font-size: 1.12rem;
+  font-weight: 500;
+  margin-bottom: 1.1rem;
+}
+.nl-breath-card > p {
+  font-size: 0.9rem;
+  color: var(--k-ink-soft);
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--k-line);
+}
+
+.nl-breath { margin: 0; text-align: center; }
+.nl-breath__ring {
+  width: 168px;
+  height: 168px;
+  margin: 0 auto;
+  color: var(--k-ink);
+}
+.nl-arc-in { stroke: var(--k-accent); }
+.nl-arc-hold { stroke: var(--k-accent-2); }
+.nl-arc-out { stroke: var(--nl-sage-deep); }
+
+.nl-breath figcaption {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+  margin-top: 1.1rem;
+  text-align: left;
+}
+.nl-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  color: var(--k-ink-soft);
+}
+.nl-legend--total {
+  display: block;
+  font-size: 0.74rem;
+  line-height: 1.6;
+  color: var(--k-ink);
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--k-line);
+  width: 100%;
+}
+.nl-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+}
+.nl-dot--in { background: var(--k-accent); }
+.nl-dot--hold { background: var(--k-accent-2); }
+.nl-dot--out { background: var(--nl-sage-deep); }
+
+/* ----------------------------------------------------------- depoimentos */
+
+.nl-vozes {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  align-items: start;
+}
+
+.nl-voice {
+  margin: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--k-line-strong);
+}
+.nl-voice p {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+  line-height: 1.5;
+  color: var(--k-ink);
+  text-wrap: pretty;
+}
+.nl-voice cite {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: var(--k-font-mono);
+  font-style: normal;
+  font-size: 0.74rem;
+  line-height: 1.6;
+  color: var(--k-ink-soft);
+}
+.nl-voice--big { grid-row: span 2; }
+.nl-voice--big p {
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem);
+  line-height: 1.45;
+}
+
+/* -------------------------------------------------------- primeira aula */
+
+.nl-primeira {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.85fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: start;
+}
+.nl-primeira h2 { margin-bottom: 0.8rem; }
+
+.nl-prices { margin-top: 1.6rem; }
+.nl-prices > li { padding-block: 0.95rem; font-size: 0.97rem; }
+.nl-prices b { color: var(--nl-sage-deep); }
+
+.nl-note {
+  margin-top: 1.5rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--k-line-strong);
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+  max-width: 60ch;
+}
+
+.nl-endereco { background: var(--k-surface); }
+.nl-endereco h3 { font-size: 1.14rem; font-weight: 500; margin-bottom: 0.6rem; }
+.nl-endereco > p { font-size: 0.92rem; color: var(--k-ink-soft); }
+
+.nl-hours {
+  display: grid;
+  margin: 1.15rem 0 1.25rem;
+}
+.nl-hours div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding-block: 0.45rem;
+  border-bottom: 1px solid var(--k-line);
+  font-size: 0.88rem;
+}
+.nl-hours dt { color: var(--k-ink-soft); }
+.nl-hours dd {
+  margin: 0;
+  font-family: var(--k-font-mono);
+  font-size: 0.8rem;
+  color: var(--k-ink);
+  text-align: right;
+}
+
+.nl-endereco__note {
+  display: block;
+  margin-top: 1.1rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--k-line-strong);
+  font-size: 0.74rem;
+  line-height: 1.65;
+  color: var(--k-ink-soft);
+}
+
+/* ---------------------------------------------------------------- rodapé */
+
+.nl-footer {
+  display: grid;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+.nl-footer__brand {
+  font-family: var(--k-font-display);
+  font-size: 1.08rem;
+  color: var(--k-ink);
+}
+.nl-footer p { line-height: 1.7; }
+
+.demo-notice {
+  font-family: var(--k-font-mono);
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--k-line);
+  max-width: 64ch;
+}
+
+.demo-chip {
+  background: var(--k-ink);
+  color: var(--k-bg);
+  border-color: transparent;
+  font-family: var(--k-font-mono);
+}
+
+/* ------------------------------------------------------------- responsivo */
+
+@media (max-width: 980px) {
+  .nl-prof,
+  .nl-agenda,
+  .nl-vozes,
+  .nl-primeira { grid-template-columns: minmax(0, 1fr); }
+  .nl-voice--big { grid-row: auto; }
+  .nl-head-sec { text-align: left; }
+  .nl-head-sec .lede { margin-inline: 0; }
+}
+
+@media (max-width: 720px) {
+  .nl-title { max-width: 24ch; }
+  .nl-figure figcaption { text-align: left; }
+  .nl-breath__ring { width: 148px; height: 148px; }
+  .nl-breath figcaption { justify-items: center; }
+  .nl-legend--total { text-align: left; }
+  .nl-head { gap: 0.9rem; }
+  .nl-head__cta { font-size: 0.75rem; padding-inline: 0.85rem; }
+}
+
+@media (max-width: 460px) {
+  .nl-card { padding: 1.2rem; }
+  .nl-hours div { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
+  .nl-hours dd { text-align: left; }
+  .nl-schedule { min-width: 23rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn, .link-arrow { transition: none; }
+}
+
+/* ------------------------------------------------- medida de leitura ---- */
+.nl-card p { max-width: 46ch; }
+.nl-voice p { max-width: 48ch; }
+.nl-voice--big p { max-width: 52ch; }
+.nl-breath-card > p { max-width: 40ch; }
+.nl-figure figcaption { max-width: 54ch; }
+.nl-endereco > p { max-width: 42ch; }
+.nl-note { max-width: 54ch; }
+.nl-lede { max-width: 50ch; }

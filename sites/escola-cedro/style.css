@@ -1,0 +1,425 @@
+/* =========================================================================
+   Escola Cedro — Alto de Pinheiros, São Paulo
+   Arquétipo J: hero centrado, card arredondado sobre faixa, muito respiro.
+   Direção visual: caderno de rotina. Verde sóbrio, régua fina, coluna de hora
+   em mono e tabela escolar. Calmo de propósito — o barulho é das crianças.
+   ========================================================================= */
+
+:root {
+  --k-bg: #fdf6ec;
+  --k-surface: #ffffff;
+  --k-ink: #2f2a24;
+  --k-accent: #5b8c5a;
+  --k-accent-2: #e0a24f;
+  --k-font-display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+  --k-font-body: "Figtree", "Segoe UI", sans-serif;
+  --k-font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --k-accent-ink: #fbf8ef;
+  --k-green-text: color-mix(in srgb, var(--k-accent) 72%, var(--k-ink));
+  --k-ink-soft: #6a6155;
+  --k-line: rgba(47, 42, 36, 0.14);
+  --k-line-strong: rgba(47, 42, 36, 0.3);
+  --k-art-bg: #f3e7d2;
+  --k-max: 74rem;
+  --k-gutter: 2.2rem;
+  --k-sec-pad: clamp(3.2rem, 6.5vw, 5.6rem);
+  --k-card-radius: 14px;
+  --k-btn-radius: 999px;
+  --k-input-radius: 8px;
+  --k-display-weight: 600;
+  --k-display-tracking: -0.028em;
+  --k-display-leading: 1.06;
+  --k-h1: clamp(2rem, 4.3vw, 3.25rem);
+  --k-h2: clamp(1.5rem, 2.7vw, 2.15rem);
+  --k-h3: 1.06rem;
+  --k-lede-size: clamp(1rem, 1.3vw, 1.1rem);
+}
+
+body { background-image: none; }
+p { text-wrap: pretty; }
+h3 { letter-spacing: -0.015em; }
+
+/* --- cabeçalho ---------------------------------------------------------- */
+
+.masthead {
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--k-line);
+}
+.masthead__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem 1.5rem;
+  flex-wrap: wrap;
+}
+.brand span { display: grid; line-height: 1.15; font-size: 1.02rem; }
+.brand small {
+  font-family: var(--k-font-mono);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--k-ink-soft);
+  padding-top: 0.2rem;
+}
+.masthead__vagas {
+  font-size: 0.68rem;
+  color: var(--k-green-text);
+  border: 1px solid color-mix(in srgb, var(--k-accent) 42%, transparent);
+  border-radius: 999px;
+  padding: 0.32rem 0.7rem;
+  background: color-mix(in srgb, var(--k-accent) 9%, transparent);
+}
+.btn {
+  --btn-bg: var(--k-ink);
+  --btn-ink: var(--k-bg);
+}
+
+/* --- hero --------------------------------------------------------------- */
+
+.hero--inset { padding-top: clamp(1.4rem, 3vw, 2.4rem); }
+.hero--inset .hero__band {
+  background: var(--k-art-bg);
+  inset: 0 0 46% 0;
+}
+.hero--inset .hero__card {
+  max-width: 56rem;
+  margin-inline: auto;
+  padding: clamp(1.6rem, 3.4vw, 2.8rem);
+  border: 1px solid var(--k-line);
+  border-radius: 18px;
+  background: var(--k-surface);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--k-ink) 8%, transparent);
+}
+.hero__title {
+  margin-block: 0.7rem 1rem;
+  max-width: 22ch;
+  margin-inline: auto;
+}
+.hero__lede { margin: 0 auto 1.6rem; max-width: 52ch; }
+.hero__card .btn { padding-inline: 1.7rem; }
+
+.hero__faixa { padding-block: clamp(1.2rem, 3vw, 2rem) 0; }
+.hero__faixa img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--k-line);
+  background: var(--k-art-bg);
+}
+.hero__faixa figcaption {
+  font-size: 0.68rem;
+  line-height: 1.6;
+  text-align: center;
+  padding-top: 0.7rem;
+  color: var(--k-ink-soft);
+}
+
+/* --- faixa de fatos ----------------------------------------------------- */
+
+.fatos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin-top: clamp(1.4rem, 3vw, 2.2rem);
+  border-block: 1px solid var(--k-line);
+}
+.fatos li {
+  padding: 0.9rem 1rem 0.9rem 0;
+  border-right: 1px solid var(--k-line);
+  display: grid;
+  gap: 0.15rem;
+}
+.fatos li:last-child { border-right: 0; }
+.fatos .mono {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+}
+.fatos b { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+
+/* --- rotina do dia ------------------------------------------------------ */
+
+.rotina__in {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.rotina__intro h2 { margin-top: 0.4rem; max-width: 18ch; }
+.rotina__intro .lede { margin-top: 1rem; }
+.rotina__txt {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--k-line);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+}
+.dia { display: grid; gap: 0; }
+.dia > li {
+  display: grid;
+  grid-template-columns: 4.2rem minmax(0, 1fr);
+  gap: 0.4rem 1.4rem;
+  padding-block: 1.05rem;
+  border-top: 1px solid var(--k-line);
+}
+.dia > li:first-child { border-top: 0; padding-top: 0; }
+.dia__hora {
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--k-green-text);
+  padding-top: 0.3rem;
+  letter-spacing: 0;
+}
+.dia h3 { margin-bottom: 0.25rem; }
+.dia p {
+  font-size: 0.93rem;
+  line-height: 1.62;
+  color: var(--k-ink-soft);
+  max-width: 54ch;
+}
+
+/* --- turmas ------------------------------------------------------------- */
+
+.turmas { background: color-mix(in srgb, var(--k-art-bg) 40%, var(--k-bg)); border-block: 1px solid var(--k-line); padding-block: var(--k-sec-pad); }
+.turmas__head { max-width: 60ch; }
+.turmas__head .lede { margin-top: 0.9rem; }
+.turmas__scroll { overflow-x: auto; }
+.turmas__tab { min-width: 36rem; margin-top: 0.6rem; }
+.turmas__tab th { font-size: 0.62rem; letter-spacing: 0.12em; }
+.turmas__tab td { font-size: 0.94rem; padding-block: 0.85rem; }
+.turmas__tab td:first-child { font-weight: 600; }
+.turmas__tab td:nth-child(5),
+.turmas__tab td:nth-child(6) { color: var(--k-green-text); font-weight: 600; }
+
+.turmas__notas {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(1.6rem, 4vw, 3.2rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(1.4rem, 3vw, 2rem);
+  border-top: 1px solid var(--k-line-strong);
+}
+.turmas__notas h3 { margin-bottom: 1rem; }
+.turmas__notas .list-check li { font-size: 0.93rem; line-height: 1.6; }
+.turmas__notas .list-check svg { color: var(--k-accent); }
+.turmas__valores { margin: 0; display: grid; gap: 0; }
+.turmas__valores > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.2rem;
+  padding-block: 0.62rem;
+  border-bottom: 1px solid var(--k-line);
+}
+.turmas__valores dt { font-size: 0.86rem; color: var(--k-ink-soft); }
+.turmas__valores dd {
+  margin: 0;
+  font-size: 0.88rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- equipe ------------------------------------------------------------- */
+
+.equipe__intro { max-width: 60ch; }
+.equipe__intro .lede { margin-top: 0.9rem; }
+.equipe__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.4rem, 3vw, 2.4rem) clamp(1.4rem, 3vw, 2.6rem);
+  margin-top: clamp(2rem, 4vw, 2.8rem);
+}
+.equipe__grid .person { align-items: start; }
+.equipe__grid .avatar {
+  background: color-mix(in srgb, var(--k-accent) 14%, var(--k-surface));
+  color: var(--k-accent);
+  border-radius: 6px;
+  font-size: 0.7rem;
+}
+.person__nome { font-weight: 600; font-size: 0.98rem; }
+.person__role {
+  font-family: var(--k-font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  color: var(--k-green-text);
+  padding-block: 0.15rem 0.5rem;
+}
+.person__bio { font-size: 0.88rem; line-height: 1.58; color: var(--k-ink-soft); }
+
+/* --- matrícula ---------------------------------------------------------- */
+
+.matricula {
+  padding-block: var(--k-sec-pad);
+  background: color-mix(in srgb, var(--k-accent) 13%, var(--k-bg));
+  border-block: 1px solid color-mix(in srgb, var(--k-accent) 26%, transparent);
+}
+.matricula__in {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.matricula h2 { max-width: 20ch; }
+.matricula .lede { margin-top: 1rem; }
+.matricula__dias {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  color: var(--k-green-text);
+  border-top: 1px solid color-mix(in srgb, var(--k-accent) 34%, transparent);
+  padding-top: 0.7rem;
+}
+.matricula__steps { margin-top: 1.4rem; }
+.matricula__steps > li { border-top-color: color-mix(in srgb, var(--k-accent) 26%, transparent); }
+.matricula__steps > li::before { color: var(--k-green-text); }
+.matricula__steps p { color: var(--k-ink-soft); }
+.matricula__card {
+  background: var(--k-surface);
+  border: 1px solid color-mix(in srgb, var(--k-ink) 14%, transparent);
+  border-radius: 16px;
+  padding: clamp(1.3rem, 2.6vw, 1.9rem);
+}
+.matricula__card h3 { margin-bottom: 1rem; }
+.matricula__contato { margin: 0; display: grid; gap: 0; }
+.matricula__contato > div {
+  padding-block: 0.6rem;
+  border-top: 1px solid var(--k-line);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.matricula__contato > div:first-child { border-top: 0; padding-top: 0; }
+.matricula__contato dt {
+  font-family: var(--k-font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  padding-bottom: 0.15rem;
+}
+.matricula__contato dd { margin: 0; }
+.matricula__obs {
+  margin-top: 1rem;
+  font-size: 0.64rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+}
+
+/* --- depoimentos -------------------------------------------------------- */
+
+.depoimentos__h { margin-bottom: clamp(1.4rem, 3vw, 2.2rem); }
+.depoimentos__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.4rem, 4vw, 3.2rem);
+}
+.depoimentos blockquote { margin: 0; }
+.depoimentos blockquote p {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.1rem, 1.9vw, 1.42rem);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+.depoimentos blockquote cite {
+  display: block;
+  margin-top: 0.9rem;
+  font-family: var(--k-font-body);
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--k-ink-soft);
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--k-line);
+}
+.depoimentos__nota {
+  margin-top: 1.6rem;
+  font-size: 0.64rem;
+  color: var(--k-ink-soft);
+}
+
+/* --- rodapé ------------------------------------------------------------- */
+
+.site-footer { background: var(--k-surface); }
+.rodape {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr) minmax(0, 0.9fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding-bottom: 2rem;
+}
+.rodape h4 {
+  font-family: var(--k-font-mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--k-ink-soft);
+  margin-bottom: 0.6rem;
+}
+.rodape ul { display: grid; gap: 0.3rem; font-size: 0.87rem; }
+.rodape__p { margin-top: 0.8rem; font-size: 0.87rem; line-height: 1.6; max-width: 40ch; color: var(--k-ink-soft); }
+.demo-notice {
+  font-family: var(--k-font-mono);
+  font-size: 0.64rem;
+  line-height: 1.7;
+  color: var(--k-ink-soft);
+  border-top: 1px solid var(--k-line);
+  padding-top: 1rem;
+  max-width: 62ch;
+}
+.demo-chip {
+  --k-chip-bg: rgba(47, 42, 36, 0.9);
+  --k-chip-ink: #fdf6ec;
+  --k-chip-line: rgba(253, 246, 236, 0.24);
+  border-radius: 999px;
+}
+
+/* --- responsivo --------------------------------------------------------- */
+
+@media (max-width: 940px) {
+  .rotina__in,
+  .turmas__notas,
+  .matricula__in,
+  .depoimentos__grid { grid-template-columns: minmax(0, 1fr); }
+  .equipe__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fatos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fatos li:nth-child(2) { border-right: 0; }
+  .fatos li:nth-child(3),
+  .fatos li:nth-child(4) { border-top: 1px solid var(--k-line); }
+  .rodape { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (max-width: 720px) {
+  :root { --k-gutter: 1.15rem; }
+  .hero__faixa img { aspect-ratio: 16 / 10; border-radius: 14px; }
+  .hero--inset .hero__card { border-radius: 14px; }
+  .hero__title { max-width: none; }
+  .equipe__grid { grid-template-columns: minmax(0, 1fr); }
+  .dia > li { grid-template-columns: 3.4rem minmax(0, 1fr); gap: 0.3rem 1rem; }
+  .turmas__tab { min-width: 30rem; }
+  .rodape { grid-template-columns: minmax(0, 1fr); }
+  .masthead__vagas { order: 3; }
+}
+
+@media (max-width: 420px) {
+  .fatos { grid-template-columns: minmax(0, 1fr); }
+  .fatos li { border-right: 0; border-top: 1px solid var(--k-line); }
+  .fatos li:first-child { border-top: 0; }
+  .dia__hora { font-size: 0.72rem; }
+}
+
+/* --- acabamento: contraste, alvo de clique, medida de linha -------------- */
+
+.demo-chip {
+  --k-chip-bg: #2f2a24;
+  --k-chip-ink: #fdf6ec;
+  --k-chip-line: rgba(253, 246, 236, 0.28);
+  opacity: 0.95;
+}
+.skip-link { background: var(--k-ink); color: var(--k-bg); }
+.rodape ul a { display: inline-flex; align-items: center; min-height: 32px; }
+.hero__faixa figcaption { max-width: 58ch; margin-inline: auto; }
+.turmas__valores dd { max-width: 34ch; }
+.matricula__obs { max-width: 46ch; }
+.depoimentos blockquote p { max-width: 42ch; }

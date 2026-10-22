@@ -1,0 +1,415 @@
+/* =========================================================================
+   Ana Veras — fotografia · Pinheiros, São Paulo
+   Arquétipo L editorial: duas colunas, fio de cabelo como divisor, imagem
+   grande com ficha na margem. Papel neutro, bronze como único acento.
+
+   Escala: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 72 px
+   Tipo: mono 0.66–0.78 · corpo 1 · display clamp(2rem, 4vw, 3.2rem)
+   ========================================================================= */
+
+:root {
+  /* paleta do manifesto — valores exatos */
+  --k-bg: #f0efec;
+  --k-surface: #ffffff;
+  --k-ink: #1c1c1c;
+  --k-accent: #b5843f;
+  --k-accent-2: #5a5a5a;
+
+  /* derivados */
+  --k-soft: #565654;
+  --k-line: rgba(28, 28, 28, 0.16);
+  --k-line-strong: rgba(28, 28, 28, 0.34);
+  --k-art-bg: #e3e1dc;
+  --k-accent-ink: #f0efec;
+  --k-focus: #b5843f;
+
+  /* fontes do manifesto */
+  --k-font-display: "Newsreader", Georgia, serif;
+  --k-font-body: "Work Sans", "Segoe UI", sans-serif;
+  --k-font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --k-max: 74rem;
+  --k-gutter: clamp(1.25rem, 4.5vw, 3rem);
+  --k-sec-pad: clamp(3.25rem, 6.5vw, 6rem);
+  --k-card-radius: 2px;
+  --k-btn-radius: 2px;
+
+  --k-display-weight: 400;
+  --k-display-leading: 1.1;
+  --k-display-tracking: -0.02em;
+  --k-h1: clamp(2.1rem, 4.6vw, 3.4rem);
+  --k-h2: clamp(1.6rem, 2.8vw, 2.2rem);
+  --k-h3: 1.28rem;
+  --k-lede-size: clamp(1rem, 1.35vw, 1.1rem);
+  --k-body-size: 1rem;
+}
+
+.ico { fill: none; }
+
+.lede, .prose p, .serie__body > p, .quote p { text-wrap: pretty; }
+
+/* -------------------------------------------------------------- masthead */
+
+.masthead {
+  padding-block: 1.15rem;
+  border-bottom: 1px solid var(--k-line);
+}
+
+.brand {
+  font-family: var(--k-font-display);
+  font-size: 1.22rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.brand__mark { width: 1.4rem; height: 1.4rem; opacity: 0.9; }
+
+.nav--quiet {
+  gap: 1.5rem;
+  font-family: var(--k-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.nav--quiet a { color: var(--k-soft); }
+.nav--quiet a:hover { color: var(--k-ink); }
+
+/* ------------------------------------------------------------------ hero */
+
+.hero { padding-block: clamp(2.25rem, 5vw, 4.25rem); }
+
+.hero__in {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: end;
+}
+
+.hero .eyebrow { color: var(--k-accent); margin-bottom: 1.1rem; }
+
+.hero h1 { max-width: 16ch; }
+
+.hero__lede {
+  margin-top: 1.1rem;
+  max-width: 36ch;
+  color: var(--k-soft);
+}
+
+.hero__meta {
+  margin-top: 1.35rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--k-line);
+  font-size: 0.72rem;
+  color: var(--k-soft);
+  max-width: 34ch;
+}
+
+.hero .link-arrow {
+  margin-top: 1.35rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--k-ink);
+  border-bottom-color: var(--k-line-strong);
+}
+
+.hero__art img {
+  width: 100%;
+  height: auto;
+  background: var(--k-art-bg);
+}
+
+.hero__art figcaption {
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--k-soft);
+  padding-top: 0.7rem;
+}
+
+/* --------------------------------------------------------------- seções */
+
+.sec__head { max-width: 46rem; }
+
+.sec__num {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+  margin-bottom: 0.9rem;
+}
+
+.sec__head .lede { margin-top: 1rem; }
+
+.sec--rule { border-top: 1px solid var(--k-line); }
+
+/* --------------------------------------------------------------- séries */
+
+.serie {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.4rem, 3.5vw, 3rem);
+  align-items: start;
+  padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+  border-top: 1px solid var(--k-line);
+}
+
+.serie--rev .serie__img { order: 2; }
+
+.serie__img img {
+  width: 100%;
+  height: auto;
+  max-height: 27rem;
+  object-fit: cover;
+  background: var(--k-art-bg);
+}
+
+.serie__body h3 {
+  font-size: 1.32rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+.serie__body > p {
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: var(--k-soft);
+  max-width: 42ch;
+}
+
+.ficha {
+  margin: 1.35rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem 1.5rem;
+  border-top: 1px solid var(--k-line);
+  padding-top: 1rem;
+}
+
+.ficha > div {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.ficha dt {
+  font-family: var(--k-font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--k-ink) 52%, transparent);
+}
+
+.ficha dd {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--k-ink);
+}
+
+/* ---------------------------------------------------------------- sobre */
+
+.sobre {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.sobre__side { display: grid; gap: 1.2rem; }
+.sobre__mark img { width: 3.2rem; height: 3.2rem; }
+
+.sobre__body h2 { max-width: 24ch; margin-bottom: 1.3rem; }
+.sobre__body p { font-size: 1rem; line-height: 1.72; max-width: 60ch; }
+
+.sobre__kit { margin-top: 1.8rem; }
+.sobre__kit li { font-size: 0.9rem; padding-block: 0.7rem; }
+.sobre__kit .mono { font-size: 0.68rem; letter-spacing: 0.06em; }
+
+/* ------------------------------------------------------------ impressão */
+
+.sec__head--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3.5vw, 3rem);
+  align-items: end;
+  max-width: none;
+}
+
+.price-list--big { max-width: 54rem; }
+
+.price-list--big > li {
+  padding-block: 1rem;
+  align-items: baseline;
+}
+
+.price-list--big span {
+  font-family: var(--k-font-display);
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
+}
+
+.price-list--big small {
+  font-family: var(--k-font-body);
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+  max-width: 46ch;
+}
+
+.price-list--big b {
+  font-family: var(--k-font-display);
+  font-size: 1.22rem;
+  font-weight: 400;
+  color: var(--k-accent);
+  white-space: nowrap;
+}
+
+/* ----------------------------------------------------------- depoimentos */
+
+.vgrid { gap: clamp(1.5rem, 4vw, 3.5rem); }
+
+.quote {
+  font-family: var(--k-font-body);
+  padding-top: 0.2rem;
+}
+
+.quote blockquote { margin: 0; padding: 0; }
+
+.quote p {
+  font-family: var(--k-font-display);
+  font-size: clamp(1.12rem, 1.7vw, 1.34rem);
+  font-weight: 300;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: var(--k-ink);
+}
+
+.quote cite {
+  font-family: var(--k-font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--k-soft);
+  margin-top: 1.1rem;
+}
+
+/* --------------------------------------------------------------- contato */
+
+.contato {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(1.75rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.contato h2 { margin-block: 0.9rem 1rem; }
+
+.contato__lede { max-width: 40ch; }
+
+.contato .btn {
+  margin-top: 1.6rem;
+  background: var(--k-ink);
+  color: var(--k-bg);
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+.contato__card {
+  border: 1px solid var(--k-line);
+  background: var(--k-surface);
+  padding: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+.contato__label {
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--k-accent);
+  margin-bottom: 0.8rem;
+}
+
+.contato__addr {
+  font-family: var(--k-font-display);
+  font-style: normal;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  margin-bottom: 1.2rem;
+}
+
+.contato__rows li { font-size: 0.88rem; padding-block: 0.7rem; }
+.contato__rows .mono { font-size: 0.72rem; letter-spacing: 0; }
+
+.contato__note {
+  margin-top: 1.1rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--k-soft);
+}
+
+/* ---------------------------------------------------------------- rodapé */
+
+.site-footer { padding-block: 2.4rem 3rem; }
+
+.footer__in {
+  display: grid;
+  grid-template-columns: repeat(2, auto) minmax(0, 1fr);
+  gap: 0.4rem 2.5rem;
+  align-items: baseline;
+}
+
+.footer__brand {
+  font-family: var(--k-font-display);
+  font-size: 1rem;
+  color: var(--k-ink);
+}
+
+.site-footer p { font-size: 0.84rem; }
+
+.demo-notice {
+  justify-self: end;
+  max-width: 40ch;
+  font-family: var(--k-font-mono);
+  font-size: 0.64rem;
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+  color: color-mix(in srgb, var(--k-ink) 55%, transparent);
+}
+
+.demo-chip {
+  --k-chip-bg: rgba(28, 28, 28, 0.84);
+  --k-chip-ink: #f0efec;
+  --k-chip-line: rgba(240, 239, 236, 0.26);
+}
+
+/* ------------------------------------------------------------ responsivo */
+
+@media (max-width: 960px) {
+  .hero__in { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .hero__art { order: -1; }
+  .hero h1 { max-width: 22ch; }
+  .serie { grid-template-columns: minmax(0, 1fr); }
+  .serie--rev .serie__img { order: 0; }
+  .sobre { grid-template-columns: minmax(0, 1fr); }
+  .sobre__side { display: flex; align-items: center; gap: 1rem; }
+  .sec__head--split { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .contato { grid-template-columns: minmax(0, 1fr); }
+  .footer__in { grid-template-columns: minmax(0, 1fr); }
+  .demo-notice { justify-self: start; margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--k-line); max-width: 46ch; }
+}
+
+@media (max-width: 640px) {
+  .ficha { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; }
+  .nav--quiet { gap: 1rem; font-size: 0.64rem; }
+  .price-list--big > li { flex-wrap: wrap; gap: 0.25rem 1rem; }
+  .price-list--big b { font-size: 1.1rem; }
+  .quote p { font-size: 1.06rem; }
+}
+
+@media (max-width: 420px) {
+  .nav--quiet { gap: 0.75rem; }
+  .brand { font-size: 1.05rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
