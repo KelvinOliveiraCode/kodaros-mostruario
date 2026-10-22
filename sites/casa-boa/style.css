@@ -183,7 +183,7 @@ body { line-height: 1.62; }
 .menu-list > li { padding-block: 0.95rem; }
 .menu-list__group {
   padding-top: 2.25rem;
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   color: var(--cb-accent-text);
 }
@@ -254,7 +254,7 @@ body { line-height: 1.62; }
 }
 .cb-facts dt {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -344,7 +344,7 @@ body { line-height: 1.62; }
   gap: 0.9rem;
 }
 .cb-form .field label {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -428,7 +428,7 @@ body { line-height: 1.62; }
 }
 .cb-tel__num a:hover { text-decoration: underline; }
 .cb-tel__label {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--k-ink-soft);

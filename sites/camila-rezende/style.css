@@ -105,7 +105,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 }
 
 .side__label {
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -128,7 +128,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 }
 
 .side__nav a:hover { color: var(--k-ink); }
-.side__nav span { color: color-mix(in srgb, var(--k-accent) 82%, transparent); font-size: 0.68rem; }
+.side__nav span { color: color-mix(in srgb, var(--k-accent) 82%, transparent); font-size: 0.6875rem; }
 
 .side__meta {
   display: grid;
@@ -163,7 +163,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 
 .hero .eyebrow {
   color: var(--k-accent);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   margin-bottom: 1rem;
 }
@@ -196,7 +196,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 
 .spec__k {
   font-family: var(--k-font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--k-accent-2) 88%, transparent);
@@ -219,7 +219,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 
 .hero__art figcaption {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.02em;
   color: var(--k-soft);
   padding: 0.6rem 0.8rem;
@@ -241,7 +241,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 
 .sec__num {
   font-family: var(--k-font-mono);
-  font-size: 0.63rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -275,7 +275,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 
 .proj__period {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   color: var(--k-soft);
   white-space: nowrap;
@@ -294,7 +294,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 .tag-row > span {
   border-color: var(--k-line);
   color: var(--k-accent-2);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   border-radius: 3px;
   background: color-mix(in srgb, var(--k-accent-2) 8%, transparent);
 }
@@ -319,7 +319,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 
 .ficha dt {
   font-family: var(--k-font-mono);
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--k-accent) 85%, transparent);
@@ -353,7 +353,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 .repos__label,
 .releases__label {
   font-family: var(--k-font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-soft);
@@ -371,7 +371,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 }
 
 .repos__list .mono:first-child { color: var(--k-accent-2); font-size: 0.76rem; }
-.repos__meta { color: var(--k-soft); font-size: 0.68rem; white-space: nowrap; }
+.repos__meta { color: var(--k-soft); font-size: 0.6875rem; white-space: nowrap; }
 
 /* ----------------------------------------------------------------- stack */
 
@@ -386,7 +386,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
   text-align: left;
   padding: 0.55rem 0.6rem;
   font-family: var(--k-font-mono);
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -465,7 +465,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
 
 .quote cite {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   color: var(--k-soft);
   margin-top: 0.8rem;
@@ -530,7 +530,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
   justify-self: end;
   max-width: 46ch;
   font-family: var(--k-font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   line-height: 1.7;
   letter-spacing: 0.02em;
   color: color-mix(in srgb, var(--k-ink) 46%, transparent);
@@ -552,7 +552,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
     gap: 0.6rem;
   }
   .side__nav { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1rem; }
-  .side__meta { grid-auto-flow: column; gap: 1rem; font-size: 0.68rem; }
+  .side__meta { grid-auto-flow: column; gap: 1rem; font-size: 0.6875rem; }
   .contato { grid-template-columns: minmax(0, 1fr); }
   .footer__in { grid-template-columns: minmax(0, 1fr); }
   .demo-notice { justify-self: start; margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid var(--k-line); }
@@ -567,7 +567,7 @@ h1, h2, h3, h4 { letter-spacing: -0.03em; }
   .repos__meta { color: var(--k-soft); }
   .releases li { grid-template-columns: 4.5rem minmax(0, 1fr); gap: 0.75rem; }
   .sec--panel { margin-inline: -0.35rem; padding-inline: 0.35rem; }
-  .nav--mono { gap: 0.85rem; font-size: 0.66rem; }
+  .nav--mono { gap: 0.85rem; font-size: 0.6875rem; }
   .stack-table { font-size: 0.8rem; }
   .stack-table thead th:nth-child(2),
   .stack-table td:nth-child(2) { display: none; }

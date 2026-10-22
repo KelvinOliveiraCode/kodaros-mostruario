@@ -96,7 +96,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 .pt-brand__mark { width: 1.7rem; height: 1.7rem; }
 .pt-top__meta {
   margin: 0;
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-soft);
@@ -124,7 +124,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 .pt-hero__art img { width: 100%; height: auto; }
 .pt-hero__art figcaption {
   font-family: var(--k-font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   line-height: 1.6;
   color: var(--k-soft);
@@ -142,7 +142,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
   padding-block: 0.85rem;
 }
 .pt-strip li {
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-soft);
@@ -168,7 +168,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 }
 .pt-index__label {
   margin: 0 0 0.9rem;
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -186,12 +186,12 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 }
 .pt-index nav a:hover { color: var(--k-ink); }
 .pt-index nav a span {
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   color: var(--k-accent);
 }
 .pt-index__note {
   margin: 1.6rem 0 0;
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   line-height: 1.75;
   color: var(--k-soft);
   max-width: 24ch;
@@ -206,7 +206,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
   padding-bottom: 0.55rem;
   border-bottom: 2px solid var(--k-ink);
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -222,7 +222,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
   border-bottom: 1px solid var(--k-line);
 }
 .carta__n {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   color: var(--k-accent);
   padding-top: 0.25rem;
 }
@@ -242,7 +242,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 }
 .carta__ficha {
   margin-top: 0.45rem;
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-soft);
@@ -284,7 +284,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 }
 .pt-ficha__label {
   margin: 0 0 0.6rem;
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -329,7 +329,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 .team-row > li { border-top-color: var(--k-line); }
 .team-row__name { font-family: var(--k-font-display); font-size: 1.06rem; }
 .team-row__role { color: var(--k-soft); }
-.team-row__meta { color: var(--k-accent); font-size: 0.68rem; }
+.team-row__meta { color: var(--k-accent); font-size: 0.6875rem; }
 
 /* ------------------------------------------------------- onde e reserva */
 
@@ -371,7 +371,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 .pt-contact span {
   width: 5.2rem;
   flex: none;
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-soft);
@@ -398,7 +398,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 }
 .pt-aside__label {
   margin: 0 0 0.55rem;
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-accent-2);
@@ -409,7 +409,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
   margin-top: 0.9rem;
   padding-top: 0.7rem;
   border-top: 1px solid var(--k-line);
-  font-size: 0.63rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.05em;
   line-height: 1.7;
   color: var(--k-soft);
@@ -426,7 +426,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 }
 .pt-foot__label {
   margin: 0 0 0.5rem;
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -444,7 +444,7 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
   padding-top: 1.1rem;
   border-top: 1px solid var(--k-line);
   font-family: var(--k-font-mono);
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   line-height: 1.8;
   color: var(--k-soft);
@@ -472,8 +472,8 @@ h3 { font-family: var(--k-font-display); font-weight: 500; }
 @media (max-width: 620px) {
   .pt-top__in { grid-template-columns: auto minmax(0, 1fr); gap: 1rem; }
   .pt-top__meta:first-of-type { display: none; }
-  .pt-top__meta:last-child { text-align: right; font-size: 0.6rem; }
-  .pt-strip li { padding-right: 1rem; margin-right: 1rem; font-size: 0.6rem; }
+  .pt-top__meta:last-child { text-align: right; font-size: 0.6875rem; }
+  .pt-strip li { padding-right: 1rem; margin-right: 1rem; font-size: 0.6875rem; }
   .carta__row { grid-template-columns: 1.6rem minmax(0, 1fr) auto; gap: 0.3rem 0.7rem; }
   .carta__name { font-size: 1.08rem; }
   .carta__price { font-size: 0.86rem; }

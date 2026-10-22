@@ -142,7 +142,7 @@ for (const site of targets) {
     if (!existsSync(target)) fail(site.slug, "referência", `não existe: ${ref}`);
   }
 
-  // --- assets declarados existem mas não usados --------------------------
+  // --- asset declarados existem mas não usados --------------------------
   const assetDir = join(dir, "assets");
   if (existsSync(assetDir)) {
     const files = readdirSync(assetDir);
@@ -150,6 +150,11 @@ for (const site of targets) {
     if (!html.includes("assets/hero.svg") && !css.includes("assets/hero.svg")) {
       fail(site.slug, "asset", "hero.svg gerado mas não usado");
     }
+  }
+
+  // --- capa do mostruário (print do topo) ---------------------------------
+  if (!existsSync(join(root, "assets", "covers", site.slug + ".webp"))) {
+    fail(site.slug, "asset", "sem capa em assets/covers/");
   }
 
   // --- proibições de conteúdo --------------------------------------------

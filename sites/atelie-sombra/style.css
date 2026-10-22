@@ -176,7 +176,7 @@ body {
   font-size: 0.95rem;
 }
 
-.schedule th { font-size: 0.66rem; letter-spacing: 0.14em; }
+.schedule th { font-size: 0.6875rem; letter-spacing: 0.14em; }
 .schedule th,
 .schedule td { padding-inline: 0.35rem; }
 .schedule td:last-child { font-size: 0.78rem; color: var(--k-soft); }
@@ -268,7 +268,7 @@ body {
 
 .swatch__code {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   color: var(--k-soft);
 }
@@ -340,7 +340,7 @@ body {
 .enroll__prices { background: color-mix(in srgb, var(--k-accent) 7%, var(--k-surface)); }
 
 .enroll__label {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -394,7 +394,7 @@ body {
 
 .footer__label {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -441,7 +441,7 @@ body {
 }
 
 @media (max-width: 420px) {
-  .nav--soft { gap: 0.9rem; font-size: 0.68rem; }
+  .nav--soft { gap: 0.9rem; font-size: 0.6875rem; }
   .palette { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 

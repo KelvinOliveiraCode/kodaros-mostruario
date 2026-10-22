@@ -26,6 +26,8 @@ body {
 }
 
 img, svg, video { display: block; max-width: 100%; }
+/* o atributo height do <img> não deve virar altura fixa quando a largura é fluida */
+img { height: auto; }
 svg { fill: currentColor; }
 
 h1, h2, h3, h4 {
@@ -218,6 +220,13 @@ a:hover { text-decoration-color: currentColor; }
   backdrop-filter: blur(10px);
   background: var(--k-head-bg, color-mix(in srgb, var(--k-bg, #12161a) 82%, transparent));
   border-bottom: 1px solid var(--k-line, color-mix(in srgb, var(--k-ink, #e9e6df) 12%, transparent));
+}
+.masthead__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--k-head-gap, 1.5rem);
 }
 .brand {
   display: inline-flex;
@@ -679,7 +688,7 @@ p > a:only-child {
 .price__period { font-size: 0.86rem; color: var(--k-ink-soft, color-mix(in srgb, var(--k-ink, #e9e6df) 66%, transparent)); }
 
 @media (max-width: 720px) {
-  .demo-chip { font-size: 0.66rem; left: 0.6rem; bottom: 0.6rem; }
+  .demo-chip { font-size: 0.6875rem; left: 0.6rem; bottom: 0.6rem; }
 }
 
 /* =========================================================================
@@ -933,7 +942,7 @@ p > a:only-child {
 }
 .schedule th {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);

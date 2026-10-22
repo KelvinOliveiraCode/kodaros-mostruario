@@ -120,7 +120,7 @@ body { line-height: 1.6; }
 .fl-kicker {
   display: inline-block;
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--fl-accent-text);
@@ -177,7 +177,7 @@ body { line-height: 1.6; }
 }
 
 .fl-pizza__tag {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--fl-accent-text);
@@ -219,7 +219,7 @@ body { line-height: 1.6; }
 
 .fl-mini-title {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -360,7 +360,7 @@ body { line-height: 1.6; }
 }
 .fl-data h3 {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -379,7 +379,7 @@ body { line-height: 1.6; }
 }
 .fl-data__list span {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -448,7 +448,7 @@ body { line-height: 1.6; }
 }
 .fl-tel h3 {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -471,7 +471,7 @@ body { line-height: 1.6; }
 }
 .fl-tel__num a:hover { color: var(--fl-accent-text); }
 .fl-tel__when {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--fl-accent-text);

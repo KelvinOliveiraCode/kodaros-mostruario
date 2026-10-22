@@ -92,7 +92,7 @@ h1, h2, h3 { text-transform: uppercase; }
 }
 .strip span {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -125,7 +125,7 @@ h1, h2, h3 { text-transform: uppercase; }
 .index-list__meta {
   color: var(--k-accent);
   text-transform: uppercase;
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.07em;
 }
 
@@ -148,7 +148,7 @@ h1, h2, h3 { text-transform: uppercase; }
 }
 .modelos__table thead th {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -262,7 +262,7 @@ h1, h2, h3 { text-transform: uppercase; }
 @media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; } }
 .site-footer h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);

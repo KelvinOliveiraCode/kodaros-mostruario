@@ -78,7 +78,7 @@
 }
 .pecas__num {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   color: var(--k-accent-2);
 }
@@ -208,7 +208,7 @@
 @media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; } }
 .site-footer h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-accent-2);

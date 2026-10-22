@@ -141,7 +141,7 @@ p { text-wrap: pretty; }
   padding: 1.35rem 1.45rem 1.1rem;
 }
 .cv-hero__panel-k {
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--k-gold-light);
@@ -157,7 +157,7 @@ p { text-wrap: pretty; }
 .cv-now__uva { font-family: var(--k-font-display); font-size: 1.04rem; }
 .cv-now__orig {
   grid-column: 1;
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.03em;
   color: rgba(238, 230, 224, 0.85);
 }
@@ -173,7 +173,7 @@ p { text-wrap: pretty; }
   margin-top: 0.9rem;
   padding-top: 0.8rem;
   border-top: 1px solid rgba(238, 230, 224, 0.17);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   color: rgba(238, 230, 224, 0.82);
 }
@@ -216,7 +216,7 @@ p { text-wrap: pretty; }
   background: var(--k-accent-2);
 }
 .cv-quote__by {
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -277,7 +277,7 @@ p { text-wrap: pretty; }
 .cv-quintas__head .lede { margin-top: 0.9rem; max-width: 44ch; }
 .cv-quintas__note {
   margin-top: 1.1rem;
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   color: var(--k-accent-2);
 }
@@ -308,10 +308,10 @@ p { text-wrap: pretty; }
   letter-spacing: -0.01em;
   color: var(--k-ink);
 }
-.cv-wines__ano { font-size: 0.64rem; letter-spacing: 0.09em; color: var(--k-accent-2); }
+.cv-wines__ano { font-size: 0.6875rem; letter-spacing: 0.09em; color: var(--k-accent-2); }
 .cv-wines__orig {
   grid-column: 1;
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   color: var(--k-ink-soft);
 }
@@ -334,7 +334,7 @@ p { text-wrap: pretty; }
 .cv-wines__p span {
   display: block;
   margin-top: 0.15rem;
-  font-size: 0.58rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -373,7 +373,7 @@ p { text-wrap: pretty; }
 .cv-form { display: grid; gap: 1rem; margin-top: 1.6rem; }
 .cv-form__row { gap: 1rem; }
 .cv-form__note {
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.05em;
   color: var(--k-ink-soft);
 }
@@ -451,7 +451,7 @@ p { text-wrap: pretty; }
 
 .cv-local__foot {
   margin-top: 1rem;
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -475,7 +475,7 @@ p { text-wrap: pretty; }
   margin-bottom: 0.45rem;
 }
 .cv-foot__small {
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.05em;
   line-height: 1.85;
   color: var(--k-ink-soft);
@@ -491,7 +491,7 @@ p { text-wrap: pretty; }
   margin-top: 1.2rem;
   max-width: 62ch;
   font-family: var(--k-font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   line-height: 1.8;
   color: var(--k-ink-soft);

@@ -127,7 +127,7 @@ p { color: var(--k-ink-soft); }
 }
 .faixa__label {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -238,7 +238,7 @@ p { color: var(--k-ink-soft); }
 }
 .ficha__campos dt {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -391,7 +391,7 @@ p { color: var(--k-ink-soft); }
 }
 .contato__dados dt {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -439,7 +439,7 @@ p { color: var(--k-ink-soft); }
 }
 .footer-grid h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -466,7 +466,7 @@ p { color: var(--k-ink-soft); }
   padding-top: 0.9rem;
   border-top: 1px solid var(--k-line);
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   line-height: 1.7;
   letter-spacing: 0.02em;
   color: #8d9a93;

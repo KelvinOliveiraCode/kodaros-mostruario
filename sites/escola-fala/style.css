@@ -92,7 +92,7 @@ h3, h4 { font-family: var(--k-font-body); font-weight: 600; }
 }
 .hero__ficha-title {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--k-gold-deep);
@@ -171,7 +171,7 @@ h3, h4 { font-family: var(--k-font-body); font-weight: 600; }
 .revista .aside-layout__nav a:hover span { color: var(--k-accent-2); }
 .revista .aside-layout__nav span {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   color: var(--k-gold-deep);
 }
 
@@ -181,7 +181,7 @@ h3, h4 { font-family: var(--k-font-body); font-weight: 600; }
 .entry + .entry { border-top: 1px solid var(--k-line-strong); padding-top: clamp(2rem, 4vw, 3rem); }
 .entry__kicker {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-accent-2);
@@ -404,7 +404,7 @@ h3, h4 { font-family: var(--k-font-body); font-weight: 600; }
 }
 .footer-grid h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 500;
@@ -431,7 +431,7 @@ h3, h4 { font-family: var(--k-font-body); font-weight: 600; }
   padding-top: 0.9rem;
   border-top: 1px dashed var(--k-line-strong);
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.65;
   color: #5f5847;
 }

@@ -95,7 +95,7 @@
 }
 .suites__meta span {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--k-ink-soft);
@@ -274,7 +274,7 @@
 @media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; } }
 .site-footer h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);

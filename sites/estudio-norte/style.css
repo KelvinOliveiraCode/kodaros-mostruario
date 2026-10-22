@@ -132,7 +132,7 @@
 }
 .casais__tag {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   color: var(--acc-text);
 }
@@ -173,7 +173,7 @@
 .passos h3::before {
   content: "0" counter(etapa);
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   color: var(--acc-text);
 }
 .passos p { font-size: 0.93rem; line-height: 1.62; color: var(--k-ink-soft); max-width: 56ch; }
@@ -195,7 +195,7 @@
 }
 .depo__item figcaption {
   font-family: var(--k-font-mono);
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   color: var(--k-ink-soft);
   padding: 0;
 }
@@ -230,7 +230,7 @@
 }
 .contato__rows dt {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -249,7 +249,7 @@
 @media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; } }
 .site-footer h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.65rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -263,7 +263,7 @@
   padding-top: 1.3rem;
   border-top: 1px solid var(--k-line);
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.78;
   color: var(--k-ink-soft);
   max-width: 64ch;

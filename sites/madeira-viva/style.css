@@ -87,7 +87,7 @@
 .etapas p { font-size: 0.9rem; line-height: 1.55; color: var(--k-ink-soft); }
 .etapas span {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.05em;
   color: var(--k-accent-2);
 }
@@ -110,7 +110,7 @@
 }
 .materiais thead th {
   font-family: var(--k-font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   font-weight: 400;
@@ -147,7 +147,7 @@
 }
 .projetos__tag {
   font-family: var(--k-font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--k-accent-2);
@@ -177,7 +177,7 @@
 .orcamento__rows div { padding-block: 0.8rem; border-bottom: 1px solid var(--k-line); }
 .orcamento__rows dt {
   font-family: var(--k-font-mono);
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -255,7 +255,7 @@
 @media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; } }
 .site-footer h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.65rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);

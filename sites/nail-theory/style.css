@@ -71,13 +71,13 @@
   font-size: 1rem;
 }
 .index-list p { line-height: 1.6; }
-.index-list__meta { color: var(--k-accent-2); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.68rem; }
+.index-list__meta { color: var(--k-accent-2); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.6875rem; }
 
 /* ------------------------------------------------------------ trabalhos */
 
 .mosaic figcaption {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -107,7 +107,7 @@
 }
 .price-list small {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   color: var(--k-ink-soft);
   margin-top: 0.25rem;
   line-height: 1.5;
@@ -155,13 +155,13 @@
   border-top: 1px solid var(--k-line);
   font-size: 0.88rem;
 }
-.onde__rows dt { font-family: var(--k-font-mono); font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--k-ink-soft); padding-top: 0.2rem; }
+.onde__rows dt { font-family: var(--k-font-mono); font-size: 0.6875rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--k-ink-soft); padding-top: 0.2rem; }
 .onde__rows dd { margin: 0; text-align: right; }
 .onde__note {
   margin-top: 0.8rem;
   text-align: center;
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   color: var(--k-ink-soft);
 }
 
@@ -182,7 +182,7 @@
 @media (max-width: 720px) { .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; } }
 .site-footer h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -196,7 +196,7 @@
   padding-top: 1.4rem;
   border-top: 1px solid var(--k-line);
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   line-height: 1.8;
   color: var(--k-ink-soft);
   max-width: 58ch;

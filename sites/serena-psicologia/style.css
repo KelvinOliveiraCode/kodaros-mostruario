@@ -93,7 +93,7 @@ h1, h2, h3 { font-weight: 400; }
   border-radius: 3px;
 }
 .s-kicker {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -190,7 +190,7 @@ h1, h2, h3 { font-weight: 400; }
 .s-ruler__seg--b { border-top-color: var(--k-accent); }
 .s-ruler__seg--c { border-top-color: var(--k-accent-2); }
 .s-ruler__seg--d { border-top-color: #b8b3a5; }
-.s-ruler__seg .mono { font-size: 0.68rem; color: var(--k-accent); letter-spacing: 0.02em; }
+.s-ruler__seg .mono { font-size: 0.6875rem; color: var(--k-accent); letter-spacing: 0.02em; }
 .s-ruler__seg b {
   font-family: var(--k-font-display);
   font-weight: 400;
@@ -221,7 +221,7 @@ h1, h2, h3 { font-weight: 400; }
   margin-bottom: 0.6rem;
 }
 .s-sub { margin-top: 0.7rem; font-size: 0.9rem; color: var(--k-ink-soft); }
-.s-head__meta { font-size: 0.68rem; color: var(--k-accent-2); white-space: nowrap; padding-bottom: 0.2rem; }
+.s-head__meta { font-size: 0.6875rem; color: var(--k-accent-2); white-space: nowrap; padding-bottom: 0.2rem; }
 @media (max-width: 640px) {
   .s-head { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
@@ -233,11 +233,11 @@ h1, h2, h3 { font-weight: 400; }
   background: transparent;
   border: 1px solid var(--k-line-strong);
   color: var(--k-accent);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
 }
 .s-team .team-row__name { font-weight: 500; font-family: var(--k-font-display); font-size: 1.08rem; }
 .s-team .team-row__role { font-size: 0.88rem; max-width: 60ch; }
-.s-team .team-row__meta { color: var(--k-accent-2); font-size: 0.68rem; }
+.s-team .team-row__meta { color: var(--k-accent-2); font-size: 0.6875rem; }
 
 /* ------------------------------------------------------- prova social */
 .s-proof { padding-block: clamp(3rem, 6vw, 5rem); }
@@ -316,7 +316,7 @@ h1, h2, h3 { font-weight: 400; }
   margin-bottom: 0.5rem;
 }
 .s-foot .mono {
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -326,7 +326,7 @@ h1, h2, h3 { font-weight: 400; }
 
 .demo-notice {
   font-family: var(--k-font-mono);
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   line-height: 1.65;
   color: var(--k-ink-soft);
   border-top: 1px solid var(--k-line);
@@ -338,7 +338,7 @@ h1, h2, h3 { font-weight: 400; }
   --k-chip-bg: #262a33;
   --k-chip-ink: #f1f2f4;
   --k-chip-line: rgba(241, 242, 244, 0.2);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   opacity: 0.9;
 }
 

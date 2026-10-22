@@ -63,7 +63,7 @@ p { text-wrap: pretty; }
   align-items: center;
   gap: 0.45rem;
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--k-bg) 82%, transparent);
@@ -104,7 +104,7 @@ p { text-wrap: pretty; }
 }
 .brand small {
   font-family: var(--k-font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -130,7 +130,7 @@ p { text-wrap: pretty; }
 }
 .hero__art figcaption {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.02em;
   padding-top: 0.55rem;
 }
@@ -158,7 +158,7 @@ p { text-wrap: pretty; }
 .ficha > div:last-child { border-right: 0; }
 .ficha dt {
   font-family: var(--k-font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -201,7 +201,7 @@ p { text-wrap: pretty; }
 .cod {
   display: inline-block;
   font-family: var(--k-font-mono);
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.08em;
   color: var(--k-ink-soft);
   border: 1px solid var(--k-line);
@@ -233,7 +233,7 @@ p { text-wrap: pretty; }
   font-size: 0.72rem;
   font-weight: 500;
 }
-.equipe__lista .team-row__meta { font-size: 0.66rem; line-height: 1.5; }
+.equipe__lista .team-row__meta { font-size: 0.6875rem; line-height: 1.5; }
 .equipe__art img {
   border: 1px solid var(--k-line);
   border-radius: var(--k-card-radius);
@@ -322,7 +322,7 @@ p { text-wrap: pretty; }
 }
 .prova__dados dt {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: color-mix(in srgb, var(--k-bg) 62%, transparent);
@@ -369,7 +369,7 @@ p { text-wrap: pretty; }
 .agenda__form input,
 .agenda__form select { background: var(--k-bg); }
 .agenda__obs {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.6;
   color: var(--k-ink-soft);
 }
@@ -385,7 +385,7 @@ p { text-wrap: pretty; }
 }
 .rodape h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -403,7 +403,7 @@ p { text-wrap: pretty; }
 }
 .demo-notice {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.7;
   letter-spacing: 0.01em;
   color: var(--k-ink-soft);
@@ -450,7 +450,7 @@ p { text-wrap: pretty; }
 
 @media (max-width: 420px) {
   .brand span { font-size: 0.95rem; }
-  .brand small { font-size: 0.56rem; }
+  .brand small { font-size: 0.6875rem; }
   .ficha dd { font-size: 0.86rem; }
 }
 

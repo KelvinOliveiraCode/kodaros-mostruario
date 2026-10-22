@@ -84,7 +84,7 @@ h2 { letter-spacing: -0.022em; }
   border-bottom: 1px solid var(--pl-hero);
 }
 .pl-hero__tag {
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(246, 242, 230, 0.78);
@@ -164,7 +164,7 @@ h2 { letter-spacing: -0.022em; }
   align-items: start;
 }
 .pl-traz__tag {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--pl-deep);
@@ -233,7 +233,7 @@ h2 { letter-spacing: -0.022em; }
 .pl-head-sec .mono { font-size: 0.7rem; color: var(--k-ink-soft); }
 .pl-mosaic figcaption {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.01em;
   line-height: 1.5;
   color: var(--k-ink-soft);
@@ -312,7 +312,7 @@ h2 { letter-spacing: -0.022em; }
 .pl-cta__acts { display: grid; gap: 0.75rem; justify-items: start; }
 .pl-cta .btn { background: var(--k-accent-ink); color: #33422f; font-size: 0.9rem; }
 .pl-cta .link-arrow { color: var(--k-accent-ink); border-bottom-color: rgba(246, 242, 230, 0.45); font-size: 0.88rem; }
-.pl-cta__mini { font-size: 0.68rem; color: rgba(246, 242, 230, 0.7); }
+.pl-cta__mini { font-size: 0.6875rem; color: rgba(246, 242, 230, 0.7); }
 
 /* ---------------------------------------------------------------- rodape */
 .site-footer { padding-block: 2.8rem 0; }
@@ -325,7 +325,7 @@ h2 { letter-spacing: -0.022em; }
   line-height: 1.55;
 }
 .pl-foot__brand { font-family: var(--k-font-display); font-size: 1.2rem; color: var(--k-ink); margin-bottom: 0.5rem; }
-.pl-foot .mono { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pl-deep); margin-bottom: 0.45rem; }
+.pl-foot .mono { font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pl-deep); margin-bottom: 0.45rem; }
 @media (max-width: 720px) { .pl-foot { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; } }
 
 .skip-link {
@@ -335,7 +335,7 @@ h2 { letter-spacing: -0.022em; }
 
 .demo-notice {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.65;
   color: var(--k-ink-soft);
   border-top: 1px solid var(--k-line);
@@ -347,7 +347,7 @@ h2 { letter-spacing: -0.022em; }
   --k-chip-bg: #2b302a;
   --k-chip-ink: #f6f2e6;
   --k-chip-line: rgba(246, 242, 230, 0.25);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   opacity: 0.9;
 }
 

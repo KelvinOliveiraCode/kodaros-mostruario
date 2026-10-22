@@ -83,7 +83,7 @@ body {
 .brand__mark { width: 24px; height: 24px; }
 .v-brand-sub {
   font-family: var(--k-font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -115,7 +115,7 @@ body {
   border-bottom: 1px solid var(--k-line);
 }
 .v-hero__tag {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -167,7 +167,7 @@ body {
 }
 .v-head h2 { max-width: 26ch; }
 .v-head__meta {
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -237,14 +237,14 @@ body {
   width: 2.1rem;
   height: 2.1rem;
   border-radius: 4px;
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   background: transparent;
   border: 1px solid var(--k-line-strong);
   color: var(--k-accent);
 }
 .team-row__name { font-size: 0.98rem; }
 .team-row__role { max-width: 62ch; line-height: 1.5; }
-.team-row__meta { font-size: 0.68rem; letter-spacing: 0.03em; }
+.team-row__meta { font-size: 0.6875rem; letter-spacing: 0.03em; }
 @media (max-width: 520px) {
   .team-row > li { grid-template-columns: 2.1rem minmax(0, 1fr); }
   .team-row__meta { grid-column: 2; text-align: left; }
@@ -276,7 +276,7 @@ body {
   color: var(--k-ink-soft);
 }
 .v-reembolso__tag {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -356,7 +356,7 @@ body {
 .v-foot .brand { margin-bottom: 0.7rem; }
 .v-foot p { font-size: 0.84rem; line-height: 1.55; }
 .v-foot .mono {
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -368,7 +368,7 @@ body {
 
 .demo-notice {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.6;
   letter-spacing: 0.01em;
   color: var(--k-ink-soft);
@@ -381,7 +381,7 @@ body {
   --k-chip-bg: #24312a;
   --k-chip-ink: #f2f7f3;
   --k-chip-line: rgba(242, 247, 243, 0.22);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   opacity: 0.9;
 }
 

@@ -52,7 +52,7 @@ h2 { letter-spacing: -0.028em; }
 .brand { color: var(--k-ink); font-weight: 700; font-size: 1.14rem; letter-spacing: -0.03em; }
 .brand__mark { width: 24px; height: 24px; }
 .mf-brand-tag {
-  font-size: 0.58rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -90,7 +90,7 @@ h2 { letter-spacing: -0.028em; }
   background-position: 0 100%;
 }
 .mf-hero__tag {
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -181,7 +181,7 @@ h2 { letter-spacing: -0.028em; }
   max-width: 62ch;
 }
 .mf-gate .mono {
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -217,7 +217,7 @@ h2 { letter-spacing: -0.028em; }
   border: 1px solid var(--k-line);
 }
 .mf-case__id {
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-accent-2);
@@ -311,13 +311,13 @@ h2 { letter-spacing: -0.028em; }
   font-size: 0.85rem;
   line-height: 1.55;
 }
-.mf-foot__tag { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--k-accent); margin-bottom: 0.6rem; }
-.mf-foot .mono { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--k-ink-soft); margin-bottom: 0.5rem; }
+.mf-foot__tag { font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--k-accent); margin-bottom: 0.6rem; }
+.mf-foot .mono { font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--k-ink-soft); margin-bottom: 0.5rem; }
 @media (max-width: 720px) { .mf-foot { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; } }
 
 .demo-notice {
   font-family: var(--k-font-mono);
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   line-height: 1.65;
   color: var(--k-ink-soft);
   border-top: 1px solid var(--k-line);

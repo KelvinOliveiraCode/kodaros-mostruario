@@ -113,7 +113,7 @@ h3, h4 {
 .hero__ficha > div:first-child { border-left: 0; padding-left: 0; }
 .hero__ficha dt {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #b6b2a5;
@@ -188,7 +188,7 @@ h3, h4 {
 }
 .competencias thead th {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -257,7 +257,7 @@ h3, h4 {
   display: inline-block;
   margin-left: 0.35rem;
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   line-height: 1.5;
   color: var(--k-clay-ink);
   border-bottom: 1px dotted var(--k-clay-ink);
@@ -448,7 +448,7 @@ h3, h4 {
 }
 .footer-grid h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 400;
@@ -474,7 +474,7 @@ h3, h4 {
   padding-top: 0.9rem;
   border-top: 1px solid var(--k-line);
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.7;
   color: #5f5a4e;
 }

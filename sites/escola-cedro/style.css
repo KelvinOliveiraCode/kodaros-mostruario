@@ -56,14 +56,14 @@ h3 { letter-spacing: -0.015em; }
 .brand span { display: grid; line-height: 1.15; font-size: 1.02rem; }
 .brand small {
   font-family: var(--k-font-mono);
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--k-ink-soft);
   padding-top: 0.2rem;
 }
 .masthead__vagas {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   color: var(--k-green-text);
   border: 1px solid color-mix(in srgb, var(--k-accent) 42%, transparent);
   border-radius: 999px;
@@ -109,7 +109,7 @@ h3 { letter-spacing: -0.015em; }
   background: var(--k-art-bg);
 }
 .hero__faixa figcaption {
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.6;
   text-align: center;
   padding-top: 0.7rem;
@@ -133,7 +133,7 @@ h3 { letter-spacing: -0.015em; }
 }
 .fatos li:last-child { border-right: 0; }
 .fatos .mono {
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -189,7 +189,7 @@ h3 { letter-spacing: -0.015em; }
 .turmas__head .lede { margin-top: 0.9rem; }
 .turmas__scroll { overflow-x: auto; }
 .turmas__tab { min-width: 36rem; margin-top: 0.6rem; }
-.turmas__tab th { font-size: 0.62rem; letter-spacing: 0.12em; }
+.turmas__tab th { font-size: 0.6875rem; letter-spacing: 0.12em; }
 .turmas__tab td { font-size: 0.94rem; padding-block: 0.85rem; }
 .turmas__tab td:first-child { font-weight: 600; }
 .turmas__tab td:nth-child(5),
@@ -243,7 +243,7 @@ h3 { letter-spacing: -0.015em; }
 .person__nome { font-weight: 600; font-size: 0.98rem; }
 .person__role {
   font-family: var(--k-font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   color: var(--k-green-text);
   padding-block: 0.15rem 0.5rem;
@@ -294,7 +294,7 @@ h3 { letter-spacing: -0.015em; }
 .matricula__contato > div:first-child { border-top: 0; padding-top: 0; }
 .matricula__contato dt {
   font-family: var(--k-font-mono);
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--k-ink-soft);
@@ -303,7 +303,7 @@ h3 { letter-spacing: -0.015em; }
 .matricula__contato dd { margin: 0; }
 .matricula__obs {
   margin-top: 1rem;
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   line-height: 1.7;
   color: var(--k-ink-soft);
 }
@@ -335,7 +335,7 @@ h3 { letter-spacing: -0.015em; }
 }
 .depoimentos__nota {
   margin-top: 1.6rem;
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   color: var(--k-ink-soft);
 }
 
@@ -350,7 +350,7 @@ h3 { letter-spacing: -0.015em; }
 }
 .rodape h4 {
   font-family: var(--k-font-mono);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -361,7 +361,7 @@ h3 { letter-spacing: -0.015em; }
 .rodape__p { margin-top: 0.8rem; font-size: 0.87rem; line-height: 1.6; max-width: 40ch; color: var(--k-ink-soft); }
 .demo-notice {
   font-family: var(--k-font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   line-height: 1.7;
   color: var(--k-ink-soft);
   border-top: 1px solid var(--k-line);

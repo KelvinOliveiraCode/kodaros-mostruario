@@ -118,7 +118,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 .an-nav a:hover { color: var(--k-accent); }
 .an-top__meta {
   margin: 0;
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-soft);
@@ -139,7 +139,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 .an-hero__acts { margin-top: 1.9rem; }
 .an-hero__note {
   margin-top: 1.6rem;
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.85;
   color: var(--k-soft);
   max-width: 40ch;
@@ -156,7 +156,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
   margin: 0 0 0.9rem;
   padding-bottom: 0.7rem;
   border-bottom: 1px solid rgba(201, 154, 78, 0.3);
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -185,7 +185,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 }
 .an-card__foot {
   margin: 1rem 0 0;
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   line-height: 1.8;
   color: var(--k-soft);
 }
@@ -212,7 +212,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
   padding-bottom: 0.6rem;
   border-bottom: 1px solid rgba(201, 154, 78, 0.4);
   font-family: var(--k-font-mono);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -237,7 +237,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 .an-wine__origin {
   margin-top: 0.25rem;
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -262,7 +262,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 }
 .an-wine__p small {
   display: block;
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--k-soft);
@@ -275,7 +275,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 
 .an-foot-note {
   margin-top: 1.6rem;
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   line-height: 1.9;
   color: var(--k-soft);
   max-width: 60ch;
@@ -350,7 +350,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 }
 .an-rule__label {
   margin: 0 0 0.5rem;
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -365,7 +365,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 }
 .an-person__label {
   margin: 0 0 0.5rem;
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -377,7 +377,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
   margin-top: 1rem;
   padding-top: 0.8rem;
   border-top: 1px solid var(--k-line);
-  font-size: 0.66rem;
+  font-size: 0.6875rem;
   line-height: 1.8;
 }
 
@@ -402,7 +402,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
   color: var(--k-soft);
 }
 .an-list span {
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -424,7 +424,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
   border: 1px solid var(--k-line);
 }
 .an-form h3 { font-family: var(--k-font-display); font-size: 1.35rem; font-weight: 400; }
-.an-form .field label { color: var(--k-soft); font-size: 0.66rem; }
+.an-form .field label { color: var(--k-soft); font-size: 0.6875rem; }
 .an-form .field input,
 .an-form .field select {
   background: var(--k-input-bg);
@@ -436,7 +436,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 .an-form .btn { margin-top: 0.3rem; }
 .an-form__note {
   margin: 0;
-  font-size: 0.62rem;
+  font-size: 0.6875rem;
   line-height: 1.7;
   color: var(--k-soft);
 }
@@ -472,7 +472,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
 }
 .an-foot__label {
   margin: 0 0 0.5rem;
-  font-size: 0.6rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--k-accent);
@@ -491,7 +491,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
   padding-top: 1.1rem;
   border-top: 1px solid var(--k-line);
   font-family: var(--k-font-mono);
-  font-size: 0.67rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.03em;
   line-height: 1.8;
   color: var(--k-soft);

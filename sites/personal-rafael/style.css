@@ -65,7 +65,7 @@ body {
 .rn-brand__sub {
   display: block;
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -213,7 +213,7 @@ body {
 }
 .rn-week__load {
   font-family: var(--k-font-mono);
-  font-size: 0.68rem;
+  font-size: 0.6875rem;
   letter-spacing: 0.02em;
   color: var(--k-accent);
 }
@@ -444,7 +444,7 @@ body {
   .rn-shot { padding: 0.4rem; border-radius: 9px; }
   .rn-week { padding: 0.6rem 0.55rem; }
   .rn-week__name { font-size: 0.84rem; }
-  .rn-week__load { font-size: 0.68rem; }
+  .rn-week__load { font-size: 0.6875rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
