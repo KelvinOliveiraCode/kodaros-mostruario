@@ -478,6 +478,7 @@ h3 { font-family: var(--k-font-body); font-weight: 600; font-size: 1.02rem; lett
   color: var(--k-accent);
 }
 .an-foot__line {
+  max-width: 62ch;
   font-size: 0.88rem;
   line-height: 1.75;
   color: var(--k-soft);

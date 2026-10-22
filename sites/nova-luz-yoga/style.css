@@ -37,6 +37,8 @@
   --k-lede-size: clamp(1rem, 1.2vw, 1.08rem);
   --k-body-size: 1rem;
   --k-gap: 1.5rem;
+  --k-chip-bg: #2e3b34;
+  --k-chip-ink: #faf7f2;
 }
 
 body {

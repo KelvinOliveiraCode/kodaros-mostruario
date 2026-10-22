@@ -34,6 +34,8 @@
   --k-art-bg: #171a17;
   --k-head-bg: rgba(16, 18, 17, 0.9);
   --k-focus: #a3e635;
+  --k-chip-bg: #edf0ee;
+  --k-chip-ink: #101211;
 }
 
 .brand { font-family: var(--k-font-display); font-weight: 600; font-size: 1.08rem; }

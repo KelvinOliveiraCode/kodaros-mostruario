@@ -12,7 +12,7 @@
   --k-bg: #f0efec;
   --k-surface: #ffffff;
   --k-ink: #1c1c1c;
-  --k-accent: #b5843f;
+  --k-accent: #84612d;
   --k-accent-2: #5a5a5a;
 
   /* derivados */
@@ -21,7 +21,7 @@
   --k-line-strong: rgba(28, 28, 28, 0.34);
   --k-art-bg: #e3e1dc;
   --k-accent-ink: #f0efec;
-  --k-focus: #b5843f;
+  --k-focus: #84612d;
 
   /* fontes do manifesto */
   --k-font-display: "Newsreader", Georgia, serif;

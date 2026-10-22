@@ -5,7 +5,7 @@
   --k-surface: #ffffff;
   --k-ink: #302725;
   --k-ink-soft: #6d5f5a;
-  --k-accent: #b5766a;
+  --k-accent: #8c5a4e;
   --k-accent-2: #7b8f7a;
   --k-accent-ink: #ffffff;
   --k-line: rgba(48, 39, 37, 0.14);
@@ -38,6 +38,8 @@
   --k-focus: #b5766a;
 
   --acc-text: #8f5445;
+  --k-chip-bg: #302725;
+  --k-chip-ink: #faf5f0;
 }
 
 .brand { font-family: var(--k-font-display); font-weight: 500; font-size: 1.22rem; letter-spacing: 0.02em; }

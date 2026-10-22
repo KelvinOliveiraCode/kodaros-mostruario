@@ -36,6 +36,8 @@
   --k-focus: #a8563a;
 
   --acc-text: #8f4830;
+  --k-chip-bg: #24231f;
+  --k-chip-ink: #eceae5;
 }
 
 .brand { font-family: var(--k-font-display); font-weight: 600; font-size: 1.02rem; letter-spacing: 0.01em; }

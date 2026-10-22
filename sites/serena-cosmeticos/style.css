@@ -5,7 +5,7 @@
   --k-surface: #ffffff;
   --k-ink: #2e2220;
   --k-ink-soft: #6b5a57;
-  --k-accent: #c96a72;
+  --k-accent: #9e5359;
   --k-accent-2: #8fa58c;
   --k-accent-ink: #ffffff;
   --k-line: rgba(46, 34, 32, 0.14);
@@ -36,6 +36,7 @@
   --k-art-bg: #f0ddd8;
   --k-head-bg: rgba(250, 241, 238, 0.9);
   --k-chip-bg: #ffffff;
+  --k-chip-ink: #1a1413;
   --k-focus: #c96a72;
 
   /* vermelho mais escuro só para texto pequeno: o accent puro não passa em AA */

@@ -223,6 +223,7 @@ a:hover { text-decoration-color: currentColor; }
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  min-height: 24px;
   font-family: var(--k-font-display);
   font-weight: var(--k-brand-weight, 700);
   font-size: 1.08rem;
@@ -381,6 +382,15 @@ figure figcaption {
 }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
+/* aviso de demonstração: medida de leitura confortável em qualquer largura */
+.demo-notice { max-width: 70ch; }
+/* links em lista/definição ficam com alvo de toque >= 24px sem mexer no ritmo do texto */
+.site-footer li > a,
+dd a,
+p > a:only-child {
+  display: inline-block;
+  padding-block: 0.3rem;
+}
 
 /* ------------------------------------------------------- demo back-chip */
 
@@ -402,7 +412,7 @@ figure figcaption {
   letter-spacing: 0.04em;
   text-decoration: none;
   backdrop-filter: blur(6px);
-  opacity: 0.72;
+  opacity: 0.92;
   transition: opacity 0.2s ease;
 }
 .demo-chip:hover { opacity: 1; text-decoration: none; }

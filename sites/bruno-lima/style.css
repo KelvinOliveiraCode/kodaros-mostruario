@@ -12,7 +12,7 @@
   --k-bg: #f2f2f0;
   --k-surface: #ffffff;
   --k-ink: #151515;
-  --k-accent: #e03c31;
+  --k-accent: #b02d24;
   --k-accent-2: #1a1a1a;
 
   /* derivados */
@@ -21,7 +21,7 @@
   --k-line-strong: rgba(21, 21, 21, 0.55);
   --k-art-bg: #e4e4e0;
   --k-accent-ink: #f2f2f0;
-  --k-focus: #e03c31;
+  --k-focus: #b02d24;
 
   /* fontes do manifesto */
   --k-font-display: "Archivo Black", "Helvetica Neue", sans-serif;

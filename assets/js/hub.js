@@ -23,6 +23,19 @@
   var bySlug = {};
   SITES.forEach(function (s) { bySlug[s.slug] = s; });
 
+  /* Tinta legível sobre a cor de destaque de cada site (AA em texto pequeno). */
+  function onAccent(hex) {
+    var m = /^#?([0-9a-f]{6})$/i.exec(hex || "");
+    if (!m) return "#14090a";
+    var n = parseInt(m[1], 16);
+    var ch = [n >> 16 & 255, n >> 8 & 255, n & 255].map(function (c) {
+      c /= 255;
+      return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    });
+    var lum = 0.2126 * ch[0] + 0.7152 * ch[1] + 0.0722 * ch[2];
+    return lum < 0.18 ? "#ffffff" : "#14090a";
+  }
+
   /* ------------------------------------------------------------- ícones */
 
   var ICON = {
@@ -86,7 +99,7 @@
     var wide = index % 7 === 3;
     return (
       '<button class="card' + (wide ? " card--wide" : "") + '" type="button" data-slug="' + site.slug + '"' +
-      ' style="--site-accent:' + site.pal.acc + ';--site-ink:' + site.pal.bg + '">' +
+      ' style="--site-accent:' + site.pal.acc + ';--site-on-accent:' + onAccent(site.pal.acc) + '">' +
         '<div class="card__thumb">' +
           '<img src="sites/' + site.slug + '/assets/hero.svg" alt="Composição visual da ' + site.brand + '" loading="lazy" width="1200" height="900">' +
           '<span class="card__cat">' + site.cat + '</span>' +
@@ -173,7 +186,7 @@
     $("#opennew").href = "sites/" + site.slug + "/index.html";
 
     viewer.style.setProperty("--site-accent", site.pal.acc);
-    viewer.style.setProperty("--site-ink", site.pal.bg);
+    viewer.style.setProperty("--site-on-accent", onAccent(site.pal.acc));
 
     loading.hidden = false;
     frame.src = "sites/" + site.slug + "/index.html";

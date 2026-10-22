@@ -29,6 +29,7 @@ Projeto publicado no GitHub Pages para mostrar a empresas reais como uma landing
 ├── tools/
 │   ├── gen-assets.mjs      ← geração determinística de SVGs
 │   ├── validate.mjs        ← validador mecânico
+│   ├── contrast.mjs        ← auditoria de contraste WCAG AA
 │   └── serve.mjs           ← servidor de desenvolvimento
 └── .nojekyll               ← necessário para GitHub Pages
 ```
@@ -48,6 +49,15 @@ node tools/serve.mjs
 node tools/validate.mjs
 # ou específicas:
 node tools/validate.mjs estudio-norte saraiva-prado
+```
+
+### Auditar contraste (WCAG AA)
+
+Com o servidor local rodando:
+
+```bash
+node tools/contrast.mjs
+# percorre as 50 páginas + o hub e sai com código 1 se algum texto falhar
 ```
 
 ### GitHub Pages

@@ -5,7 +5,7 @@
   --k-surface: #fbfcfa;
   --k-ink: #23302a;
   --k-ink-soft: #5c6a63;
-  --k-accent: #5c8a72;
+  --k-accent: #406b55;
   --k-accent-2: #d2a24c;
   --k-accent-ink: #fbfcfa;
   --k-line: rgba(35, 48, 42, 0.13);
@@ -35,6 +35,7 @@
   --k-art-bg: #e3e9e2;
   --k-head-bg: rgba(242, 244, 240, 0.9);
   --k-chip-bg: #fbfcfa;
+  --k-chip-ink: #141615;
   --k-focus: #5c8a72;
 }
 

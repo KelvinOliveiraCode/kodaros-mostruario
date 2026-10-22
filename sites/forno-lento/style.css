@@ -8,7 +8,7 @@
   --k-bg: #191013;
   --k-surface: #22151a;
   --k-ink: #f6e7dd;
-  --k-accent: #d33a2c;
+  --k-accent: #a82e22;
   --k-accent-2: #e0b768;
   --k-font-display: "Bricolage Grotesque", sans-serif;
   --k-font-body: "Rubik", sans-serif;
@@ -37,6 +37,8 @@
   --k-display-leading: 0.94;
   --k-lede-size: clamp(0.98rem, 1.2vw, 1.08rem);
   --k-gap: 1rem;
+  --k-chip-bg: #f6e7dd;
+  --k-chip-ink: #191013;
 }
 
 body { line-height: 1.6; }

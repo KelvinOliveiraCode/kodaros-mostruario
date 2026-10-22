@@ -34,6 +34,8 @@
   --k-art-bg: #1d1d1d;
   --k-head-bg: rgba(20, 20, 20, 0.92);
   --k-focus: #f2c94c;
+  --k-chip-bg: #f2f2f2;
+  --k-chip-ink: #141414;
 }
 
 h1, h2, h3 { text-transform: uppercase; }

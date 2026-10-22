@@ -34,6 +34,8 @@
   --k-art-bg: #e8e6dd;
   --k-head-bg: rgba(245, 244, 239, 0.94);
   --k-focus: #3f4a52;
+  --k-chip-bg: #1f1e19;
+  --k-chip-ink: #f5f4ef;
 }
 
 h1, h2, h3 { text-transform: uppercase; }
@@ -232,6 +234,7 @@ h1, h2, h3 { text-transform: uppercase; }
 }
 .contato__tel a { color: var(--k-ink); text-decoration: none; }
 .contato__mail { font-size: 0.9rem; margin-top: 0.1rem; }
+.contato__mail a { display: inline-block; padding-block: 0.3rem; }
 .contato__addr {
   margin-top: 1.1rem;
   padding-top: 0.9rem;

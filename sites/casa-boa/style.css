@@ -38,6 +38,8 @@
   --k-lede-size: clamp(1rem, 1.25vw, 1.12rem);
   --k-gap: 1.5rem;
   --k-gallery-cols: 3;
+  --k-chip-bg: #f3e8d8;
+  --k-chip-ink: #1b1410;
 }
 
 body { line-height: 1.62; }

@@ -35,6 +35,8 @@
   --k-art-bg: #1b1a18;
   --k-head-bg: rgba(16, 16, 20, 0.92);
   --k-focus: #c9a86a;
+  --k-chip-bg: #f0ece4;
+  --k-chip-ink: #101014;
 }
 
 .brand {
