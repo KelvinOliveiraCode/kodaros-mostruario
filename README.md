@@ -1,5 +1,7 @@
 # Kodaros — Mostruário de Landing Pages
 
+[English](README.en.md) · **Português (Brasil)**
+
 **50 páginas de demonstração, cada uma com a identidade visual do seu nicho.**
 
 Projeto publicado no GitHub Pages para mostrar a empresas reais como uma landing page pode ser construída sem template genérico — com paleta própria, tipografia escolhida a dedo e conteúdo escrito para o negócio, não para SEO.
