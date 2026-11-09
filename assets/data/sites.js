@@ -1,4 +1,4 @@
-/* Kodaros Landing — manifesto do mostruário.
+/* Kodaros Landing, manifesto do mostruário.
    Fonte única de verdade: o hub lê este arquivo para montar filtros, busca e
    a grade de vitrines. Cada site vive em /sites/<slug>/ com identidade própria.
 

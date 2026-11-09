@@ -1,4 +1,4 @@
-/* Kodaros — hub do mostruário.
+/* Kodaros, hub do mostruário.
    Carrega o manifesto, pré-carrega as miniaturas, filtra, busca e abre o site
    dentro de um iframe (com barra de contexto e link para abrir em nova aba). */
 
@@ -159,6 +159,12 @@
   /* -------------------------------------------------------------- viewer */
 
   var viewer, frame, loading, lastFocus = null;
+  var locks = 0;
+  function lock() { locks++; document.body.style.overflow = "hidden"; }
+  function unlock() {
+    locks = Math.max(0, locks - 1);
+    if (!locks) document.body.style.overflow = "";
+  }
 
   function openSite(slug, push) {
     var site = bySlug[slug];
@@ -175,9 +181,9 @@
     frame.src = "sites/" + site.slug + "/index.html";
 
     viewer.hidden = false;
+    lock();
     requestAnimationFrame(function () {
       viewer.classList.add("is-open");
-      document.body.style.overflow = "hidden";
     });
 
     if (push !== false) {
@@ -188,7 +194,7 @@
 
   function closeSite(pop) {
     viewer.classList.remove("is-open");
-    document.body.style.overflow = "";
+    unlock();
     setTimeout(function () {
       viewer.hidden = true;
       frame.src = "about:blank";
@@ -199,23 +205,51 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
-  /* ------------------------------------------------------------- splash */
+  /* ---------------------------------------------------------------- boot */
 
-  function runSplash(done) {
-    var fill = $("#splash-fill");
-    var status = $("#splash-status");
-    var total = SITES.length;
+  function runBoot(done) {
+    var el = $("#boot");
+    var fill = $("#bootFill");
+    var pct = $("#bootPct");
+    var status = $("#bootStatus");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!el || !fill || !pct || !status) {
+      done();
+      return;
+    }
+    if (reduce) {
+      done();
+      return;
+    }
+
+    lock();
+    el.classList.add("is-on");
+
+    var steps = ["iniciando runtime", "carregando ativos", "montando interface", "carregando capas", "pronto"];
+    var CRIT = ["assets/img/bust.webp"];
+    var total = SITES.length + CRIT.length;
     var loaded = 0;
     var fontsReady = false;
     var finished = false;
 
+    function paint(p, label) {
+      var v = Math.max(0, Math.min(100, Math.round(p)));
+      fill.style.width = v + "%";
+      pct.textContent = (v < 10 ? "0" : "") + v + "%";
+      if (label) status.textContent = label;
+    }
+
     function tick() {
       var p = Math.min(100, Math.round(((loaded / total) * 0.75 + (fontsReady ? 0.25 : 0)) * 100));
-      fill.style.width = p + "%";
-      status.querySelector("b").textContent = loaded + "/" + total + " páginas";
+      paint(p, steps[Math.min(3, Math.floor((loaded / total) * 4))]);
       if (loaded >= total && fontsReady && !finished) {
         finished = true;
-        setTimeout(done, 320);
+        paint(100, "pronto");
+        setTimeout(function () {
+          el.classList.remove("is-on");
+          unlock();
+          done();
+        }, 420);
       }
     }
 
@@ -228,17 +262,20 @@
       fontsReady = true;
     }
 
-    // pré-carrega as capas para a grade abrir sem atraso
-    SITES.forEach(function (site) {
+    // pré-carrega a marca e as capas para a grade abrir sem atraso
+    var queue = CRIT.slice();
+    SITES.forEach(function (site) { queue.push("assets/covers/" + site.slug + ".webp"); });
+    queue.forEach(function (src) {
       var img = new Image();
       img.onload = img.onerror = function () {
         loaded++;
         tick();
       };
-      img.src = "assets/covers/" + site.slug + ".webp";
+      img.src = src;
     });
+    paint(6, steps[0]);
 
-    // rede de segurança: nunca deixa o splash travado
+    // rede de segurança: nunca deixa o boot preso
     setTimeout(function () {
       fontsReady = true;
       loaded = Math.max(loaded, total);
@@ -296,9 +333,47 @@
           }
         });
       } catch (err) {
-        /* origem diferente (file://) — o link funciona como fallback */
+        /* origem diferente (file://): o link funciona como fallback */
       }
     });
+
+    /* -------------------------------------------------------- topnav + drawer */
+    (function nav() {
+      var top = $("#topnav");
+      var burger = $("#navBurger");
+      var drawer = $("#drawer");
+      var ticking = false;
+
+      function onScroll() {
+        var y = window.pageYOffset || document.documentElement.scrollTop;
+        if (top) top.classList.toggle("is-scrolled", y > 12);
+        ticking = false;
+      }
+      window.addEventListener("scroll", function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+      }, { passive: true });
+      onScroll();
+
+      function setDrawer(open) {
+        if (!burger || !drawer) return;
+        drawer.classList.toggle("is-open", open);
+        burger.setAttribute("aria-expanded", String(open));
+        burger.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+        if (open) lock(); else unlock();
+      }
+
+      if (burger && drawer) {
+        burger.addEventListener("click", function () {
+          setDrawer(!drawer.classList.contains("is-open"));
+        });
+        drawer.addEventListener("click", function (e) {
+          if (e.target.closest("a")) setDrawer(false);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && drawer.classList.contains("is-open")) setDrawer(false);
+        });
+      }
+    })();
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && !viewer.hidden) closeSite();
@@ -310,11 +385,7 @@
       else if (!viewer.hidden) closeSite(false);
     });
 
-    runSplash(function () {
-      var s = $("#splash");
-      s.classList.add("is-done");
-      setTimeout(function () { s.hidden = true; }, 420);
-
+    runBoot(function () {
       var slug = location.hash.replace("#", "");
       if (slug && bySlug[slug]) openSite(slug, false);
     });

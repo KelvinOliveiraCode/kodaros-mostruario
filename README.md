@@ -1,8 +1,8 @@
-# Kodaros — Mostruário de Landing Pages
+# Kodaros, Mostruário de Landing Pages
 
 **50 páginas de demonstração, cada uma com a identidade visual do seu nicho.**
 
-Projeto publicado no GitHub Pages para mostrar a empresas reais como uma landing page pode ser construída sem template genérico — com paleta própria, tipografia escolhida a dedo e conteúdo escrito para o negócio, não para SEO.
+Projeto publicado no GitHub Pages para mostrar a empresas reais como uma landing page pode ser construída sem template genérico, com paleta própria, tipografia escolhida a dedo e conteúdo escrito para o negócio, não para SEO.
 
 O hub segue a identidade da Kodaros: obsidiana, tinta quente e um único sinal de ouro, com Instrument Serif nos títulos e Figtree no texto. A capa de cada página é um print real do topo dela.
 
@@ -78,7 +78,7 @@ node tools/covers.mjs
 
 1. Faça push do repositório
 2. No GitHub, Settings → Pages → Source: **Deploy from a branch**, branch `main`, pasta `/ (root)`
-3. O `.nojekyll` já está na raiz — o Jekyll não será acionado
+3. O `.nojekyll` já está na raiz, então o Jekyll não será acionado
 
 ## Nichos cobertos
 

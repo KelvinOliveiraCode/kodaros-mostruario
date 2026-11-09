@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kodaros — Mostruário de landing pages</title>
-<meta name="description" content="Mostruário da Kodaros: 50 landing pages de demonstração, uma para cada nicho — de salão de beleza a marcenaria. Filtre por área e abra cada página por dentro.">
+<title>Kodaros, Mostruário de landing pages</title>
+<meta name="description" content="Mostruário da Kodaros: 50 landing pages de demonstração, uma para cada nicho , de salão de beleza a marcenaria. Filtre por área e abra cada página por dentro.">
 <meta name="theme-color" content="#070709">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kodaros — Mostruário de landing pages">
+<meta property="og:title" content="Kodaros, Mostruário de landing pages">
 <meta property="og:description" content="Cinquenta landing pages, uma para cada nicho. Cada uma escrita para um negócio específico.">
 <meta property="og:image" content="assets/img/og.jpg">
 <link rel="icon" href="assets/img/favicon-192.png" sizes="192x192">
@@ -19,49 +19,66 @@
 </head>
 <body>
 
-<!-- ------------------------------------------------------------- splash -->
-<div class="splash" id="splash">
-  <div class="splash__inner">
-    <div class="splash__mark">
-      <img class="splash__bust" src="assets/img/bust.webp" alt="" width="121" height="120">
-      <span class="splash__word">KODAROS</span>
+<!-- ------------------------------------------------------------- splash · padrão boot da landing -->
+<div class="boot" id="boot">
+  <div class="boot-inner">
+    <img class="boot-mark" src="assets/img/bust.webp" alt="" width="121" height="120">
+    <div class="boot-name">KODAROS</div>
+    <div class="boot-bar" role="progressbar" aria-label="Carregando o mostruário" aria-valuemin="0" aria-valuemax="100">
+      <span id="bootFill"></span>
     </div>
-    <p class="splash__title">Cinquenta páginas.<br><span>Um nicho em cada.</span></p>
-    <div class="splash__bar" role="progressbar" aria-label="Carregando o mostruário" aria-valuemin="0" aria-valuemax="100">
-      <div class="splash__fill" id="splash-fill"></div>
-    </div>
-    <div class="splash__status" id="splash-status">
-      <span>Carregando prévias</span>
-      <b>0/50 páginas</b>
+    <div class="boot-readout">
+      <span id="bootStatus">iniciando runtime</span>
+      <span class="num" id="bootPct">00%</span>
     </div>
   </div>
 </div>
 
-<!-- ------------------------------------------------------------- header -->
-<header class="hub-head">
-  <div class="wrap hub-head__in">
-    <a class="wordmark" href="index.html" aria-label="Kodaros, início">
-      <img class="wordmark__bust" src="assets/img/bust.webp" alt="" width="121" height="120">
-      KODAROS
+<!-- ------------------------------------------------------------- header · alinhado com a landing -->
+<header class="topnav" id="topnav">
+  <div class="wrap topnav-inner">
+    <a class="logo" href="index.html" aria-label="KODAROS, início">
+      <img class="logo-mark" src="assets/img/bust.webp" alt="" width="121" height="120">
+      <span>KODAROS</span>
     </a>
-    <nav class="hub-head__nav" aria-label="Principal">
-      <span class="mono hide-sm">Mostruário 2026</span>
-      <a href="#catalogo">Catálogo</a>
-      <a class="hide-xs" href="#contato">Contato</a>
-      <a class="hub-cta" href="https://wa.me/559192094504?text=Oi!%20Vi%20o%20mostru%C3%A1rio%20da%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
-        Falar no WhatsApp
-      </a>
+    <nav aria-label="Seções do site">
+      <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#modulos">Ecossistema</a>
+      <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#biblioteca">Biblioteca</a>
+      <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#mostruario">Mostruário</a>
+      <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#diagnostico">Diagnóstico</a>
+      <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#duvidas">Dúvidas</a>
     </nav>
+    <div class="topnav-actions">
+      <a class="btn-ghost" href="https://kelvinoliveiracode.github.io/kodaros-landing/#diagnostico">Diagnóstico gratuito</a>
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
+<!-- Drawer mobile, igual ao da landing -->
+<div class="drawer" id="drawer">
+  <nav aria-label="Menu principal">
+    <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#modulos">Ecossistema</a>
+    <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#biblioteca">Biblioteca</a>
+    <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#mostruario">Mostruário</a>
+    <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#diagnostico">Diagnóstico</a>
+    <a href="https://kelvinoliveiracode.github.io/kodaros-landing/#duvidas">Dúvidas</a>
+  </nav>
+  <div class="drawer-actions">
+    <a class="btn-primary" href="https://kelvinoliveiracode.github.io/kodaros-landing/#diagnostico">Começar meu diagnóstico</a>
+    <a class="btn-wa" href="https://wa.me/559192094504?text=Oi!%20Vi%20o%20mostru%C3%A1rio%20da%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+  </div>
+</div>
+
+<main id="content" tabindex="-1">
   <!-- --------------------------------------------------------------- hero -->
   <section class="wrap hub-hero">
     <p class="eyebrow">Mostruário · 50 páginas · 12 nichos</p>
     <div class="hub-hero__grid">
       <div>
-        <h1>Cinquenta landing pages.<br><em>Nenhuma parece a outra.</em></h1>
+        <h1>Cinquenta landing pages.<br>Nenhuma parece a outra.</h1>
         <p class="hub-hero__lede">
           Cada página aqui foi escrita para um negócio específico: o preço de um corte,
           a fornada de uma padaria, o prazo de uma obra. Escolha um nicho, abra e repare
@@ -112,31 +129,31 @@
   </section>
 </main>
 
-<!-- ------------------------------------------------------------- footer -->
-<footer class="hub-foot" id="contato">
+<!-- ------------------------------------------------------------- footer · alinhado com a landing -->
+<footer class="pagefoot">
   <div class="wrap">
-    <div class="hub-foot__grid">
-      <div>
-        <div class="hub-foot__brand">
-          <img class="wordmark__bust" src="assets/img/bust.webp" alt="" width="121" height="120">
-          <span>KODAROS</span>
-        </div>
-        <p style="max-width:36ch">Landing pages para negócios que têm algo concreto para dizer. Página feita, texto escrito, imagem resolvida.</p>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img class="logo-mark" src="assets/img/bust.webp" alt="" width="121" height="120" style="width:52px;height:52px">
+        <p style="max-width:42ch;margin-top:1rem">Landing pages para negócios que têm algo concreto para dizer. Página feita, texto escrito, imagem resolvida.</p>
       </div>
-      <div>
-        <h3>Mostruário</h3>
+      <div class="foot-col">
+        <h3>Plataforma</h3>
         <ul>
-          <li><a href="#catalogo">Ver as 50 páginas</a></li>
-          <li><a href="#catalogo">Filtrar por nicho</a></li>
-          <li><a href="index.html#atelie-lumina">Abrir um exemplo</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-landing/#modulos">Ecossistema</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-landing/#biblioteca">Biblioteca</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-landing/#mostruario">Mostruário</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-landing/#diagnostico">Diagnóstico</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-landing/#duvidas">Dúvidas</a></li>
         </ul>
       </div>
-      <div>
-        <h3>Contato</h3>
+      <div class="foot-col">
+        <h3>Contato e legal</h3>
         <ul>
-          <li><a href="https://wa.me/559192094504?text=Oi!%20Vi%20o%20mostru%C3%A1rio%20da%20KODAROS%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">WhatsApp · +55 91 9209-4504</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-landing/#contato">Falar com a gente</a></li>
+          <li><a href="https://kelvinoliveiracode.github.io/kodaros-landing/#diagnostico">Diagnóstico gratuito</a></li>
+          <li><a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="mailto:kodaros01@gmail.com">kodaros01@gmail.com</a></li>
-          <li><a href="https://www.instagram.com/kodaros01" target="_blank" rel="noopener">Instagram · @kodaros01</a></li>
         </ul>
       </div>
     </div>
@@ -146,9 +163,12 @@
       oferece serviço real e nenhuma delas vende nada. Este mostruário existe para
       mostrar desenho e redação, não para captar cliente.
     </p>
-    <div class="hub-foot__base">
-      <span>© 2026 Kodaros</span>
-      <span>Brasil · atendimento remoto</span>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> KODAROS · Todos os direitos reservados.</span>
+      <a class="foot-credit" href="https://github.com/kelvinoliveiracode" target="_blank" rel="noopener" aria-label="Feito por Kelvin Oliveira. Abrir o GitHub de kelvinoliveiracode em nova aba">
+        <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+        <span>Feito por <b>Kelvin Oliveira</b></span>
+      </a>
     </div>
   </div>
 </footer>
